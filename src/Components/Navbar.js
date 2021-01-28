@@ -1,8 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
 import './Navbar.css'
-import Lee_Logo from '.././images/Nurmalee-Logo.png'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { AiOutlineGithub, AiOutlineInstagram, AiFillTwitterSquare } from 'react-icons/ai'
+import { navList } from '.././sourceData/data'
+import Lee_Logo from '.././images/Nurmalee-Logo-3.png'
+import { ImCancelCircle } from 'react-icons/im'
+import { FiTwitter, FiGithub } from 'react-icons/fi'
+import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineMenu } from 'react-icons/ai'
+
 
 function Navbar() {
     const [showList, setShowList] = useState(false)
@@ -19,28 +22,33 @@ function Navbar() {
         }
     }, [showList])
 
+    const handleNavToggle = () => {
+        setShowList(!showList)
+    }
+
     return (
         <nav className="navbar">
             <div className="navbar-buttons">
                 <img className="lee-logo" src={Lee_Logo} alt="LEE"/>
-                <GiHamburgerMenu className="navbar-icon" onClick={() => setShowList(!showList)} />
+                {showList ? <ImCancelCircle className="navbar-icon" onClick={handleNavToggle} /> : <AiOutlineMenu className="navbar-icon" onClick={handleNavToggle} /> }
             </div>
 
             <div className= "navbar-list-container" ref={navbarListContainerRef}>
                 <ul className="navbar-list" ref={navbarListRef}>
-                    <li className="list-item"><a href="#about-me">about me</a></li>
-                    <li className="list-item"><a href="#technologies">technologies</a></li>
-                    <li className="list-item"><a href="#projects">projects</a></li>
-                    <li className="list-item"><a href="#contact-me">contact me</a></li>
+                    {
+                        navList.map(({id, title, href}) => {
+                         return <li className="list-item" key={id}> <a href={href}>{title}</a> </li>
+                        })
+                    }
                 </ul>
             </div>
 
             <div className="social-list">
-                <AiOutlineGithub className="navbar-icon"/>
+                <FiGithub className="navbar-icon"/>
                 <AiOutlineInstagram className="navbar-icon"/>
-                <AiFillTwitterSquare className="navbar-icon"/>
-            </div>
-            
+                <FiTwitter className="navbar-icon"/>
+                <AiOutlineYoutube className="navbar-icon"/>
+            </div> 
         </nav>
     )
 }

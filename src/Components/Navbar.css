@@ -1,6 +1,10 @@
 .navbar {
-    box-shadow: 0 0 10px black;
-    font-family: 'Raleway', sans-serif;
+    box-shadow: 0 0 20px black;
+    position: fixed;
+    width: 100%;
+    /* background-color: rgb(111, 130, 111); */
+    background-color: rgb(68, 68, 68);
+    z-index: 100;
 }
 
 .navbar-buttons {
@@ -11,12 +15,13 @@
 }
 
 .lee-logo {
-    height: 80px;
+    height: 70px;
 }
 
 .navbar-icon {
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
+    color: white;
 }
 
 .navbar-list {
@@ -26,30 +31,26 @@
 }
 
 .list-item {
-    padding: 10px 0;
     position: relative;
 }
 
 .list-item > a {
     text-decoration: none;
-    color: black;
-    padding: 7px 20px;
+    color: white;
+    padding: 13px 20px;
     display: block;
     font-size: 14px;
-    font-weight: 500;
     font-weight: 500;
     letter-spacing: 1px;
     text-align: left;
     text-transform: capitalize;
-    /* position: relative; */
     transition: 500ms;
 }
 
 .list-item:hover a {
-    background-color: darkred;
+    background-color: #222;
     color: white;
-    padding-left: 30px;
-    font-weight: 700;
+    padding-left: 40px;
 }
 
 .navbar-list-container {
@@ -59,31 +60,37 @@
 }
 
 .social-list {
-    margin-right: 10px;
-    display: none;
+    position: fixed;
+    top: 15.5rem;
+    left: -40px;
+    border-right: 1px solid;
+    padding: 5px 7px 0 2px ;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+
+.social-list:hover {
+    left: 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.9);
 }
 
 .social-list .navbar-icon {
-    margin: 0 10px;
+    margin: 10px;
     cursor: pointer;
     transition: 500ms;
 }
 
 .social-list .navbar-icon:hover {
-    transform: scale(1.4);
-    color: #333;
+    /* transform: scale(1.5); */
+    transform: rotate(1080deg);
+    color: red;
 }
 
-/* .social-list .navbar-icon:nth-of-type(2):hover {
-    color: rgb(118, 13, 83);
-}
 
-.social-list .navbar-icon:nth-of-type(3):hover {
-    color: rgb(48, 155, 197);
-} */
-
-
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 900px) {
     .navbar {
         display: flex;
         justify-content: space-between;
@@ -100,8 +107,13 @@
         display: none;
     }
 
+    .list-item {
+        padding: 10px 0;
+    }
+
     .list-item > a {
         margin: 0 10px;
+        padding: 7px 20px;
     }
 
     .list-item:hover a {
@@ -116,11 +128,11 @@
     .list-item::after {
         content: "";
         position: absolute;
-        /* left: 0; */
+        left: 0;
         bottom: 0;
-        height: 2px;
+        height: 1px;
         width: 0;
-        background-color: darkred;
+        background-color: white;
         transition: 1000ms;
     }
     
@@ -133,7 +145,20 @@
     }
 
     .social-list {
+        margin-right: 10px;
         display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        border: none;
+    }
+
+    .social-list .navbar-icon {
+        margin: 0 10px;
+    }
+
+    .social-list:hover {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     }
 }
 

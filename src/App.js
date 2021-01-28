@@ -1,10 +1,12 @@
 import './App.css';
-import PortfolioHompage from './Components/PortfolioHompage';
+import Banner from './Components/Banner';
+import Technologies from './Components/Technologies';
 
 function App() {
   return (
     <div className="app">
-      <PortfolioHompage />
+      <Banner />
+      <Technologies />
     </div>
   );
 }
