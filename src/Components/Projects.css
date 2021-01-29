@@ -1,0 +1,38 @@
+.projects {
+    min-height: 100vh;
+    padding: 50px 0;
+    background-color: rgb(230, 242, 245);
+    /* text-align: center; */
+}
+
+.projects > h1 {
+    /* color: white; */
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: 'Abel', sans-serif;
+}
+
+.underlines {
+    height: 3px;
+    background-color: black;
+    width: 15%;
+    margin: 10px auto 0;
+}
+
+.projects-container {
+    margin: 60px auto 0 auto;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    padding: 0 3rem;
+}
+
+@media screen and (min-width: 900px) {
+    .underline {
+        width: 7%;
+    }
+}

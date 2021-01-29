@@ -1,41 +1,29 @@
 import React from 'react'
 import './Technologies.css'
-import { FaReact, FaCss3Alt, FaHtml5 } from 'react-icons/fa'
-import { SiAdobeillustrator } from 'react-icons/si'
-import { DiJqueryLogo, DiJavascript } from 'react-icons/di'
 import { techList } from '.././sourceData/data'
+import Technology from './Technology'
 
 
 function Technologies() {
 
-    const techCardColorEffect = (color) => {
-        console.log(color);
-        return {
-            color: color
-        }
-    }
+    // const techCardColorEffect = (color) => {
+    //     console.log(color);
+    //     return {
+    //         color: color
+    //     }
+    // }
 
     return (
         <section className="technologies" id="technologies">
-            <h1>Technologies</h1>
+            <h1>Technologies/Languages</h1>
             <div className="underline"></div>
 
+            <p>Redescribe these technologies, give more details, e.g under css.. include css grid, flexbox etc .. use an accordion to redesign th whole section, make sure tp talk about responsiveness and other things you offer</p>
+
             <div className="techs-container">
-                {techList.map(tech => {
-                    const {id, title, color, info} = tech
+                {techList.map((tech, index) => {
                     return (
-                        <article key={id} className="tech">
-                            <div className="tech-image" onMouseOver={() => techCardColorEffect(color)} style={techCardColorEffect(color)}>
-                               {title === "html5" && <FaHtml5 className="tech-icon" /> }
-                               {title === "css3" && <FaCss3Alt className="tech-icon" /> }
-                               {title === "javascript" && <DiJavascript className="tech-icon" /> }
-                               {title === "jQuery" && <DiJqueryLogo className="tech-icon" /> }
-                               {title === "react" && <FaReact className="tech-icon" /> }
-                               {title === "adobe illustrator" && <SiAdobeillustrator className="tech-icon" /> }
-                               <h3 className="tech-name"> {title} </h3>
-                            </div>
-                            <p className="tech-info">{info}</p>
-                        </article>
+                        <Technology {...tech} key={index}/>
                     )
                 })}
             </div>

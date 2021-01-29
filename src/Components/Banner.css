@@ -1,5 +1,6 @@
 .banner {
     background-image: url(.././images/kelly-sikkema-L5HG3CH_pgc-unsplash.jpg);
+    font-family: 'Abel', sans-serif;
     /* mask-image: linear-gradient(to top, transparent 10%, black); */
     background-position: center;
     background-size: cover;
@@ -20,14 +21,14 @@
 .profile > h1 {
     font-size: 2rem;
     text-transform: uppercase;
+    font-family: 'Abel', sans-serif;
 }
 
 .profile-summary {
-    text-justify: distribute;
+    text-align: justify;
     margin-top: 20px;
     font-size: 11px;
     line-height: 20px;
-    /* font-style: italic; */
 }
 
 .profile-buttons {
@@ -36,6 +37,7 @@
 
 .profile-buttons button {
     padding: 15px 3rem;
+    font-family: 'Abel', sans-serif;
     font-size: 11px;
     margin: 2px;
     background-color: transparent;
@@ -45,7 +47,6 @@
     outline: none;
     position: relative;
     z-index: 1;
-    /* 0225798776 */
 }
 
 .profile-buttons button:first-of-type {
