@@ -38,7 +38,6 @@
     width: 0;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    z-index: 10;
 }
 
 .project-card:hover .project-image::after {
@@ -53,12 +52,10 @@
     height: 100%;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
-    z-index: 8;
 }
 
 .project-info {
     padding: 20px;
-    /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4); */
 }
 
 .project-desc {

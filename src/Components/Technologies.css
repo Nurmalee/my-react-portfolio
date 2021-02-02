@@ -1,12 +1,14 @@
 .technologies {
-    /* background-image: url(.././images/kelly-sikkema-tk9RQCq5eQo-unsplash.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; */
     min-height: 100vh;
     padding: 50px 0;
-    background-color: rgb(53, 53, 53);
+    background-color: rgb(158, 193, 202);
+    background-color: rgb(145, 163, 145);
     text-align: center;
+    transition: 1000ms;
+}
+
+.technologies:hover {
+    padding-top: 100px;
 }
 
 .technologies > h1 {
@@ -25,14 +27,36 @@
 
 .techs-container {
     margin: 60px auto 0 auto;
-    max-width: 700px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-gap: 15px;
+    padding: 0 3rem;
 }
 
-@media screen and (min-width: 900px) {
+.technologies:hover .indicator::after {
+    width: 85%;
+}
+
+
+@media screen and (min-width: 720px) {
+
+    .techs-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .underline {
         width: 20%;
     }
+
+}
+
+@media screen and (min-width: 1000px) {
+
+    .techs-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .underline {
+        width: 20%;
+    }
+    
 }

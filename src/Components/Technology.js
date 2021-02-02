@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Technology.css'
-import { FaReact, FaCss3Alt, FaHtml5 } from 'react-icons/fa'
-import { SiAdobeillustrator } from 'react-icons/si'
-import { DiJqueryLogo, DiJavascript } from 'react-icons/di'
+import { AiOutlineMinusSquare, AiFillPlusSquare } from 'react-icons/ai'
 
-function Technology({id, title, color, info}) {
+function Technology({title, info, icon}) {
+    const [showMore, setShowMore] = useState(false)
+    const [hideInfo, setHideInfo] = useState(false)
+
+    const moreAndInfo = () => {
+        setShowMore(!showMore)
+        setHideInfo(!hideInfo)
+    }
+
     return (
-        <article key={id} className="tech">
+        <>
+        {/* <article className="tech">
             <div className="tech-image">
                {title === "html5" && <FaHtml5 className="tech-icon" /> }
                {title === "css3" && <FaCss3Alt className="tech-icon" /> }
@@ -17,7 +24,19 @@ function Technology({id, title, color, info}) {
                <h3 className="tech-name"> {title} </h3>
             </div>
             <p className="tech-info">{info}</p>
-        </article>
+        </article> */}
+        <div className="technology-card">
+            <div className="technology-title">
+                <div className="technology-icon">
+                    {icon}
+                    <h4>{title}</h4>
+                </div>
+                <p className="indicator"></p>
+                {showMore ?  <AiOutlineMinusSquare className="plus-minus-icon"  onClick={moreAndInfo} /> : <AiFillPlusSquare className="plus-minus-icon" onClick={moreAndInfo} />}
+            </div>
+            {hideInfo &&  <p className="technology-info" >{info}</p>}
+        </div>
+        </>
     )
 }
 

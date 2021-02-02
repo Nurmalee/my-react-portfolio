@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import './Navbar.css'
 import { navList } from '.././sourceData/data'
-import Lee_Logo from '.././images/Nurmalee-Logo-3.png'
+import Lee_Logo from '.././images/Nurmalee-Logo-4.png'
 import { ImCancelCircle } from 'react-icons/im'
 import { FiTwitter, FiGithub } from 'react-icons/fi'
 import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineMenu } from 'react-icons/ai'
@@ -9,8 +9,8 @@ import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineMenu } from 'react-icons
 
 function Navbar() {
     const [showList, setShowList] = useState(false)
-    const navbarListContainerRef = useRef(null)
-    const navbarListRef = useRef(null)
+    const navbarListContainerRef = useRef('')
+    const navbarListRef = useRef('')
 
     useEffect(() => {
         const listHeight = navbarListRef.current.getBoundingClientRect().height
@@ -22,8 +22,23 @@ function Navbar() {
         }
     }, [showList])
 
+    //Trying to use this code to hide and show navbar on scroll;
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            console.log(window.pageYOffset, window.scrollY)
+        })
+        // return () => {
+        //     cleanup
+        // }
+    })
+
     const handleNavToggle = () => {
         setShowList(!showList)
+    }
+
+    const handleLinkClick = (e) => {
+        e.target.style.backgroundColor = "#222";
+        setShowList(false)
     }
 
     return (
@@ -37,7 +52,7 @@ function Navbar() {
                 <ul className="navbar-list" ref={navbarListRef}>
                     {
                         navList.map(({id, title, href}) => {
-                         return <li className="list-item" key={id}> <a href={href}>{title}</a> </li>
+                         return <li className="list-item" key={id}> <a href={href} onClick={handleLinkClick} >{title}</a> </li>
                         })
                     }
                 </ul>

@@ -1,3 +1,4 @@
+import React from 'react'
 import youtube from '.././images/works/Youtube-VanillaJs-Clone.JPG'
 import porsche_garage from '.././images/works/My-Porsche-Garage-Landing-Page.JPG'
 import pepsi_landing from '.././images/works/Pepsi-Landing-Page.JPG'
@@ -6,11 +7,19 @@ import watchesHq from '.././images/works/Watches-Landing-Page.JPG'
 import random_users from '.././images/works/react-random-users-app.JPG'
 import linkedIn_clone from '.././images/works/linkedIn-clone.JPG'
 
+
+//react-icons
+import { FaReact, FaCss3Alt, FaHtml5 } from 'react-icons/fa'
+import { SiAdobeillustrator } from 'react-icons/si'
+import { DiJqueryLogo, DiJavascript } from 'react-icons/di'
+
+
+
 export const navList = [
     {
         id: 1,
-        title: 'about me',
-        href: '#about-me'
+        title: 'home',
+        href: '#home'
     },
     {
         id: 2,
@@ -29,39 +38,59 @@ export const navList = [
     }
 ]
 
+export const bannerList = [
+    {
+        title: 'hub of enthralling, functional & responsive websites',
+        info: 'Javascript is the now and the future. I build exquisite and responsive user interfaces. This portfolio in fact was made with react js. It showcases the flexibility of functional components with a bunch of use cases for the most commonly used react hooks. Click any of the buttons below to uncover more....',
+        // background: '.././images/theme-photos-nJCW43biz9U-unsplash.jpg'
+    },
+    {
+        title: 'home of enthralling, functional & responsive websites',
+        info: 'Javascript is the now and the future. I am a front end, javascript & react developer based in Lagos, Nigeria. I build exquisite and responsive user interfaces. This portfolio in fact was made with react js. It showcases the flexibility of functional components with a bunch of use cases for the most commonly used react hooks. Click any of the buttons below to uncover more....',
+        // background: '.././images/julien-pouplard-nqyw2rUs1uo-unsplash.jpg'
+    },
+    {
+        title: 'school of enthralling, functional & responsive websites',
+        info: 'css is the now and the future. I am a front end, javascript & react developer based in Lagos, Nigeria. I build <b>exquisite and responsive user interfaces',
+        // background: '.././images/bruce-tang-DfRRllois_I-unsplash.jpg'
+    },
+]
+
 
 export const techList = [
     {
-        id: 1,
         title: 'html5',
-        color: 'green',
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        icon: <FaHtml5 className="tech-icon" />,
+        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
     {
-        id: 2,
         title: 'css3',
-        color: 'darkblue',
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        icon: <FaCss3Alt className="tech-icon"  />,
+        info: 'Media querry | CSS flexbox | CSS grid and general responsiveness'
     },
     {
-        id: 3,
+        title: 'bootstrap',
+        info: 'Media querry | CSS flexbox | CSS grid and general responsiveness'
+    },
+    {
         title: 'javascript',
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        icon: <DiJavascript className="tech-icon" />,
+        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
     {
-        id: 4,
         title: 'jQuery',
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        icon: <DiJqueryLogo className="tech-icon" />,
+        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
     {
-        id: 5,
         title: 'react',
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        icon: <FaReact className="tech-icon" />,
+        info: 'Experienced in the use of Class based components | Function based components | React hooks | React router | Context API | Redux'
     },
     {
-        id: 6,
         title: 'adobe illustrator',
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        icon: <SiAdobeillustrator className="tech-icon" />,
+        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     }
 ]
 

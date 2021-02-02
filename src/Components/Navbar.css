@@ -3,7 +3,7 @@
     position: fixed;
     width: 100%;
     /* background-color: rgb(111, 130, 111); */
-    background-color: rgb(68, 68, 68);
+    background-color: rgba(68, 68, 68, 0.9);
     font-family: 'Abel', sans-serif;
     z-index: 100;
 }
@@ -66,6 +66,7 @@
     top: 15.5rem;
     left: -40px;
     border-right: 1px solid;
+    background-color: rgba(68, 68, 68, 0.9);
     padding: 5px 7px 0 2px ;
     display: flex;
     flex-direction: column;
@@ -86,17 +87,17 @@
 }
 
 .social-list .navbar-icon:hover {
-    /* transform: scale(1.5); */
     transform: rotate(1080deg);
     color: red;
 }
 
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1100px) {
     .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        /* background-color: transparent; */
     }
 
     .navbar-list {
@@ -119,12 +120,7 @@
     }
 
     .list-item:hover a {
-        transform: rotate(-5deg);
         padding-left: 20px;
-    }
-
-    .list-item:nth-of-type(even):hover a {
-        transform: rotate(5deg);
     }
 
     .list-item::after {
@@ -150,6 +146,7 @@
         margin-right: 10px;
         display: block;
         position: relative;
+        background-color: transparent;
         top: 0;
         left: 0;
         border: none;
@@ -161,6 +158,10 @@
 
     .social-list:hover {
         box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    .social-list .navbar-icon:hover {
+        transform: scale(1.3);
     }
 }
 

@@ -12,7 +12,7 @@ function Project({imageUrl, title, info}) {
             <article className="project-info">
                 <h2 className="project-title"> {title} </h2>
                 <p className="project-desc">
-                    {showLess ? `${info.substring(0, 150)}...` : info } 
+                    {showLess ? `${info.substring(0, 100)}...` : info } 
                     <button onClick={() => setShowLess(!showLess)}> {showLess ? ' Show More' : ' Show Less'} </button>
                 </p>
                 <button className="visit-page"> visit page </button>

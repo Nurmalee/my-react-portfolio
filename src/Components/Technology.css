@@ -1,5 +1,4 @@
-
-.tech {
+/* .tech {
     border-radius: 5px;
     width: 200px;
     background-color: white;
@@ -59,4 +58,83 @@
     visibility: visible;
     opacity: 1;
     margin-top: 40px;
+} */
+
+
+/* ANOTHER STYLE TRIAL */
+.technology-card {
+    cursor: pointer;
+    border-radius: 3px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    align-self: flex-start;
+    color: #555;
+    padding: 10px 20px;
+    padding-bottom: 25px;
+}
+
+.tech-icon {
+   color: red;
+}
+
+.technology-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    text-transform: capitalize;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+}
+
+.indicator {
+    flex: 1;
+    margin: 0 10px;
+    border-radius: 30px;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100px;
+    position: relative;
+}
+
+.indicator::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 0;
+    background-color: darkred;
+    transition: 1500ms cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.technology-icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.technology-icon > h4 {
+    margin-left: 10px;
+    color: black;
+}
+
+/* .plus-minus-icon {
+    
+} */
+
+.technology-info {
+    text-align: start;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.transition {
+    transition: 1000ms cubic-bezier(0.19, 1, 0.22, 1);
 }
