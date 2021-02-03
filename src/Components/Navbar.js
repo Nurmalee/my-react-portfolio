@@ -37,7 +37,7 @@ function Navbar() {
     }
 
     const handleLinkClick = (e) => {
-        e.target.style.backgroundColor = "#222";
+        // e.target.style.backgroundColor = "#222";
         setShowList(false)
     }
 

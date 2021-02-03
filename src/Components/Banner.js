@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import './Banner.css'
 import Navbar from './Navbar'
 import { bannerList } from '.././sourceData/data'
+import { IoIosArrowDropdownCircle } from 'react-icons/io'
+
 
 function Banner() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -15,7 +17,7 @@ function Banner() {
     }, [windowWidth])
 
     useEffect(() => {
-        let slider = setInterval(() => {
+        let bannerListSlider = setInterval(() => {
             setIndex((index) => {
                 let newIndex = index + 1
                 if(newIndex > bannerList.length - 1){
@@ -23,9 +25,9 @@ function Banner() {
                 }
                 return newIndex
             })
-        }, 7000)
+        }, 12000)
         return () => {
-           clearInterval(slider)
+           clearInterval(bannerListSlider)
         }
     }, [index])
 
@@ -37,10 +39,11 @@ function Banner() {
                 <h1> {title} </h1>
                 <p className="profile-summary"> {info} </p>
                 <div className="profile-buttons">
-                    <button>discover more</button>
+                    <button href="#projects"> discover more </button>
                     <button>view my CV</button>
                 </div>
             </div>
+            <a href="#about"> <IoIosArrowDropdownCircle className="arrow-down" /> </a>
         </section>
     )
 }

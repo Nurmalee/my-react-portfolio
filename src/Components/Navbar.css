@@ -3,7 +3,7 @@
     position: fixed;
     width: 100%;
     /* background-color: rgb(111, 130, 111); */
-    background-color: rgba(68, 68, 68, 0.9);
+    background-color: rgba(68, 68, 68, 0.7);
     font-family: 'Abel', sans-serif;
     z-index: 100;
 }

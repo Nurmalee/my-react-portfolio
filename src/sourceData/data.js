@@ -1,4 +1,6 @@
 import React from 'react'
+
+//project-images
 import youtube from '.././images/works/Youtube-VanillaJs-Clone.JPG'
 import porsche_garage from '.././images/works/My-Porsche-Garage-Landing-Page.JPG'
 import pepsi_landing from '.././images/works/Pepsi-Landing-Page.JPG'
@@ -9,7 +11,7 @@ import linkedIn_clone from '.././images/works/linkedIn-clone.JPG'
 
 
 //react-icons
-import { FaReact, FaCss3Alt, FaHtml5 } from 'react-icons/fa'
+import { FaReact, FaCss3Alt, FaHtml5, FaBootstrap } from 'react-icons/fa'
 import { SiAdobeillustrator } from 'react-icons/si'
 import { DiJqueryLogo, DiJavascript } from 'react-icons/di'
 
@@ -23,16 +25,21 @@ export const navList = [
     },
     {
         id: 2,
+        title: 'about',
+        href: '#about'
+    },
+    {
+        id: 3,
         title: 'works/projects',
         href: '#projects'
     },
     {
-        id: 3,
+        id: 4,
         title: 'technologies',
         href: '#technologies'
     },
     {
-        id: 4,
+        id: 5,
         title: 'contact me',
         href: '#contact-me'
     }
@@ -40,20 +47,17 @@ export const navList = [
 
 export const bannerList = [
     {
-        title: 'hub of enthralling, functional & responsive websites',
-        info: 'Javascript is the now and the future. I build exquisite and responsive user interfaces. This portfolio in fact was made with react js. It showcases the flexibility of functional components with a bunch of use cases for the most commonly used react hooks. Click any of the buttons below to uncover more....',
-        // background: '.././images/theme-photos-nJCW43biz9U-unsplash.jpg'
+        title: 'the hub of enthralling & functional websites',
+        info: 'Javascript is the now and the future. I build exquisite and functional user interfaces which are in trueness, functional. This portfolio in fact was made with react js. It showcases the flexibility of functional components with a bunch of use cases for the most commonly used react hooks. Click any of the buttons below to uncover more....',
     },
     {
-        title: 'home of enthralling, functional & responsive websites',
-        info: 'Javascript is the now and the future. I am a front end, javascript & react developer based in Lagos, Nigeria. I build exquisite and responsive user interfaces. This portfolio in fact was made with react js. It showcases the flexibility of functional components with a bunch of use cases for the most commonly used react hooks. Click any of the buttons below to uncover more....',
-        // background: '.././images/julien-pouplard-nqyw2rUs1uo-unsplash.jpg'
+        title: 'a seamless focus and priority on responsiveness',
+        info: 'Responsiveness prioritized. At the heart of all my designs and websites is responsive ability for all user interfaces in what i like to call the "ultra-responsive confidence". All my websites are made to work on all devices to ensure an unforgettable user experience that will keep you in awe. Click any of the buttons below to uncover more....',
     },
     {
-        title: 'school of enthralling, functional & responsive websites',
-        info: 'css is the now and the future. I am a front end, javascript & react developer based in Lagos, Nigeria. I build <b>exquisite and responsive user interfaces',
-        // background: '.././images/bruce-tang-DfRRllois_I-unsplash.jpg'
-    },
+        title: 'clones that make the original look inferior',
+        info: 'Herein is a few collection of clones of popular social media spaces. These builds make the original looks as though they might need an upgrade. Click any of the buttons below to uncover more....',
+    }
 ]
 
 
@@ -69,13 +73,14 @@ export const techList = [
         info: 'Media querry | CSS flexbox | CSS grid and general responsiveness'
     },
     {
-        title: 'bootstrap',
-        info: 'Media querry | CSS flexbox | CSS grid and general responsiveness'
-    },
-    {
         title: 'javascript',
         icon: <DiJavascript className="tech-icon" />,
         info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
+    },
+    {
+        title: 'bootstrap',
+        icon: <FaBootstrap className="tech-icon" />,
+        info: 'Media querry | CSS flexbox | CSS grid and general responsiveness'
     },
     {
         title: 'jQuery',

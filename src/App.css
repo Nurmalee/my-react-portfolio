@@ -10,4 +10,6 @@
     scroll-snap-type: mandatory;
     overflow: auto;
     height: 100vh;
+    background-color: black;
+    background-image: url(./images/jack-b-ombUn7ergE4-unsplash.jpg);
 }
