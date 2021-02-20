@@ -2,7 +2,7 @@
     min-height: 80vh;
     color: white;
     padding: 50px 0;
-    background-color: #444;
+    background-color: #333;
     text-align: center;
     transition: 1000ms;
 }
@@ -35,7 +35,7 @@
     max-width: 700px;
     align-self: flex-start;
     line-height: 30px;
-    text-align: left;
+    text-align: justify;
 }
 
 .about-info > img {
@@ -56,6 +56,10 @@
 
     .underline {
         width: 10%;
+    }
+
+    .about-info p {
+        text-align: left;
     }
     
 }
