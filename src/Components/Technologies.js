@@ -8,8 +8,8 @@ function Technologies() {
 
     return (
         <section className="technologies" id="technologies">
-            <h1>Technologies/Languages</h1>
-            <div className="underline"></div>
+            <h1>some technologies/languages I know/use</h1>
+            {/* <div className="underline"></div> */}
 
             <div className="techs-container">
                 {techList.map((tech, index) => {

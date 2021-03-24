@@ -2,7 +2,7 @@
     min-height: 80vh;
     color: white;
     padding: 50px 0;
-    background-color: #333;
+    /* background-color: #333; */
     text-align: center;
     transition: 1000ms;
 }
@@ -29,6 +29,7 @@
     margin: 60px auto 0 auto;
     color: #ccc;
     padding: 0 5rem;
+    overflow-wrap: break-word;
 }
 
 .about-info p {
@@ -39,11 +40,13 @@
 }
 
 .about-info > img {
+    object-fit: cover;
     height: 200px;
     width: 200px;
     border-radius: 50%;
+    border: 5px solid white;
     box-shadow: 0 0 10px grey;
-    margin: 30px;
+    margin: 0 30px;
 }
 
 
@@ -51,7 +54,7 @@
     .about-info {
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .underline {

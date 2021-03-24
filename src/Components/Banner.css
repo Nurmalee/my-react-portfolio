@@ -88,6 +88,7 @@
     text-transform: capitalize;
     color: white;
     border: 1px solid white;
+    border-radius: 3px;
     outline: none;
     position: relative;
     z-index: 1;

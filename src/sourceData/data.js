@@ -55,7 +55,7 @@ export const bannerList = [
         info: 'Responsiveness prioritized. At the heart of all my designs and websites is responsive ability for all user interfaces in what i like to call the "ultra-responsive confidence". All my websites are made to work on all devices to ensure an unforgettable user experience that will keep you in awe. Click any of the buttons below to uncover more....',
     },
     {
-        title: 'clones that make the original look inferior',
+        title: 'web app clones that make the original look inferior',
         info: 'Herein is a few collection of clones of popular social media spaces. These builds make the original looks as though they might need an upgrade. Click any of the buttons below to uncover more....',
     }
 ]
@@ -73,7 +73,7 @@ export const techList = [
         info: 'Media querry | CSS flexbox | CSS grid and general responsiveness'
     },
     {
-        title: 'javascript',
+        title: 'javascript (ES6+)',
         icon: <DiJavascript className="tech-icon" />,
         info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },

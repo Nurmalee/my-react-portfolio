@@ -32,9 +32,9 @@ function Technology({title, info, icon}) {
                     <h4>{title}</h4>
                 </div>
                 <p className="indicator"></p>
-                {showMore ?  <AiOutlineMinusSquare className="plus-minus-icon"  onClick={moreAndInfo} /> : <AiFillPlusSquare className="plus-minus-icon" onClick={moreAndInfo} />}
+                {/* {showMore ?  <AiOutlineMinusSquare className="plus-minus-icon"  onClick={moreAndInfo} /> : <AiFillPlusSquare className="plus-minus-icon" onClick={moreAndInfo} />} */}
             </div>
-            {hideInfo &&  <p className="technology-info" >{info}</p>}
+            {/* {hideInfo &&  <p className="technology-info" >{info}</p>} */}
         </div>
         </>
     )
