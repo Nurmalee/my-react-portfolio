@@ -5,29 +5,33 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    /* padding-bottom: 20px; */
     display: grid;
     place-items: center;
     position: relative;
 }
 
 .banner > a {
-    position: absolute;
+    /* position: absolute; */
     z-index: 5;
-    bottom: 20px;
+    margin: 100px 0 20px 0;
     /* color: white; */
 }
 
 .arrow-down {
-    height: 60px;
-    width: 60px;
-    color: white;
+    height: 50px;
+    width: 50px;
+    transform: rotate(180deg);
+    color: rgb(171, 171, 171);
+    border: 1px solid;
+    border-radius: 50%;
     transition: 1000ms cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
 .arrow-down:hover {
-    color: rgb(181, 58, 58);
+    color: white;
+    transform: rotate(360deg);
 }
 
 .banner::after {
@@ -57,6 +61,7 @@
     color: white;
     width: 70%;
     z-index: 2;
+    margin-top: 200px;
 }
 
 .profile > h1 {
@@ -68,7 +73,8 @@
 .profile-summary {
     text-align: justify;
     margin-top: 20px;
-    font-size: 11px;
+    font-weight: 100;
+    font-size: 13px;
     line-height: 20px;
     z-index: 1;
     color: white;
@@ -76,14 +82,15 @@
 
 .profile-buttons {
     margin-top: 20px;
+    display: flex;
 }
 
 .profile-buttons button {
     display: inline-block;
-    padding: 15px 3rem;
+    padding: 15px 3px;
     font-family: 'Abel', sans-serif;
-    font-size: 11px;
-    margin: 2px;
+    font-size: 13px;
+    width: 40%;
     background-color: transparent;
     text-transform: capitalize;
     color: white;
@@ -91,11 +98,13 @@
     border-radius: 3px;
     outline: none;
     position: relative;
+    cursor: pointer;
     z-index: 1;
 }
 
 .profile-buttons button:first-of-type {
    background-color: darkred;
+   margin-right: 5px;
 }
 
 .profile-buttons button:first-of-type:hover {
@@ -119,19 +128,12 @@
     width: 100%;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 800px) {
     .profile {
         width: 55%;
     }
 
     .profile-summary {
-        font-size: 13px;
-        font-weight: 100;
-        /* line-height: 30px; */
-    }
-
-    .profile-buttons button {
-        padding: 15px 5rem;
-        font-size: 14px;
+        font-size: 15px;
     }
 }

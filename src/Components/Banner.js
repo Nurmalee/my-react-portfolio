@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import './Banner.css'
+import styled from 'styled-components'
+import img from '../images/1x/banner_bg.png'
 import Navbar from './Navbar'
+
 import { bannerList } from '.././sourceData/data'
 import { IoIosArrowDropdownCircle } from 'react-icons/io'
 
 
 function Banner() {
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
     const [index, setIndex] = useState(0)
     const {title, info} = bannerList[index]
-
-    useEffect(() => {
-        window.addEventListener("resize", () => {
-            setWindowWidth(window.innerWidth)
-        })
-    }, [windowWidth])
 
     useEffect(() => {
         let bannerListSlider = setInterval(() => {
@@ -32,20 +27,133 @@ function Banner() {
     }, [index])
 
     return (
-        <section className="banner" id="home">
-            {/* <h5>{windowWidth} px </h5> */}
+        <BannerContainer id="home" imageUrl='../images/bruce-tang-DfRRllois_I-unsplash.jpg'>
             <Navbar />
-            <div className="profile">                
+            <Profile>                
                 <h1> {title} </h1>
-                <p className="profile-summary"> {info} </p>
-                <div className="profile-buttons">
+                <p> {info} </p>
+                <div>
                     <button href="#projects"> discover more </button>
                     <button>view my CV</button>
                 </div>
-            </div>
-            <a href="#about"> <IoIosArrowDropdownCircle className="arrow-down" /> </a>
-        </section>
+            </Profile>
+            <a href="#about"> <ArrowDownBtn/> </a>
+        </BannerContainer>
     )
 }
 
 export default Banner
+
+
+const BannerContainer = styled.section`
+    background-image: url(${img});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Abel', sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    position: relative;
+    color: black;
+
+    > a {
+        margin: 100px 0 10px 0;
+    }
+`
+
+const Profile = styled.div`
+    color: black;
+    width: 60%;
+    z-index: 2;
+    margin-top: 150px;
+    padding: 10px;
+
+
+    > h1 {
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-family: 'Abel', sans-serif;
+    }
+
+    > p {
+        text-align: justify;
+        margin-top: 20px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+        z-index: 1;
+    }
+
+    > div {
+        margin-top: 20px;
+        display: flex;
+
+        > button {
+            padding: 15px 3px;
+            font-family: 'Abel', sans-serif;
+            font-size: 13px;
+            width: 40%;
+            background-color: transparent;
+            text-transform: capitalize;
+            color: black;
+            border: 1px solid black;
+            outline: none;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 0 10px black;
+            z-index: 1;
+            transition: 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+
+            :first-of-type {
+                color: white;
+                background-color: darkred;
+                margin-right: 5px;
+
+                :hover {
+                    background-color: rgb(95, 10, 10);
+                    
+                }
+            }
+
+            :nth-of-type(2):hover {
+                color: white;
+            }
+
+            :nth-of-type(2):after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                top: 0;
+                height: 100%;
+                width: 0;
+                color: white;
+                background-color: rgb(95, 10, 10);
+                z-index: -1;
+                transition: 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+            }
+
+            :nth-of-type(2):hover::after {
+                width: 100%;
+            }
+        }
+    } 
+`
+
+const ArrowDownBtn = styled(IoIosArrowDropdownCircle)`
+    height: 40px;
+    width: 40px;
+    transform: rotate(180deg);
+    color: rgba(68, 68, 68, 0.9);
+    border: 1px solid;
+    border-radius: 50%;
+    box-shadow: 0 0 3px black;
+    transition: 1000ms cubic-bezier(0.215, 0.610, 0.355, 1);
+
+    :hover {
+        color: darkred;
+        transform: rotate(2160deg);
+        box-shadow: 0 0 10px black;
+    }
+`

@@ -1,5 +1,5 @@
 .about-me {
-    min-height: 80vh;
+    min-height: 100vh;
     color: white;
     padding: 50px 0;
     /* background-color: #333; */
@@ -7,9 +7,9 @@
     transition: 1000ms;
 }
 
-.about-me:hover {
+/* .about-me:hover {
     padding-top: 100px;
-}
+} */
 
 .about-me > h1 {
     color: white;
@@ -28,7 +28,7 @@
 .about-info {
     margin: 60px auto 0 auto;
     color: #ccc;
-    padding: 0 5rem;
+    padding: 0 3rem;
     overflow-wrap: break-word;
 }
 
@@ -41,8 +41,8 @@
 
 .about-info > img {
     object-fit: cover;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
     border: 5px solid white;
     box-shadow: 0 0 10px grey;
@@ -54,6 +54,7 @@
     .about-info {
         display: flex;
         align-items: center;
+        flex-direction: column;
         justify-content: space-between;
     }
 

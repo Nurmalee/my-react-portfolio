@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react'
-import './Navbar.css'
+import styled from 'styled-components'
+
 import { navList } from '.././sourceData/data'
-import Lee_Logo from '.././images/Nurmalee-Logo-4.png'
+import Lee_Logo from '.././images/1x/logo_black.png'
+
 import { ImCancelCircle } from 'react-icons/im'
 import { FiTwitter, FiGithub } from 'react-icons/fi'
 import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineMenu } from 'react-icons/ai'
@@ -11,61 +13,216 @@ function Navbar() {
     const [showList, setShowList] = useState(false)
     const navbarListContainerRef = useRef('')
     const navbarListRef = useRef('')
+    const windowWidth = window.innerWidth;
 
     useEffect(() => {
-        const listHeight = navbarListRef.current.getBoundingClientRect().height
+        const listWidth = navbarListRef.current.getBoundingClientRect().width
         if(showList){
-            navbarListContainerRef.current.style.height = `${listHeight}px`
+            navbarListContainerRef.current.style.width = `${listWidth}px`
         }
         else {
-            navbarListContainerRef.current.style.height = '0px'
+            navbarListContainerRef.current.style.width = '0px'
         }
-    }, [showList])
-
-    //Trying to use this code to hide and show navbar on scroll;
-    useEffect(() => {
-        window.addEventListener("scroll", () => {
-            console.log(window.pageYOffset, window.scrollY)
-        })
-        // return () => {
-        //     cleanup
-        // }
-    })
-
-    const handleNavToggle = () => {
-        setShowList(!showList)
-    }
-
-    const handleLinkClick = (e) => {
-        // e.target.style.backgroundColor = "#222";
-        setShowList(false)
-    }
+    }, [showList, windowWidth])
 
     return (
-        <nav className="navbar">
-            <div className="navbar-buttons">
-                <img className="lee-logo" src={Lee_Logo} alt="LEE"/>
-                {showList ? <ImCancelCircle className="navbar-icon" onClick={handleNavToggle} /> : <AiOutlineMenu className="navbar-icon" onClick={handleNavToggle} /> }
-            </div>
+        <Nav>
+            <NavHeader>
+                <img src={Lee_Logo} alt="LEE"/>
+                <div onClick={() => setShowList(!showList)}>
+                    <p>menu</p>
+                    <OpenMenuBtn />
+                </div>
+            </NavHeader>
 
-            <div className= "navbar-list-container" ref={navbarListContainerRef}>
-                <ul className="navbar-list" ref={navbarListRef}>
+            <NavListContainer ref={navbarListContainerRef}>
+                <CloseMenuBtn onClick={() => setShowList(!showList)} />
+                <ul ref={navbarListRef}>
                     {
-                        navList.map(({id, title, href}) => {
-                         return <li className="list-item" key={id}> <a href={href} onClick={handleLinkClick} >{title}</a> </li>
+                        navList.map(({title, href}, index) => {
+                         return <li className="list-item" key={index}> <a href={href} onClick={() => setShowList(false)} >{title}</a> </li>
                         })
                     }
                 </ul>
-            </div>
+            </NavListContainer>
 
-            <div className="social-list">
-                <FiGithub className="navbar-icon"/>
-                <AiOutlineInstagram className="navbar-icon"/>
-                <FiTwitter className="navbar-icon"/>
-                <AiOutlineYoutube className="navbar-icon"/>
-            </div> 
-        </nav>
+            <SocialList>
+                <li><a href="#about"> <MyGithub /> </a></li>
+                <li><a href="#about"> <MyInstagram /> </a></li>
+                <li><a href="#about">  <MyTwitter /> </a></li>
+                <li><a href="#about">  <MyYoutube /> </a></li> 
+            </SocialList>
+
+        </Nav>
     )
 }
 
 export default Navbar
+
+const Nav = styled.nav`
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+`
+
+const NavHeader = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: black;
+
+    > img {
+        height: 60px;
+    }
+
+    > div {
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        > p {
+            font-family: 'Abel', sans-serif;
+            font-weight: 900;
+            font-size: 20px;
+            margin-right: 5px;
+        }
+    }
+       
+`
+
+const NavListContainer = styled.div`
+    overflow: hidden;
+    background-color: white;
+    transition: 500ms;
+    box-shadow: 0 0 30px #777;
+    border-left: 1px solid darkred;
+    width: auto;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    > ul {
+        list-style: none;
+        width: 350px;
+        text-align: center;
+        padding: 0;
+
+        > li {
+            position: relative;
+
+            > a {
+                text-decoration: none;
+                border-top: 1px solid #eee;
+                color: black;
+                padding: 13px 0;
+                display: block;
+                width: 100%;
+                font-family: 'Abel', sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                text-align: center;
+                text-transform: capitalize;
+                transition: 500ms;
+            }
+
+            :last-of-type > a {
+                border-bottom: 1px solid #eee;
+            }
+
+            ::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                width: 0;
+                background-color: darkred;
+                transition: 1000ms;
+            }
+
+            :nth-of-type(odd)::after {
+                left: auto;
+                right: 0;
+            }
+
+            :hover::after {
+                width: 95%;
+            }
+        } 
+       
+    }
+
+`
+
+const SocialList = styled.ul`
+    list-style: none;
+    position: fixed;
+    top: 15.5rem;
+    left: -35px;
+    border-right: 2px solid white;
+    background-color: rgba(68, 68, 68, 0.9);
+    padding: 5px 7px 0 2px ;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+
+    :hover {
+        left: 0;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.9);
+    }
+
+    > li > a {
+       text-decoration: none;
+       color: white;
+
+        :hover {
+            color: red;
+        }
+    }
+`
+
+const OpenMenuBtn = styled(AiOutlineMenu)`
+    height: 25px;
+    width: 25px;
+    color: black;
+`
+
+const CloseMenuBtn = styled(ImCancelCircle)`
+    height: 32px;
+    width: 32px;
+    color: black;
+    cursor: pointer;
+    margin: 20px;
+`
+
+const MyTwitter = styled(FiTwitter)`
+    margin: 10px;
+    cursor: pointer;
+    transition: 500ms;
+`
+
+const MyInstagram = styled(AiOutlineInstagram)`
+    margin: 10px;
+    cursor: pointer;
+    transition: 500ms;
+`
+
+const MyYoutube = styled(AiOutlineYoutube)`
+    margin: 10px;
+    cursor: pointer;
+    transition: 500ms;
+`
+
+const MyGithub = styled(FiGithub)`
+    margin: 10px;
+    cursor: pointer;
+    transition: 500ms;
+`
+

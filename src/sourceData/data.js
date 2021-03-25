@@ -19,27 +19,18 @@ import { DiJqueryLogo, DiJavascript } from 'react-icons/di'
 
 export const navList = [
     {
-        id: 1,
         title: 'home',
         href: '#home'
     },
     {
-        id: 2,
         title: 'about',
         href: '#about'
     },
     {
-        id: 3,
         title: 'works/projects',
         href: '#projects'
     },
     {
-        id: 4,
-        title: 'technologies',
-        href: '#technologies'
-    },
-    {
-        id: 5,
         title: 'contact me',
         href: '#contact-me'
     }
@@ -51,11 +42,11 @@ export const bannerList = [
         info: 'Javascript is the now and the future. I build exquisite and functional user interfaces which are in trueness, functional. This portfolio in fact was made with react js. It showcases the flexibility of functional components with a bunch of use cases for the most commonly used react hooks. Click any of the buttons below to uncover more....',
     },
     {
-        title: 'a seamless focus and priority on responsiveness',
+        title: 'seamless focus and priority on responsiveness',
         info: 'Responsiveness prioritized. At the heart of all my designs and websites is responsive ability for all user interfaces in what i like to call the "ultra-responsive confidence". All my websites are made to work on all devices to ensure an unforgettable user experience that will keep you in awe. Click any of the buttons below to uncover more....',
     },
     {
-        title: 'web app clones that make the original look inferior',
+        title: 'web app clones that make the original look the inferior',
         info: 'Herein is a few collection of clones of popular social media spaces. These builds make the original looks as though they might need an upgrade. Click any of the buttons below to uncover more....',
     }
 ]

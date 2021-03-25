@@ -3,6 +3,7 @@
     /* padding: 50px 0; */
     /* background-color: rgb(158, 193, 202); */
     /* background-color: rgb(145, 163, 145); */
+    margin-top: 50px;
     background-color: transparent;
     text-align: center;
     transition: 1000ms;
@@ -67,8 +68,7 @@
     color: rgb(163, 65, 13);
 }
 
-
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 550px) {
 
     .techs-container {
         grid-template-columns: repeat(2, 1fr);
@@ -80,14 +80,22 @@
 
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 750px) {
 
     .techs-container {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .underline {
-        width: 20%;
+}
+
+@media screen and (min-width: 950px) {
+
+    .techs-container {
+        grid-template-columns: repeat(4, 1fr);
     }
     
 }
+
+
+
+

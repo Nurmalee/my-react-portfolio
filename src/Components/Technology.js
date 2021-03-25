@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Technology.css'
-import { AiOutlineMinusSquare, AiFillPlusSquare } from 'react-icons/ai'
+import styled from 'styled-components'
 
 function Technology({title, info, icon}) {
     const [showMore, setShowMore] = useState(false)
@@ -12,19 +12,6 @@ function Technology({title, info, icon}) {
     }
 
     return (
-        <>
-        {/* <article className="tech">
-            <div className="tech-image">
-               {title === "html5" && <FaHtml5 className="tech-icon" /> }
-               {title === "css3" && <FaCss3Alt className="tech-icon" /> }
-               {title === "javascript" && <DiJavascript className="tech-icon" /> }
-               {title === "jQuery" && <DiJqueryLogo className="tech-icon" /> }
-               {title === "react" && <FaReact className="tech-icon" /> }
-               {title === "adobe illustrator" && <SiAdobeillustrator className="tech-icon" /> }
-               <h3 className="tech-name"> {title} </h3>
-            </div>
-            <p className="tech-info">{info}</p>
-        </article> */}
         <div className="technology-card">
             <div className="technology-title">
                 <div className="technology-icon">
@@ -36,8 +23,9 @@ function Technology({title, info, icon}) {
             </div>
             {/* {hideInfo &&  <p className="technology-info" >{info}</p>} */}
         </div>
-        </>
     )
 }
 
-export default Technology
+export default Technology 
+
+// const

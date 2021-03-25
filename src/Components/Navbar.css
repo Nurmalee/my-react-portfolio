@@ -1,9 +1,7 @@
-.navbar {
-    box-shadow: 0 0 20px black;
+/* .navbar {
+    box-shadow: 0 0 20px #999;
     position: fixed;
     width: 100%;
-    /* background-color: rgb(111, 130, 111); */
-    background-color: rgba(68, 68, 68, 0.7);
     font-family: 'Abel', sans-serif;
     z-index: 100;
 }
@@ -13,6 +11,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    color: black;
+    width: 100%;
 }
 
 .lee-logo {
@@ -22,7 +22,7 @@
 .navbar-icon {
     height: 20px;
     width: 20px;
-    color: white;
+    color: black;
 }
 
 .navbar-list {
@@ -59,9 +59,11 @@
     height: 0;
     overflow: hidden;
     transition: 500ms;
-}
+} */
 
-.social-list {
+
+
+/* .social-list {
     position: fixed;
     top: 15.5rem;
     left: -40px;
@@ -78,7 +80,9 @@
 .social-list:hover {
     left: 0;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.9);
-}
+} */
+
+
 
 .social-list .navbar-icon {
     margin: 10px;
@@ -92,12 +96,11 @@
 }
 
 
-@media screen and (min-width: 1100px) {
+/* @media screen and (min-width: 1100px) {
     .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* background-color: transparent; */
     }
 
     .navbar-list {
@@ -163,5 +166,5 @@
     .social-list .navbar-icon:hover {
         transform: scale(1.3);
     }
-}
+} */
 
