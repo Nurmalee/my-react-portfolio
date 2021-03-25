@@ -1,5 +1,3 @@
-import React from 'react'
-
 //project-images
 import youtube from '.././images/works/Youtube-VanillaJs-Clone.JPG'
 import porsche_garage from '.././images/works/My-Porsche-Garage-Landing-Page.JPG'
@@ -55,37 +53,62 @@ export const bannerList = [
 export const techList = [
     {
         title: 'html5',
-        icon: <FaHtml5 className="tech-icon" />,
+        Icon: FaHtml5,
         info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
     {
-        title: 'css3',
-        icon: <FaCss3Alt className="tech-icon"  />,
+        title: 'css3 (with SASS, Bootstrap)',
+        Icon: FaCss3Alt,
         info: 'Media querry | CSS flexbox | CSS grid and general responsiveness'
     },
     {
         title: 'javascript (ES6+)',
-        icon: <DiJavascript className="tech-icon" />,
+        Icon: DiJavascript,
         info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
     {
         title: 'bootstrap',
-        icon: <FaBootstrap className="tech-icon" />,
+        Icon: FaBootstrap,
         info: 'Media querry | CSS flexbox | CSS grid and general responsiveness'
     },
     {
         title: 'jQuery',
-        icon: <DiJqueryLogo className="tech-icon" />,
+        Icon: DiJqueryLogo,
         info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
     {
-        title: 'react',
-        icon: <FaReact className="tech-icon" />,
+        title: 'react (with Redux)',
+        Icon: FaReact,
         info: 'Experienced in the use of Class based components | Function based components | React hooks | React router | Context API | Redux'
     },
     {
-        title: 'adobe illustrator',
-        icon: <SiAdobeillustrator className="tech-icon" />,
+        title: 'adobe illustrator & CorelDraw',
+        Icon: SiAdobeillustrator,
+        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
+    },
+    {
+        title: 'MongoDB (with Node & Express)',
+        Icon: SiAdobeillustrator,
+        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
+    },
+    {
+        title: 'Firebase',
+        Icon: SiAdobeillustrator,
+        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
+    },
+    {
+        title: 'Material Ui',
+        Icon: SiAdobeillustrator,
+        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
+    },
+    {
+        title: 'Material Ui',
+        Icon: SiAdobeillustrator,
+        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
+    },
+    {
+        title: 'Figma & Balsamiq Wireframe',
+        Icon: SiAdobeillustrator,
         info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     }
 ]

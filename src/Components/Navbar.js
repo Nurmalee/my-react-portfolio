@@ -98,7 +98,7 @@ const NavListContainer = styled.div`
     background-color: white;
     transition: 500ms;
     box-shadow: 0 0 30px #777;
-    border-left: 1px solid darkred;
+    border-left: 2px solid darkred;
     width: auto;
     height: 100%;
     position: fixed;

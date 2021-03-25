@@ -1,5 +1,6 @@
 import React from 'react'
 import './Technologies.css'
+import styled from 'styled-components'
 import { techList } from '.././sourceData/data'
 import Technology from './Technology'
 
@@ -7,19 +8,51 @@ import Technology from './Technology'
 function Technologies() {
 
     return (
-        <section className="technologies" id="technologies">
-            <h1>some technologies/languages I know/use</h1>
-            {/* <div className="underline"></div> */}
+        <TechnologiesContainer id="technologies">
+            <h1>some technologies I know of or use</h1>
 
-            <div className="techs-container">
+            <TechnologyCardContainer>
                 {techList.map((tech, index) => {
                     return (
                         <Technology {...tech} key={index}/>
                     )
                 })}
-            </div>
-        </section>
+            </TechnologyCardContainer>
+        </TechnologiesContainer>
     )
 }
 
 export default Technologies
+
+const TechnologiesContainer = styled.section`
+    margin-top: 50px;
+    transition: 1000ms;
+    width: 100%;
+    flex: 1;
+
+    > h1 {
+        color: black;
+        font-family: 'Abel', sans-serif;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+`
+
+const TechnologyCardContainer = styled.div`
+    margin: 20px auto 0 auto;
+    display: grid;
+    grid-gap: 15px;
+    padding: 10px;
+
+    @media screen and (min-width: 550px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 750px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (min-width: 950px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+`

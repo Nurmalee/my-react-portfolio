@@ -1,8 +1,4 @@
 .technologies {
-    /* min-height: 70vh; */
-    /* padding: 50px 0; */
-    /* background-color: rgb(158, 193, 202); */
-    /* background-color: rgb(145, 163, 145); */
     margin-top: 50px;
     background-color: transparent;
     text-align: center;
@@ -11,22 +7,11 @@
     flex: 1;
 }
 
-/* .technologies:hover {
-    padding-top: 100px;
-} */
-
 .technologies > h1 {
     color: white;
     font-family: 'Abel', sans-serif;
     font-size: 20px;
     text-transform: uppercase;
-}
-
-.underline {
-    height: 3px;
-    background-color: white;
-    width: 30%;
-    margin: 10px auto 0;
 }
 
 .techs-container {

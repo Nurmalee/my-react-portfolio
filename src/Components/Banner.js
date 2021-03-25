@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import img from '../images/1x/banner_bg.png'
+import backgroundImg from '../images/1x/banner_bg.png'
 import Navbar from './Navbar'
 
 import { bannerList } from '.././sourceData/data'
@@ -46,7 +46,7 @@ export default Banner
 
 
 const BannerContainer = styled.section`
-    background-image: url(${img});
+    background-image: url(${backgroundImg});
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -78,9 +78,10 @@ const Profile = styled.div`
 
     > p {
         text-align: justify;
+        font-family: 'Abel', sans-serif;
         margin-top: 20px;
         font-weight: 500;
-        font-size: 15px;
+        font-size: 17px;
         line-height: 20px;
         z-index: 1;
     }
@@ -97,7 +98,7 @@ const Profile = styled.div`
             background-color: transparent;
             text-transform: capitalize;
             color: black;
-            border: 1px solid black;
+            border: none;
             outline: none;
             position: relative;
             cursor: pointer;
