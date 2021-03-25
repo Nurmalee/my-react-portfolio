@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Technology.css'
+import './extended.css'
 import styled from 'styled-components'
 
 function Technology({title, info, Icon}) {

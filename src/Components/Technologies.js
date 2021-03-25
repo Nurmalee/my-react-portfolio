@@ -1,5 +1,4 @@
 import React from 'react'
-import './Technologies.css'
 import styled from 'styled-components'
 import { techList } from '.././sourceData/data'
 import Technology from './Technology'
