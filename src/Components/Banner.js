@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import backgroundImg from '../images/1x/banner_bg.png'
+// import backgroundImg from '../images/theme-photos-nJCW43biz9U-unsplash.jpg'
 import Navbar from './Navbar'
 
 import { bannerList } from '.././sourceData/data'
@@ -64,10 +65,15 @@ const BannerContainer = styled.section`
 
 const Profile = styled.div`
     color: black;
-    width: 60%;
+    width: 85%;
     z-index: 2;
     margin-top: 150px;
     padding: 10px;
+    transition: 1000ms;
+
+    @media screen and (min-width: 600px) {
+        width: 60%;
+    }
 
 
     > h1 {
@@ -94,34 +100,38 @@ const Profile = styled.div`
             padding: 15px 3px;
             font-family: 'Abel', sans-serif;
             font-size: 13px;
-            width: 40%;
+            width: 50%;
             background-color: transparent;
             text-transform: capitalize;
             color: black;
-            border: none;
+            border: 1px solid black;
             outline: none;
             position: relative;
             cursor: pointer;
-            box-shadow: 0 0 10px black;
+            box-shadow: 0 0 5px black;
             z-index: 1;
             transition: 2000ms cubic-bezier(0.19, 1, 0.22, 1);
 
-            :first-of-type {
+            @media screen and (min-width: 800px) {
+                width: 35%;
+            }
+
+            &:first-of-type {
                 color: white;
                 background-color: darkred;
                 margin-right: 5px;
 
-                :hover {
+                &:hover {
                     background-color: rgb(95, 10, 10);
                     
                 }
             }
 
-            :nth-of-type(2):hover {
+            &:nth-of-type(2):hover {
                 color: white;
             }
 
-            :nth-of-type(2):after {
+            &:nth-of-type(2):after {
                 content: "";
                 position: absolute;
                 left: 0;
@@ -135,7 +145,7 @@ const Profile = styled.div`
                 transition: 2000ms cubic-bezier(0.19, 1, 0.22, 1);
             }
 
-            :nth-of-type(2):hover::after {
+            &:nth-of-type(2):hover::after {
                 width: 100%;
             }
         }
@@ -152,7 +162,7 @@ const ArrowDownBtn = styled(IoIosArrowDropdownCircle)`
     box-shadow: 0 0 3px black;
     transition: 1000ms cubic-bezier(0.215, 0.610, 0.355, 1);
 
-    :hover {
+    &:hover {
         color: darkred;
         transform: rotate(2160deg);
         box-shadow: 0 0 10px black;

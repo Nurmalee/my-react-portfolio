@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { techList } from '.././sourceData/data'
 import Technology from './Technology'
@@ -8,7 +7,7 @@ function Technologies() {
 
     return (
         <TechnologiesContainer id="technologies">
-            <h1>some technologies I know of or use</h1>
+            <h1>some technologies that I employ</h1>
 
             <TechnologyCardContainer>
                 {techList.map((tech, index) => {
@@ -41,7 +40,6 @@ const TechnologyCardContainer = styled.div`
     margin: 20px auto 0 auto;
     display: grid;
     grid-gap: 15px;
-    padding: 10px;
 
     @media screen and (min-width: 550px) {
         grid-template-columns: repeat(2, 1fr);

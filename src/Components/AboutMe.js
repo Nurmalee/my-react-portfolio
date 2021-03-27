@@ -1,7 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
 import me from '.././images/me.jpg'
-import backgroundImg from '../images/1x/aboutme_techs.png'
+// import backgroundImg from '../images/1x/aboutme_techs.png'
 import Technologies from './Technologies'
 
 
@@ -9,12 +8,12 @@ function AboutMe() {
 
     return (
         <AboutContainer id="about">
+            <p>Introduction & highlights</p>
             <h1>About Me</h1>
-            <p>An Introduction and highlights of my competencies</p>
-            
+
             <AboutInfo>
                 <img src={me} alt="Nurudeen Lawal" />
-                <p> "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur accusamus magnam dolore, nostrum eius rem eveniet iure? Magni nemo, quod earum numquam totam culpa quaerat dolorum ad reprehenderit vel nobis aspernatur obcaecati molestias praesentium odit at accusantium asperiores minus! Doloribus deleniti molestiae aut sint accusantium libero reprehenderit quisquam nulla! Accusamus aut nihil quis eum corporis accusantium id dolore, iste enim molestias! Impedit nostrum ipsam modi, tenetur consequuntur assumenda perspiciatis itaque esse vero deserunt praesentium" </p>
+                <p> "Independent and meticulous web developer with over 2 years of experience in the front-end department concatenating the art of design with functional and object-oriented programming skills to deliver enthralling user interfaces with captivating responsiveness for immersive user experience. Recursively pushing variables into an array of abilities that already includes proficiency in HTML, CSS, JavaScript, jQuery, Node and frameworks and/or libraries like React, Bootstrap, Material UI etc." </p>
             </AboutInfo>
             <Technologies />
         </AboutContainer>
@@ -24,17 +23,21 @@ function AboutMe() {
 export default AboutMe
 
 const AboutContainer = styled.section`
-    background-image: url(${backgroundImg});
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     min-height: 100vh;
     font-family: 'Abel', sans-serif;
-    padding: 50px 3rem;
+    padding: 50px 2rem;
     transition: 1000ms;
 
-    :hover {
+    @media screen and (min-width: 1000px) {
+        padding: 50px 4rem;
+    }
+
+    &:hover {
         padding-top: 100px;
+
+        p::after {
+            width: 75%;
+        }
     }
 
     > h1 {
@@ -43,19 +46,16 @@ const AboutContainer = styled.section`
         font-size: 2rem;
         text-transform: uppercase;
         text-align: left;
-        border-bottom: 2px solid;
         width: fit-content;
+        letter-spacing: 3px;
     }
 
     > p {
         text-transform: uppercase;
-        color: #7777;
-        margin-top: 20px;
+        border-top: 1px solid #777;
+        color: #777;
         letter-spacing: 2px;
-    }
-
-    :hover p::after {
-        width: 70%;
+        width: fit-content;
     }
 `
 
@@ -78,8 +78,8 @@ const AboutInfo = styled.div`
         object-fit: cover;
         height: 200px;
         width: 200px;
-        border-radius: 50%;
-        border: 5px solid white;
+        border-radius: 5%;
+        border: 3px solid white;
         box-shadow: 0 0 10px grey;
     }
 

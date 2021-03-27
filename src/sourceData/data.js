@@ -57,7 +57,7 @@ export const techList = [
         info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
     {
-        title: 'css3 (with SASS, Bootstrap)',
+        title: 'css3 (incl. Bootstrap, SASS)',
         Icon: FaCss3Alt,
         info: 'Media querry | CSS flexbox | CSS grid and general responsiveness'
     },
@@ -77,17 +77,17 @@ export const techList = [
         info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
     {
-        title: 'react (with Redux)',
+        title: 'react (incl. Redux)',
         Icon: FaReact,
         info: 'Experienced in the use of Class based components | Function based components | React hooks | React router | Context API | Redux'
     },
     {
-        title: 'adobe illustrator & CorelDraw',
+        title: 'adobe illustrator (or CorelDraw)',
         Icon: SiAdobeillustrator,
         info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
     {
-        title: 'MongoDB (with Node & Express)',
+        title: 'Node (with MongoDB & Express)',
         Icon: SiAdobeillustrator,
         info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
@@ -101,11 +101,11 @@ export const techList = [
         Icon: SiAdobeillustrator,
         info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
-    {
-        title: 'Material Ui',
-        Icon: SiAdobeillustrator,
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
-    },
+    // {
+    //     title: 'Material Ui',
+    //     Icon: SiAdobeillustrator,
+    //     info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
+    // },
     {
         title: 'Figma & Balsamiq Wireframe',
         Icon: SiAdobeillustrator,

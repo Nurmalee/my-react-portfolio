@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react'
-import './Projects.css'
+import { useEffect } from 'react'
+import styled from 'styled-components'
+
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-import { projectList } from '.././sourceData/data'
+
 import Project from './Project';
+import { projectList } from '.././sourceData/data'
+
 
 
 
@@ -15,11 +18,11 @@ function Projects () {
       }, [])
 
     return (
-        <section className="projects" id="projects">
-            <h1>PORTFOLIO PROJECTS</h1>
-            <div className="underlines"></div>
+        <ProjectsWrap id="projects">
+            <p>A collection of project use cases from my recent works</p>
+            <h1>PROJECTS/WORKS</h1>
 
-            <div className="projects-container">
+            <ProjectsContainer>
                 {
                     projectList.map((project, index) => {
                         return (
@@ -27,9 +30,57 @@ function Projects () {
                         )
                     })
                 }
-            </div>
-        </section>
+            </ProjectsContainer>
+        </ProjectsWrap>
     )
 }
 
 export default Projects
+
+const ProjectsWrap = styled.section`
+    min-height: 100vh;
+    padding: 50px 2rem;
+    background-color: rgba(245, 233, 230, 0.564);
+    transition: 1000ms;
+
+    &:hover {
+        padding-top: 100px;
+    }
+    
+    > h1 {
+        /* text-align: center; */
+        color: black;
+        font-family: 'Abel', sans-serif;
+        font-size: 2rem;
+        text-transform: uppercase;
+        text-align: left;
+        width: fit-content;
+        letter-spacing: 3px;
+    }
+
+    > p {
+        text-transform: uppercase;
+        border-top: 1px solid #777;
+        color: #777;
+        letter-spacing: 2px;
+        width: fit-content;
+    }
+
+    @media screen and (min-width: 1000px) {
+        padding: 50px 4rem;
+    }
+`
+
+const ProjectsContainer = styled.div`
+    margin: 60px auto 0 auto;
+    display: grid;
+    grid-gap: 20px;
+
+    @media screen and (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 1000px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+`

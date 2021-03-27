@@ -1,12 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 
 import { navList } from '.././sourceData/data'
-import Lee_Logo from '.././images/1x/logo_black.png'
+import Lee_Logo from '.././images/1x/logo_2_black.png'
 
-import { ImCancelCircle } from 'react-icons/im'
 import { FiTwitter, FiGithub } from 'react-icons/fi'
-import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineMenu } from 'react-icons/ai'
+import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineMenu, AiOutlineArrowRight } from 'react-icons/ai'
 
 
 function Navbar() {
@@ -72,6 +71,7 @@ const NavHeader = styled.div`
     align-items: center;
     padding: 10px 20px;
     color: black;
+    transition: 1000ms;
 
     > img {
         height: 60px;
@@ -130,11 +130,11 @@ const NavListContainer = styled.div`
                 transition: 500ms;
             }
 
-            :last-of-type > a {
+            &:last-of-type > a {
                 border-bottom: 1px solid #eee;
             }
 
-            ::after {
+            &::after {
                 content: "";
                 position: absolute;
                 left: 0;
@@ -145,13 +145,13 @@ const NavListContainer = styled.div`
                 transition: 1000ms;
             }
 
-            :nth-of-type(odd)::after {
+            &:nth-of-type(odd)::after {
                 left: auto;
                 right: 0;
             }
 
-            :hover::after {
-                width: 95%;
+            &:hover::after {
+                width: 80%;
             }
         } 
        
@@ -173,7 +173,7 @@ const SocialList = styled.ul`
     transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 1;
 
-    :hover {
+    &:hover {
         left: 0;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.9);
     }
@@ -194,9 +194,9 @@ const OpenMenuBtn = styled(AiOutlineMenu)`
     color: black;
 `
 
-const CloseMenuBtn = styled(ImCancelCircle)`
-    height: 32px;
-    width: 32px;
+const CloseMenuBtn = styled(AiOutlineArrowRight)`
+    height: 25px;
+    width: 25px;
     color: black;
     cursor: pointer;
     margin: 20px;

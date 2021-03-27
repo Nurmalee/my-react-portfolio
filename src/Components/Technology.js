@@ -1,15 +1,10 @@
-import React, { useState } from 'react'
 import './extended.css'
 import styled from 'styled-components'
 
-function Technology({title, info, Icon}) {
-    const [showMore, setShowMore] = useState(false)
-    const [hideInfo, setHideInfo] = useState(false)
+// import { AiOutlineMinusSquare, AiFillPlusSquare } from 'react-icons/ai'
 
-    const moreAndInfo = () => {
-        setShowMore(!showMore)
-        setHideInfo(!hideInfo)
-    }
+function Technology({title, info, Icon}) {
+    // const [showMore, setShowMore] = useState(false)
 
     return (
         <TechnologyCard>
@@ -19,9 +14,9 @@ function Technology({title, info, Icon}) {
                     <h4>{title}</h4>
                 </TechnologyIcon>
                 <p></p>
-                {/* {showMore ?  <AiOutlineMinusSquare className="plus-minus-icon"  onClick={moreAndInfo} /> : <AiFillPlusSquare className="plus-minus-icon" onClick={moreAndInfo} />} */}
+                {/* {showMore ?  <AiOutlineMinusSquare className="plus-minus-icon"  onClick={() => setShowMore(!showMore)} /> : <AiFillPlusSquare className="plus-minus-icon" onClick={() => setShowMore(!showMore)} />} */}
             </TechnologyTitle>
-            {/* {hideInfo &&  <p className="technology-info" >{info}</p>} */}
+            {/* {showMore &&  <p className="technology-info" >{info}</p>} */}
         </TechnologyCard>
     )
 }
@@ -30,9 +25,10 @@ export default Technology
 
 const TechnologyCard = styled.div`
     cursor: pointer;
-    border-radius: 3px;
+    border: 1px solid #777;
+    border-radius: 2px;
     border-bottom-right-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     background-color: white;
     align-self: flex-start;
     color: #555;
@@ -57,7 +53,7 @@ const TechnologyTitle = styled.div`
         background-color: rgba(0, 0, 0, 0.4);
         position: relative;
 
-        ::after {
+        &::after {
             content: "";
             position: absolute;
             left: 0;

@@ -1,7 +1,7 @@
 .projects {
     min-height: 100vh;
-    padding: 50px 0;
-    background-color: rgb(230, 242, 245);
+    padding: 50px 3rem;
+    background-color: rgb(245, 233, 230);
     transition: 1000ms;
 }
 
@@ -10,7 +10,7 @@
 }
 
 .projects > h1 {
-    text-align: center;
+    /* text-align: center; */
     font-size: 2rem;
     text-transform: uppercase;
     font-family: 'Abel', sans-serif;
@@ -27,7 +27,6 @@
     margin: 60px auto 0 auto;
     display: grid;
     grid-gap: 15px;
-    padding: 0 3rem;
 }
 
 @media screen and (min-width: 720px) {
