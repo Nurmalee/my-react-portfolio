@@ -34,7 +34,7 @@ function Banner() {
                 <h1> {title} </h1>
                 <p> {info} </p>
                 <div>
-                    <button href="#projects"> discover more </button>
+                    <a href="#projects"> jump to projects </a>
                     <button>view my CV</button>
                 </div>
             </Profile>
@@ -69,7 +69,7 @@ const Profile = styled.div`
     z-index: 2;
     margin-top: 150px;
     padding: 10px;
-    transition: 1000ms;
+    transition: 500ms;
 
     @media screen and (min-width: 600px) {
         width: 60%;
@@ -96,11 +96,34 @@ const Profile = styled.div`
         margin-top: 20px;
         display: flex;
 
+        > a {
+            text-decoration: none;
+            text-align: center;
+            text-transform: capitalize;
+            color: white;
+            background-color: darkred;
+            margin-right: 5px;
+            padding: 15px 3px;
+            font-family: 'Abel', sans-serif;
+            font-size: 13px;
+            width: 50%;
+
+            @media screen and (min-width: 800px) {
+                width: 35%;
+            }
+                
+            &:hover {
+                background-color: rgb(95, 10, 10);     
+            }
+
+        }
+
         > button {
             padding: 15px 3px;
             font-family: 'Abel', sans-serif;
             font-size: 13px;
             width: 50%;
+           
             background-color: transparent;
             text-transform: capitalize;
             color: black;
@@ -116,22 +139,11 @@ const Profile = styled.div`
                 width: 35%;
             }
 
-            &:first-of-type {
-                color: white;
-                background-color: darkred;
-                margin-right: 5px;
-
-                &:hover {
-                    background-color: rgb(95, 10, 10);
-                    
-                }
-            }
-
-            &:nth-of-type(2):hover {
+            &:hover {
                 color: white;
             }
 
-            &:nth-of-type(2):after {
+            &::after {
                 content: "";
                 position: absolute;
                 left: 0;
@@ -145,7 +157,7 @@ const Profile = styled.div`
                 transition: 2000ms cubic-bezier(0.19, 1, 0.22, 1);
             }
 
-            &:nth-of-type(2):hover::after {
+            &:hover::after {
                 width: 100%;
             }
         }

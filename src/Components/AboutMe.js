@@ -26,7 +26,7 @@ const AboutContainer = styled.section`
     min-height: 100vh;
     font-family: 'Abel', sans-serif;
     padding: 50px 2rem;
-    transition: 1000ms;
+    transition: 500ms;
 
     @media screen and (min-width: 1000px) {
         padding: 50px 4rem;

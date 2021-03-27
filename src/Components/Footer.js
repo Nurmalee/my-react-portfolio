@@ -25,7 +25,7 @@ function Footer() {
                 </div>
 
                 <ul>
-                    <p> Latest projects --- </p>
+                    <p> Currently working on --- </p>
                     <li> LeanerMeta Africa PWA (<b> <small>contract</small> </b>) </li>
                     <li> MERN - Whatsapp Clone (<b> <small>personnal</small> </b>) </li>
                     <li> MERN - My Photo Well (<b> <small>personnal</small> </b>) </li>

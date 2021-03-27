@@ -49,7 +49,7 @@ function Navbar() {
                 <li><a href="#about"> <MyGithub /> </a></li>
                 <li><a href="#about"> <MyInstagram /> </a></li>
                 <li><a href="#about">  <MyTwitter /> </a></li>
-                <li><a href="#about">  <MyYoutube /> </a></li> 
+                <li><a href="#contactme">  <MyYoutube /> </a></li> 
             </SocialList>
 
         </Nav>

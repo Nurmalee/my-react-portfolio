@@ -1,8 +1,5 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-// import { AiOutlineArrowRight } from 'react-icons/ai'
-
-
 
 function Project({imageUrl, title, info}) {
     const [showLess, setShowLess] = useState(true);

@@ -41,7 +41,7 @@ const ProjectsWrap = styled.section`
     min-height: 100vh;
     padding: 50px 2rem;
     background-color: rgba(245, 233, 230, 0.564);
-    transition: 1000ms;
+    transition: 500ms;
 
     &:hover {
         padding-top: 100px;

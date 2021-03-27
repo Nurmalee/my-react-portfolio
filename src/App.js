@@ -3,6 +3,7 @@ import './App.css'
 import Banner from './Components/Banner'
 import AboutMe from './Components/AboutMe'
 import Projects from './Components/Projects'
+import ContactForm from './Components/ContactForm'
 import Footer from './Components/Footer'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Banner />
       <AboutMe />
       <Projects />
+      <ContactForm />
       <Footer />
     </div>
   );

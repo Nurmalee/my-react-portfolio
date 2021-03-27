@@ -24,7 +24,7 @@ export default Technologies
 
 const TechnologiesContainer = styled.section`
     margin-top: 50px;
-    transition: 1000ms;
+    transition: 500ms;
     width: 100%;
     flex: 1;
 

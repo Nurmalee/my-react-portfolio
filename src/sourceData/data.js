@@ -30,7 +30,7 @@ export const navList = [
     },
     {
         title: 'contact me',
-        href: '#contact-me'
+        href: '#contactme'
     }
 ]
 
