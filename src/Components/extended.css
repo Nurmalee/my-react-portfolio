@@ -9,3 +9,18 @@
     font-size: 13px;
     font-weight: 400;
 }
+
+.nextSlide {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.prevSlide {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.activeSlide {
+    opacity: 1;
+    transform: translateX(0);
+}

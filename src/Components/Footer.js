@@ -5,6 +5,8 @@ import logo_letterN from '../images/1x/logo_letterN.png'
 import { FiTwitter, FiGithub } from 'react-icons/fi'
 import { AiOutlineInstagram, AiOutlineYoutube } from 'react-icons/ai'
 
+import { BsDash } from 'react-icons/bs'
+
 function Footer() {
     const yearRef = useRef(null)
     useEffect(() => {
@@ -18,26 +20,26 @@ function Footer() {
             <FooterLists>
 
                 <div>
-                    <p> Contact information --- </p>
+                    <p> Contact information <BsDash/> </p>
                     You can reach out to me anytime via email or phone, although most preferrably email since we may have considerable time differences <br/> <br/>
                     <b> <small> email: thecodedlee.lee@gmail.com </small> </b> <br/>
                     <b> <small> p: +234 816 480 0735; +234 907 576 2921 </small> </b> <br/> 
                 </div>
 
                 <ul>
-                    <p> Currently working on --- </p>
+                    <p> Currently working on <BsDash/> </p>
                     <li> LeanerMeta Africa PWA (<b> <small>contract</small> </b>) </li>
                     <li> MERN - Whatsapp Clone (<b> <small>personnal</small> </b>) </li>
                     <li> MERN - My Photo Well (<b> <small>personnal</small> </b>) </li>
                 </ul>
 
                 <div>
-                    <p> Current availability --- </p>
+                    <p> Current availability <BsDash/> </p>
                     At this moment, I am at your disposal for collaborations, contract/full-time engagements as well as freelancing possibilities
                 </div>
 
                 <ul>
-                    <p> Follow me on --- </p>
+                    <p> Follow me on <BsDash/> </p>
                     <li> <FiGithub/> <a href="#github"> github </a> </li>
                     <li> <AiOutlineInstagram/> <a href="#github"> instagram </a> </li>
                     <li> <FiTwitter/> <a href="#github"> twitter </a> </li>
@@ -85,6 +87,8 @@ const FooterLists = styled.div`
             margin-bottom: 10px;
             text-align: justify;
             letter-spacing: 1px;
+            display: flex;
+            align-items: center;
         }
     }
 
@@ -118,6 +122,8 @@ const FooterLists = styled.div`
             font-weight: 900;
             margin-bottom: 10px;
             letter-spacing: 1px;
+            display: flex;
+            align-items: center;
         }
     }
 

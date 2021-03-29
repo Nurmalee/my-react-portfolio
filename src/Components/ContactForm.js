@@ -18,15 +18,19 @@ function ContactForm() {
         }
     }, [showForm])
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <ContactFormWrapper id="contactme">
             <p> need a developer or a designer ? it's my job, but... </p>
             <p> Be warned! you may never want to let me go </p>
 
-            <button onClick={() => setShowForm(!showForm)}> {!showForm ? "show admin contact form" : "collapse admin contact form"}  </button>
+            <button onClick={() => setShowForm(!showForm)}> {!showForm ? "show contact form" : "collapse contact form"}  </button>
 
             <FormContainer ref={formContainerRef}>
-                <form ref={formRef}>
+                <form ref={formRef} onSubmit={handleSubmit}>
 
                     <p onClick={() => setShowForm(!showForm)}> fill out this form to react out to me </p>
 

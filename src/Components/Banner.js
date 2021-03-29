@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import './extended.css'
 import backgroundImg from '../images/1x/banner_bg.png'
 // import backgroundImg from '../images/theme-photos-nJCW43biz9U-unsplash.jpg'
 import Navbar from './Navbar'
@@ -10,35 +11,78 @@ import { IoIosArrowDropdownCircle } from 'react-icons/io'
 
 function Banner() {
     const [index, setIndex] = useState(0)
-    const {title, info} = bannerList[index]
+    const [banner, setBanner] = useState(bannerList)
+    // const {title, info} = bannerList[index]
+
+    // useEffect(() => {
+    //     let bannerListSlider = setInterval(() => {
+    //         setIndex((index) => {
+    //             let newIndex = index + 1
+    //             if(newIndex > bannerList.length - 1){
+    //                 return 0
+    //             }
+    //             return newIndex
+    //         })
+    //     }, 12000)
+    //     return () => {
+    //        clearInterval(bannerListSlider)
+    //     }
+    // }, [index])
 
     useEffect(() => {
-        let bannerListSlider = setInterval(() => {
-            setIndex((index) => {
-                let newIndex = index + 1
-                if(newIndex > bannerList.length - 1){
-                    return 0
-                }
-                return newIndex
-            })
-        }, 12000)
+        if(index >= bannerList.length - 1){
+            setIndex(0)
+        }
+
+        if(index < 0) {
+            setIndex(bannerList.length - 1)
+        }
+    }, [index])
+
+    useEffect(() => {
+        let autoSlide = setInterval(() => {
+            setIndex(index + 1)
+        }, 10000)
         return () => {
-           clearInterval(bannerListSlider)
+            clearInterval(autoSlide)
         }
     }, [index])
 
     return (
         <BannerContainer id="home" imageUrl='../images/bruce-tang-DfRRllois_I-unsplash.jpg'>
             <Navbar />
-            <Profile>                
-                <h1> {title} </h1>
-                <p> {info} </p>
-                <div>
-                    <a href="#projects"> jump to projects </a>
-                    <button>view my CV</button>
-                </div>
+            <Profile>
+               {
+                   banner.map((bannerItem, bannerItemIndex) => {
+                        const {id, title, info} = bannerItem
+
+                        let position = "nextSlide"
+
+                        if(bannerItemIndex === index){
+                            position = "activeSlide"
+                        }
+
+                        if(bannerItemIndex === index - 1 || (index === 0 && bannerItemIndex === bannerList.length - 1)){
+                        position = "prevSlide"
+                        }
+
+                        return (
+                            <BannerText key={id} className={position}>
+                                <h1> {title} </h1>
+                                <p> {info} </p>
+                                <Buttons>
+                                    <a href="#projects"> jump to projects </a>
+                                    <button>view my CV</button>
+                                </Buttons>
+                            </BannerText>
+                        )
+                    })
+               }
+                
             </Profile>
+            
             <a href="#about"> <ArrowDownBtn/> </a>
+
         </BannerContainer>
     )
 }
@@ -66,15 +110,29 @@ const BannerContainer = styled.section`
 const Profile = styled.div`
     color: black;
     width: 85%;
+
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+
     z-index: 2;
-    margin-top: 150px;
+    margin-top: 200px;
     padding: 10px;
     transition: 500ms;
 
     @media screen and (min-width: 600px) {
         width: 60%;
     }
+`
 
+const BannerText = styled.div`
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 1000ms;
 
     > h1 {
         font-size: 2rem;
@@ -91,10 +149,12 @@ const Profile = styled.div`
         line-height: 20px;
         z-index: 1;
     }
+`
 
-    > div {
+const Buttons = styled.article`
         margin-top: 20px;
         display: flex;
+        width: 100%;
 
         > a {
             text-decoration: none;
@@ -161,7 +221,7 @@ const Profile = styled.div`
                 width: 100%;
             }
         }
-    } 
+
 `
 
 const ArrowDownBtn = styled(IoIosArrowDropdownCircle)`

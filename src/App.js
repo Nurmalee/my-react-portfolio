@@ -5,6 +5,7 @@ import AboutMe from './Components/AboutMe'
 import Projects from './Components/Projects'
 import ContactForm from './Components/ContactForm'
 import Footer from './Components/Footer'
+import { ThemeProvider } from 'styled-components'
 
 function App() {
 
