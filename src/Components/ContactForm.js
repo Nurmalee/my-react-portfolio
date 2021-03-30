@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
-
 import styled from 'styled-components'
+
+import backgroundImg from '../images/1x/1x/bg_flipped.png'
 
 function ContactForm() {
 
@@ -32,8 +33,6 @@ function ContactForm() {
             <FormContainer ref={formContainerRef}>
                 <form ref={formRef} onSubmit={handleSubmit}>
 
-                    <p onClick={() => setShowForm(!showForm)}> fill out this form to react out to me </p>
-
                     {/* <label htmlFor="name"> Name </label> */}
                     <input type="text" name="name" id="name" placeholder="Your name - IMPORTANT" />
 
@@ -58,6 +57,10 @@ function ContactForm() {
 export default ContactForm
 
 const ContactFormWrapper = styled.section`
+    background-image: url(${backgroundImg});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 50px 2rem;
     transition: 500ms;
     text-align: center;
@@ -68,7 +71,8 @@ const ContactFormWrapper = styled.section`
 
     > p:first-of-type {
         text-transform: uppercase;
-        color: #999;
+        color: #333;
+        font-weight: 600;
     }
 
     > p:nth-child(2) {
@@ -82,9 +86,10 @@ const ContactFormWrapper = styled.section`
         padding: 15px 5px;
         font-family: 'Abel', sans-serif;
         margin-top: 20px;
+        margin-bottom: 20px;
         width: 50%;
         font-size: 13px;
-        background-color: darkred;
+        background-color: #333;  
         text-transform: capitalize;
         color: white;
         border: 1px solid black;
@@ -96,7 +101,7 @@ const ContactFormWrapper = styled.section`
         transition: 500ms cubic-bezier(0.19, 1, 0.22, 1);
 
         &:hover {
-            background-color: rgb(95, 10, 10);     
+            background-color: rgb(95, 10, 10);  
         }
 
         @media screen and (min-width: 600px) {
@@ -114,17 +119,8 @@ const FormContainer = styled.div`
         display: grid;
         max-width: 500px;
         margin: 0 auto;
+        /* margin-top: 20px; */
         text-align: left;
-
-        > p {
-            text-align: center;
-            text-transform: capitalize;
-            text-decoration: underline;
-            color: #555;
-            font-size: 16px;
-            font-weight: 700;
-            margin: 30px 0 10px 0;
-        }
 
         > label {
             font-weight: 700;
@@ -135,7 +131,8 @@ const FormContainer = styled.div`
             height: 35px;
             padding: 0 10px;
             border: none;
-            border-bottom: 1px solid black;
+            border: 1px solid black;
+            box-shadow: 0 0 2px black;
             outline: none;
             margin-bottom: 10px;
         }
@@ -153,7 +150,7 @@ const FormContainer = styled.div`
             transition: 500ms;
 
             &:hover {
-                background-color: darkred;
+                background-color: rgb(95, 10, 10);
                 color: white;
             }
         }

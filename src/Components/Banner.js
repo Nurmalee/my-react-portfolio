@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import './extended.css'
-import backgroundImg from '../images/1x/banner_bg.png'
+// import backgroundImg from '../images/1x/banner_bg.png'
 // import backgroundImg from '../images/theme-photos-nJCW43biz9U-unsplash.jpg'
+import backgroundImg from '../images/1x/1x/bg_trial.png'
 import Navbar from './Navbar'
 
 import { bannerList } from '.././sourceData/data'
@@ -11,38 +12,22 @@ import { IoIosArrowDropdownCircle } from 'react-icons/io'
 
 function Banner() {
     const [index, setIndex] = useState(0)
-    const [banner, setBanner] = useState(bannerList)
-    // const {title, info} = bannerList[index]
-
-    // useEffect(() => {
-    //     let bannerListSlider = setInterval(() => {
-    //         setIndex((index) => {
-    //             let newIndex = index + 1
-    //             if(newIndex > bannerList.length - 1){
-    //                 return 0
-    //             }
-    //             return newIndex
-    //         })
-    //     }, 12000)
-    //     return () => {
-    //        clearInterval(bannerListSlider)
-    //     }
-    // }, [index])
+    const [banner] = useState(bannerList)
 
     useEffect(() => {
-        if(index >= bannerList.length - 1){
+        if(index >= bannerList.length){
             setIndex(0)
         }
 
-        if(index < 0) {
-            setIndex(bannerList.length - 1)
-        }
+        // if(index < 0) {
+        //     setIndex(bannerList.length - 1)
+        // }
     }, [index])
 
     useEffect(() => {
         let autoSlide = setInterval(() => {
             setIndex(index + 1)
-        }, 10000)
+        }, 15000)
         return () => {
             clearInterval(autoSlide)
         }
@@ -63,7 +48,7 @@ function Banner() {
                         }
 
                         if(bannerItemIndex === index - 1 || (index === 0 && bannerItemIndex === bannerList.length - 1)){
-                        position = "prevSlide"
+                            position = "prevSlide"
                         }
 
                         return (
@@ -72,7 +57,7 @@ function Banner() {
                                 <p> {info} </p>
                                 <Buttons>
                                     <a href="#projects"> jump to projects </a>
-                                    <button>view my CV</button>
+                                    {/* <button>view my CV</button> */}
                                 </Buttons>
                             </BannerText>
                         )
@@ -98,31 +83,35 @@ const BannerContainer = styled.section`
     font-family: 'Abel', sans-serif;
     min-height: 100vh;
     display: grid;
-    place-items: center;
+    /* place-items: center; */
     position: relative;
     color: black;
 
     > a {
-        margin: 100px 0 10px 0;
+        margin: 40px 0;
     }
 `
 
 const Profile = styled.div`
-    color: black;
-    width: 85%;
+    color: #333;
+    /* max-width: 85%; */
+    max-width: 550px;
 
-    height: 300px;
+    height: 400px;
     position: relative;
     overflow: hidden;
+    /* border: 1px solid; */
 
     z-index: 2;
-    margin-top: 200px;
+   
     padding: 10px;
     transition: 500ms;
+    
+    margin: 28vh 30px -10px 30px;
 
-    @media screen and (min-width: 600px) {
-        width: 60%;
-    }
+    /* @media screen and (min-width: 600px) {
+        width: 55%;
+    } */
 `
 
 const BannerText = styled.div`
@@ -131,22 +120,27 @@ const BannerText = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: fit-content;
     transition: 1000ms;
+
 
     > h1 {
         font-size: 2rem;
         text-transform: uppercase;
         font-family: 'Abel', sans-serif;
+
+        /* @media screen and (min-width: 300px){
+            font-size: 2.5rem;
+        } */
     }
 
     > p {
-        text-align: justify;
         font-family: 'Abel', sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin-top: 20px;
-        font-weight: 500;
-        font-size: 17px;
-        line-height: 20px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 25px;
         z-index: 1;
     }
 `
@@ -159,21 +153,25 @@ const Buttons = styled.article`
         > a {
             text-decoration: none;
             text-align: center;
-            text-transform: capitalize;
+            text-transform: uppercase;
             color: white;
-            background-color: darkred;
+            background-color: rgb(95, 10, 10); 
             margin-right: 5px;
             padding: 15px 3px;
+            box-shadow: 0 0 5px black;
             font-family: 'Abel', sans-serif;
-            font-size: 13px;
-            width: 50%;
+            font-size: 14px;
+            font-weight: 900;
+            border-radius: 2px;
+            width: 45%;
+            transition: 2000ms cubic-bezier(0.19, 1, 0.22, 1);
 
-            @media screen and (min-width: 800px) {
+            /* @media screen and (min-width: 800px) {
                 width: 35%;
-            }
+            } */
                 
             &:hover {
-                background-color: rgb(95, 10, 10);     
+                background-color: #333;   
             }
 
         }
@@ -182,7 +180,7 @@ const Buttons = styled.article`
             padding: 15px 3px;
             font-family: 'Abel', sans-serif;
             font-size: 13px;
-            width: 50%;
+            width: 60%;
            
             background-color: transparent;
             text-transform: capitalize;
@@ -195,9 +193,9 @@ const Buttons = styled.article`
             z-index: 1;
             transition: 2000ms cubic-bezier(0.19, 1, 0.22, 1);
 
-            @media screen and (min-width: 800px) {
+            /* @media screen and (min-width: 800px) {
                 width: 35%;
-            }
+            } */
 
             &:hover {
                 color: white;
@@ -233,6 +231,11 @@ const ArrowDownBtn = styled(IoIosArrowDropdownCircle)`
     border-radius: 50%;
     box-shadow: 0 0 3px black;
     transition: 1000ms cubic-bezier(0.215, 0.610, 0.355, 1);
+
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%, -50%);
 
     &:hover {
         color: darkred;

@@ -6,6 +6,7 @@ import products_page from '.././images/works/Product-Pricing-Page.JPG'
 import watchesHq from '.././images/works/Watches-Landing-Page.JPG'
 import random_users from '.././images/works/react-random-users-app.JPG'
 import linkedIn_clone from '.././images/works/linkedIn-clone.JPG'
+import instagram_clone from '.././images/works/instagram_clone.JPG'
 
 
 //react-icons
@@ -38,18 +39,18 @@ export const bannerList = [
     {
         id: 1,
         title: 'the hub of enthralling & functional websites',
-        info: 'Javascript is the now and the future. I build exquisite and functional user interfaces which are in trueness, functional. This portfolio in fact was made with react js. It showcases the flexibility of functional components with a bunch of use cases for the most commonly used react hooks. Click any of the buttons below to uncover more....',
+        info: 'Javascript is the now and the future. I build exquisite and functional user interfaces which are in trueness, functional. This portfolio in fact was made with react js. It showcases the flexibility of functional components with a bunch of use cases for the most commonly used react hooks. Click the button below to see projects....',
     },
     {
         id: 2,
         title: 'seamless focus and priority on responsiveness',
-        info: 'Responsiveness prioritized. At the heart of all my designs and websites is responsive ability for all user interfaces in what i like to call the "ultra-responsive confidence". All my websites are made to work on all devices to ensure an unforgettable user experience that will keep you in awe. Click any of the buttons below to uncover more....',
+        info: 'Responsiveness prioritized. At the heart of all my designs and websites is responsive ability for all user interfaces in what i like to call the "ultra-responsive confidence". All my websites are made to work on all devices to ensure an unforgettable user experience that will keep you in awe. Click the button below to see projects....',
     },
-    {
-        id: 3,
-        title: 'web app clones that make the original look the inferior',
-        info: 'Herein is a few collection of clones of popular social media spaces. These builds make the original looks as though they might need an upgrade. Click any of the buttons below to uncover more....',
-    }
+    // {
+    //     id: 3,
+    //     title: 'web app clones that make the original look the inferior',
+    //     info: 'Herein is a few collection of clones of popular social media spaces. These builds make the original looks as though they might need an upgrade. Click the button below to see projects....',
+    // }
 ]
 
 
@@ -118,38 +119,51 @@ export const techList = [
 
 export const projectList = [
     {
+        imageUrl: instagram_clone,
+        title: 'Instagram Clone',
+        type: 'react js',
+        info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
+    },
+    {
         imageUrl: linkedIn_clone,
         title: 'linkedIn clone',
+        type: 'react js',
         info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
     },
     {
         imageUrl: pepsi_landing,
         title: 'pepsi landing page',
+        type: 'vanilla js',
         info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.',
     },
     {
         imageUrl: youtube,
         title: 'youtube home page',
+        type: 'vanilla js',
         info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
     },
     {
         imageUrl: random_users,
         title: 'random users app',
+        type: 'react js',
         info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
     },
     {
         imageUrl: products_page,
         title: 'products pricing page',
+        type: 'vanilla js',
         info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
     },
     {
         imageUrl: porsche_garage,
         title: 'porsche garage',
+        type: 'vanilla js',
         info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
     },
     {
         imageUrl: watchesHq,
         title: 'watches sales demo',
+        type: 'vanilla js',
         info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
     },
 ]

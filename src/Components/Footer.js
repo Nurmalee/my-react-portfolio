@@ -79,6 +79,7 @@ const FooterLists = styled.div`
     > div {
         margin-top: 20px;
         margin-right: 20px;
+        font-size: 14px;
       
         /* width: 30%; */
 
@@ -97,11 +98,13 @@ const FooterLists = styled.div`
         margin-top: 20px;
         margin-right: 20px;
         padding: 0;
+        font-size: 14px;
         
         > li {
             display: flex;
             align-items: center;
             cursor: pointer;
+            font-size: 14px;
 
             > a {
                 text-decoration: none;
