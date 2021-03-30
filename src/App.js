@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import { useState, useEffect } from 'react'
 // import './App.css'
 import Banner from './Components/Banner'
 import AboutMe from './Components/AboutMe'
@@ -26,6 +26,10 @@ const themes = {
 }
 
 function App() {
+
+  useEffect(() => {
+      alert("I'M CONSTANTLY WORKING ON IT, THIS WEBSITE IS NOT YET FULLY FUNCTIONAL, PLEASE BEAR WITH ME")
+  }, [])
 
   const [theme, setTheme] = useState("light")
 
