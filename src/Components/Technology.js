@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 // import { AiOutlineMinusSquare, AiFillPlusSquare } from 'react-icons/ai'
 
-function Technology({title, info, Icon}) {
+function Technology({title, info, Icon}, props) {
     // const [showMore, setShowMore] = useState(false)
 
     return (

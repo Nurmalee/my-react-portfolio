@@ -1,5 +1,5 @@
 //project-images
-import youtube from '.././images/works/Youtube-VanillaJs-Clone.JPG'
+import youtube_clone from '.././images/works/Youtube-VanillaJs-Clone.JPG'
 import porsche_garage from '.././images/works/My-Porsche-Garage-Landing-Page.JPG'
 import pepsi_landing from '.././images/works/Pepsi-Landing-Page.JPG'
 import products_page from '.././images/works/Product-Pricing-Page.JPG'
@@ -7,12 +7,15 @@ import watchesHq from '.././images/works/Watches-Landing-Page.JPG'
 import random_users from '.././images/works/react-random-users-app.JPG'
 import linkedIn_clone from '.././images/works/linkedIn-clone.JPG'
 import instagram_clone from '.././images/works/instagram_clone.JPG'
+import brisk_sleek from '.././images/works/Brisk-and-Sleek.JPG'
+import facebook_clone from '.././images/works/facebook_clone.JPG'
 
 
 //react-icons
-import { FaReact, FaCss3Alt, FaHtml5, FaBootstrap } from 'react-icons/fa'
-import { SiAdobeillustrator } from 'react-icons/si'
+import { FaReact, FaCss3Alt, FaHtml5, FaBootstrap, FaNodeJs } from 'react-icons/fa'
+import { SiAdobeillustrator, SiFirebase, SiMaterialUi } from 'react-icons/si'
 import { DiJqueryLogo, DiJavascript } from 'react-icons/di'
+import { CgFigma } from 'react-icons/cg'
 
 
 
@@ -58,69 +61,65 @@ export const techList = [
     {
         title: 'html5',
         Icon: FaHtml5,
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
     {
         title: 'css3 (incl. Bootstrap, SASS)',
         Icon: FaCss3Alt,
-        info: 'Media querry | CSS flexbox | CSS grid and general responsiveness'
     },
     {
         title: 'javascript (ES6+)',
         Icon: DiJavascript,
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
-    },
-    {
-        title: 'bootstrap',
-        Icon: FaBootstrap,
-        info: 'Media querry | CSS flexbox | CSS grid and general responsiveness'
-    },
-    {
-        title: 'jQuery',
-        Icon: DiJqueryLogo,
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
     {
         title: 'react (incl. Redux)',
         Icon: FaReact,
-        info: 'Experienced in the use of Class based components | Function based components | React hooks | React router | Context API | Redux'
-    },
-    {
-        title: 'adobe illustrator (or CorelDraw)',
-        Icon: SiAdobeillustrator,
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
     },
     {
         title: 'Node (with MongoDB & Express)',
-        Icon: SiAdobeillustrator,
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
+        Icon: FaNodeJs,
+    },
+    {
+        title: 'jQuery',
+        Icon: DiJqueryLogo,
+    },
+    {
+        title: 'bootstrap',
+        Icon: FaBootstrap,
     },
     {
         title: 'Firebase',
-        Icon: SiAdobeillustrator,
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
+        Icon: SiFirebase,
     },
     {
         title: 'Material Ui',
-        Icon: SiAdobeillustrator,
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
+        Icon: SiMaterialUi,
     },
-    // {
-    //     title: 'Material Ui',
-    //     Icon: SiAdobeillustrator,
-    //     info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
-    // },
+    {
+        title: 'adobe illustrator & CorelDraw',
+        Icon: SiAdobeillustrator,
+    },
     {
         title: 'Figma & Balsamiq Wireframe',
-        Icon: SiAdobeillustrator,
-        info: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.'
+        Icon: CgFigma,
     }
 ]
 
 export const projectList = [
     {
+        imageUrl: brisk_sleek,
+        title: 'brisk and sleek Official - landing page',
+        type: 'vanilla js',
+        info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.',
+    },
+    {
         imageUrl: instagram_clone,
         title: 'Instagram Clone',
+        type: 'react js',
+        info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
+    },
+    {
+        imageUrl: facebook_clone,
+        title: 'facebook clone',
         type: 'react js',
         info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
     },
@@ -137,8 +136,8 @@ export const projectList = [
         info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.',
     },
     {
-        imageUrl: youtube,
-        title: 'youtube home page',
+        imageUrl: youtube_clone,
+        title: 'youtube clone',
         type: 'vanilla js',
         info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
     },

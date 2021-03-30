@@ -1,21 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
-
-import Aos from 'aos'
-import 'aos/dist/aos.css'
 
 import Project from './Project';
 import { projectList } from '.././sourceData/data'
 
 const projectType = ["all", ...new Set(projectList.map(project => project.type))]
-console.log(projectType);
 
-function Projects () {
+function Projects (props) {
     const [filteredProjects, setFilteredProjects] = useState(projectList)
-
-    useEffect(() => {
-        Aos.init({duration: 2000})
-      }, [])
 
     const filterProjectsByType = (type) => {
         const filteredByType = projectList.filter(project => project.type === type)
@@ -27,22 +19,22 @@ function Projects () {
     }
 
     return (
-        <ProjectsWrap id="projects">
+        <ProjectsWrap id="projects" className="projects">
             <p>A collection of project use cases from my recent works</p>
             <h1>PROJECTS/WORKS</h1>
 
             <FilterCategories>
-                FILTER BY CATEGORIES: <br/>
+                <p> FILTER BY CATEGORY: </p> <br/>
                 {
                     projectType.map((type, index) => {
                         return (
-                            <button id={index} onClick={() => filterProjectsByType(type)}>{type}</button>
+                            <button key={index} onClick={() => filterProjectsByType(type)}>{type}</button>
                         )
                     })
                 }
             </FilterCategories>
 
-            <ProjectsContainer>
+            <ProjectsContainer className='project'>
                 {
                     filteredProjects.map((project, index) => {
                         return (
@@ -61,7 +53,8 @@ const ProjectsWrap = styled.section`
     min-height: 100vh;
     padding: 50px 2rem;
     /* background-color: rgba(245, 233, 230, 0.564); */
-    background-color: #eee;
+    background-color: ${props => props.theme.pageBackground2};
+    /* background-color: #eee; */
     transition: 500ms;
 
     &:hover {
@@ -71,6 +64,8 @@ const ProjectsWrap = styled.section`
     > h1 {
         /* text-align: center; */
         color: black;
+        color: ${props => props.theme.titleColor};
+        transition: 500ms;
         font-family: 'Abel', sans-serif;
         font-size: 2rem;
         text-transform: uppercase;
@@ -81,8 +76,11 @@ const ProjectsWrap = styled.section`
 
     > p {
         text-transform: uppercase;
-        border-top: 1px solid #777;
-        color: #777;
+        /* border-top: 1px solid #777; */
+        /* color: #777; */
+        /* border-top: 1px solid ${props => props.theme.pageBackground}; */
+        color: ${props => props.theme.titleColor};
+        transition: 500ms;
         letter-spacing: 2px;
         width: fit-content;
     }
@@ -95,14 +93,17 @@ const ProjectsWrap = styled.section`
 const FilterCategories = styled.div`
     margin-top: 20px;
     /* text-align: center;/ */
+    color: ${props => props.theme.titleColor};
+    transition: 500ms;
 
     > button {
             text-transform: uppercase;
-            color: white;
-            background-color: #333; 
+            color: ${props => props.theme.titleColor};
+            background-color: ${props => props.theme.pageBackground};
+            /* background-color: #333; */
             margin-right: 3px;
             padding: 7px 10px;
-            box-shadow: 0 0 2px black;
+            box-shadow: 0 0 2px ${props => props.theme.titleColor};
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 11px;
             font-weight: 900;
@@ -113,7 +114,9 @@ const FilterCategories = styled.div`
             transition: 2000ms cubic-bezier(0.19, 1, 0.22, 1);
                 
             &:hover {
+                color: ${props => props.theme.pageBackground};
                 background-color: rgb(95, 10, 10);  
+                background-color: ${props => props.theme.titleColor};
             }
     }
 `

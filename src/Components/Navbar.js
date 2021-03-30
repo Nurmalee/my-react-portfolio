@@ -2,17 +2,40 @@ import { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 
 import { navList } from '.././sourceData/data'
-import Lee_Logo from '.././images/1x/logo_2_black.png'
+import logo_black from '.././images/1x/logo_2_black.png'
+// import logo_white from '.././images/1x/logo_2_white.png'
 
 import { FiTwitter, FiGithub } from 'react-icons/fi'
+import { BsToggleOn, BsToggleOff } from 'react-icons/bs'
+import { AiTwotoneWarning } from 'react-icons/ai'
+
+
+
 import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineMenu, AiOutlineArrowRight } from 'react-icons/ai'
 
+let logo = logo_black
 
-function Navbar() {
+function Navbar({props}) {
     const [showList, setShowList] = useState(false)
     const navbarListContainerRef = useRef('')
     const navbarListRef = useRef('')
     const windowWidth = window.innerWidth;
+
+    const toggleTheme = () => {
+        if(props.theme === 'light'){
+            props.setTheme('dark')
+            // logo = logo_white
+        } else {
+            props.setTheme('light')
+            // logo = logo_black
+        }
+    }
+
+    const socialStyle = {
+        margin: "10px",
+        cursor: "pointer",
+        transition: "500ms",
+    }
 
     useEffect(() => {
         const listWidth = navbarListRef.current.getBoundingClientRect().width
@@ -27,7 +50,7 @@ function Navbar() {
     return (
         <Nav>
             <NavHeader>
-                <img src={Lee_Logo} alt="LEE"/>
+                <img src={logo} alt="LEE"/>
                 <div onClick={() => setShowList(!showList)}>
                     <p>menu</p>
                     <OpenMenuBtn />
@@ -42,14 +65,20 @@ function Navbar() {
                          return <li className="list-item" key={index}> <a href={href} onClick={() => setShowList(false)} >{title}</a> </li>
                         })
                     }
+                    <Toggler>
+                        <AiTwotoneWarning style={{height: "30px", width: "30px", color: "orange"}}/>
+                        dark theme( test mode )
+                        {props.theme === 'light' ? <ToggleOffBtn onClick={toggleTheme} /> : <ToggleOnBtn onClick={toggleTheme} />}
+                    </Toggler>
                 </ul>
+                
             </NavListContainer>
 
             <SocialList>
-                <li><a href="#about"> <MyGithub /> </a></li>
-                <li><a href="#about"> <MyInstagram /> </a></li>
-                <li><a href="#about">  <MyTwitter /> </a></li>
-                <li><a href="#contactme">  <MyYoutube /> </a></li> 
+                <li><a href="#about"> <FiGithub style={socialStyle} /> </a></li>
+                <li><a href="#about"> <AiOutlineInstagram style={socialStyle} /> </a></li>
+                <li><a href="#about">  <FiTwitter style={socialStyle} /> </a></li>
+                <li><a href="#contactme">  <AiOutlineYoutube style={socialStyle} /> </a></li> 
             </SocialList>
 
         </Nav>
@@ -91,6 +120,9 @@ const NavHeader = styled.div`
             font-weight: 900;
             font-size: 20px;
             margin-right: 5px;
+            color: ${props => props.theme.titleColor};
+            color: #333;
+            transition: 500ms;
         }
     }
        
@@ -98,9 +130,9 @@ const NavHeader = styled.div`
 
 const NavListContainer = styled.div`
     overflow: hidden;
-    background-color: white;
+    background-color: ${props => props.theme.pageBackground};
     transition: 500ms;
-    box-shadow: 0 0 30px #777;
+    box-shadow: 0 0 30px black;
     border-left: 2px solid darkred;
     width: auto;
     height: 100%;
@@ -120,7 +152,7 @@ const NavListContainer = styled.div`
             > a {
                 text-decoration: none;
                 border-top: 1px solid #eee;
-                color: black;
+                color: ${props => props.theme.titleColor};
                 padding: 13px 0;
                 display: block;
                 width: 100%;
@@ -194,38 +226,48 @@ const SocialList = styled.ul`
 const OpenMenuBtn = styled(AiOutlineMenu)`
     height: 25px;
     width: 25px;
-    color: black;
+    color: ${props => props.theme.titleColor};
+    color: #333;
+    transition: 500ms;
 `
 
 const CloseMenuBtn = styled(AiOutlineArrowRight)`
     height: 25px;
     width: 25px;
-    color: black;
+    color: ${props => props.theme.titleColor};
     cursor: pointer;
     margin: 20px;
 `
 
-const MyTwitter = styled(FiTwitter)`
-    margin: 10px;
-    cursor: pointer;
+// TOGGLE CONTAINER, BUTTTON AND CONCERNS
+const Toggler = styled.div`
+    color: ${props => props.theme.pageBackground};
+    background-color: ${props => props.theme.titleColor};
     transition: 500ms;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    margin-top: 2px;
+    padding: 10px;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    width: 100%;
 `
 
-const MyInstagram = styled(AiOutlineInstagram)`
-    margin: 10px;
+const ToggleOffBtn = styled(BsToggleOff)`
+    margin-left: 10px;
+    height: 30px;
+    width: 30px; 
     cursor: pointer;
-    transition: 500ms;
 `
 
-const MyYoutube = styled(AiOutlineYoutube)`
-    margin: 10px;
+const ToggleOnBtn = styled(BsToggleOn)`
+    margin-left: 10px;
     cursor: pointer;
-    transition: 500ms;
-`
-
-const MyGithub = styled(FiGithub)`
-    margin: 10px;
-    cursor: pointer;
-    transition: 500ms;
+    height: 30px;
+    width: 30px; 
 `
 

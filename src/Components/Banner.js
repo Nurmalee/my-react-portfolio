@@ -1,27 +1,34 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import './extended.css'
-// import backgroundImg from '../images/1x/banner_bg.png'
-// import backgroundImg from '../images/theme-photos-nJCW43biz9U-unsplash.jpg'
-import backgroundImg from '../images/1x/1x/bg_trial.png'
+
+import bg_light from '../images/1x/1x/bg_light.png'
+import bg_dark from '../images/1x/1x/bg_dark_2.png'
 import Navbar from './Navbar'
 
 import { bannerList } from '.././sourceData/data'
 import { IoIosArrowDropdownCircle } from 'react-icons/io'
+import { GiWideArrowDunk } from 'react-icons/gi'
 
+let bg = bg_light
 
-function Banner() {
+function Banner(props) {
     const [index, setIndex] = useState(0)
     const [banner] = useState(bannerList)
+
+    useEffect(() => {
+       
+        if(props.theme === 'light'){
+            bg = bg_light
+        } else {
+            bg = bg_dark
+        }
+    }, [props.theme])
 
     useEffect(() => {
         if(index >= bannerList.length){
             setIndex(0)
         }
-
-        // if(index < 0) {
-        //     setIndex(bannerList.length - 1)
-        // }
     }, [index])
 
     useEffect(() => {
@@ -35,7 +42,7 @@ function Banner() {
 
     return (
         <BannerContainer id="home" imageUrl='../images/bruce-tang-DfRRllois_I-unsplash.jpg'>
-            <Navbar />
+            <Navbar props={props} />
             <Profile>
                {
                    banner.map((bannerItem, bannerItemIndex) => {
@@ -56,8 +63,10 @@ function Banner() {
                                 <h1> {title} </h1>
                                 <p> {info} </p>
                                 <Buttons>
-                                    <a href="#projects"> jump to projects </a>
-                                    {/* <button>view my CV</button> */}
+                                    <a href="#projects"> <GiWideArrowDunk /> jump to projects  </a>
+
+                                    {/* <a href="../images/NURUDEEN_LAWAL.pdf" download="Nurudeen Wed Dev CV"> <GiWideArrowDunk /> Download My CV </a> */}
+                                    
                                 </Buttons>
                             </BannerText>
                         )
@@ -76,7 +85,7 @@ export default Banner
 
 
 const BannerContainer = styled.section`
-    background-image: url(${backgroundImg});
+    background-image: url(${bg});
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -128,6 +137,9 @@ const BannerText = styled.div`
         font-size: 2rem;
         text-transform: uppercase;
         font-family: 'Abel', sans-serif;
+        color: ${props => props.theme.titleColor};
+        color: #333;
+        transition: 500ms;
 
         /* @media screen and (min-width: 300px){
             font-size: 2.5rem;
@@ -137,6 +149,9 @@ const BannerText = styled.div`
     > p {
         font-family: 'Abel', sans-serif;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: ${props => props.theme.titleColor};
+        color: #333;
+        transition: 500ms;
         margin-top: 20px;
         font-weight: 600;
         font-size: 16px;
@@ -155,6 +170,7 @@ const Buttons = styled.article`
             text-align: center;
             text-transform: uppercase;
             color: white;
+            /* color: ${props => props.theme.titleColor}; */
             background-color: rgb(95, 10, 10); 
             margin-right: 5px;
             padding: 15px 3px;

@@ -3,7 +3,7 @@ import { techList } from '.././sourceData/data'
 import Technology from './Technology'
 
 
-function Technologies() {
+function Technologies(props) {
 
     return (
         <TechnologiesContainer id="technologies">
@@ -28,8 +28,9 @@ const TechnologiesContainer = styled.section`
     width: 100%;
     flex: 1;
 
-    > h1 {
-        color: black;
+    > h1 { color: ${props => props.theme.titleColor};
+       
+        transition: 500ms;
         font-family: 'Abel', sans-serif;
         font-size: 20px;
         text-transform: uppercase;

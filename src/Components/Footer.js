@@ -7,7 +7,7 @@ import { AiOutlineInstagram, AiOutlineYoutube } from 'react-icons/ai'
 
 import { BsDash } from 'react-icons/bs'
 
-function Footer() {
+function Footer(props) {
     const yearRef = useRef(null)
     useEffect(() => {
         const newYear = new Date().getFullYear()
@@ -67,6 +67,9 @@ export default Footer
 const FooterWrapper = styled.div`
     padding: 40px 2rem;
     background-color: white;
+    color: ${props => props.theme.titleColor};
+    background-color: ${props => props.theme.pageBackground};
+    transition: 500ms;
 
     @media screen and (min-width: 1000px) {
         padding: 40px 4rem;
@@ -80,7 +83,6 @@ const FooterLists = styled.div`
         margin-top: 20px;
         margin-right: 20px;
         font-size: 14px;
-      
         /* width: 30%; */
 
         > p {
@@ -108,7 +110,8 @@ const FooterLists = styled.div`
 
             > a {
                 text-decoration: none;
-                color: black;
+                /* color: black; */
+                color: ${props => props.theme.titleColor};
                 margin-left: 10px;
                 transition: 500ms;
 

@@ -4,7 +4,7 @@ import me from '.././images/me.jpg'
 import Technologies from './Technologies'
 
 
-function AboutMe() {
+function AboutMe(props) {
 
     return (
         <AboutContainer id="about">
@@ -27,6 +27,7 @@ const AboutContainer = styled.section`
     font-family: 'Abel', sans-serif;
     padding: 50px 2rem;
     transition: 500ms;
+    background-color: ${props => props.theme.pageBackground};
 
     @media screen and (min-width: 1000px) {
         padding: 50px 4rem;
@@ -41,21 +42,24 @@ const AboutContainer = styled.section`
     }
 
     > h1 {
-        color: black;
+        color: ${props => props.theme.titleColor};
         font-family: 'Abel', sans-serif;
         font-size: 2rem;
         text-transform: uppercase;
         text-align: left;
         width: fit-content;
         letter-spacing: 3px;
+        transition: 500ms;
     }
 
     > p {
         text-transform: uppercase;
-        border-top: 1px solid #777;
-        color: #777;
+        /* border-top: 1px solid #777;
+        color: #777; */
+        color: ${props => props.theme.titleColor};
         letter-spacing: 2px;
         width: fit-content;
+        transition: 500ms;
     }
 `
 
@@ -68,10 +72,12 @@ const AboutInfo = styled.div`
 
     > p {
         max-width: 600px;
+        color: ${props => props.theme.titleColor};
         align-self: flex-start;
         line-height: 30px;
         text-align: justify;
         margin-top: 25px;
+        transition: 500ms;
     }
 
     > img {
