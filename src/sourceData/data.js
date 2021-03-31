@@ -49,11 +49,11 @@ export const bannerList = [
         title: 'seamless focus and priority on responsiveness',
         info: 'Responsiveness prioritized. At the heart of all my designs and websites is responsive ability for all user interfaces in what i like to call the "ultra-responsive confidence". All my websites are made to work on all devices to ensure an unforgettable user experience that will keep you in awe. Click the button below to see projects....',
     },
-    // {
-    //     id: 3,
-    //     title: 'web app clones that make the original look the inferior',
-    //     info: 'Herein is a few collection of clones of popular social media spaces. These builds make the original looks as though they might need an upgrade. Click the button below to see projects....',
-    // }
+    {
+        id: 3,
+        title: 'web app clones that make the original look the inferior',
+        info: 'Herein is a few collection of clones of popular social media spaces. These builds make the original looks as though they might need an upgrade. Click the button below to see projects....',
+    }
 ]
 
 
@@ -109,60 +109,70 @@ export const projectList = [
         imageUrl: brisk_sleek,
         title: 'brisk and sleek Official - landing page',
         type: 'vanilla js',
-        info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.',
+        info: 'This is the proposed inspiration for the official website of Brisk and Sleek Arch Ventures. An upcoming architectural firm that deals in completion of architecural drawings, building construction, supervision, renovations, maintenance, production of quantity bills and so much more extended dealings related to construction development',
+        technologies: 'html, css, javascript'
     },
     {
         imageUrl: instagram_clone,
         title: 'Instagram Clone',
         type: 'react js',
-        info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
+        info: 'An explicit clone of the all popular instagram app from facebook. This desktop version of instagram was inspired from my love for using instagram',
+        technologies: 'html (jsx), css, javascript, react, styled-components, firebase'
     },
     {
         imageUrl: facebook_clone,
         title: 'facebook clone',
         type: 'react js',
-        info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
+        info: 'Although I dont use the facebook app, It was worth making this build, and considering that I have made an intriguing version of the instagram, I decided to face off with the guys at facebook with a clone of all their applications',
+        technologies: 'html (jsx), css, javascript, react, material-ui, firebase'
     },
     {
         imageUrl: linkedIn_clone,
         title: 'linkedIn clone',
         type: 'react js',
-        info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
+        info: 'As an individual who loves networking, I spend a whole lot of my time every day on linkedIn meeting new people. LinkedIn is the best and the most popular online job related platform where professionals meet on a professional level. This build was practically my first major build with ReactJs, it was a revelation, a game changer',
+        technologies: 'html (jsx), css, javascript, react, material-ui, firebase'
     },
     {
         imageUrl: pepsi_landing,
         title: 'pepsi landing page',
         type: 'vanilla js',
-        info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod.',
+        info: 'Inspired by an instagram post made by a UI/UX expert. This pepsi landing page features a display of variants of the beverages of the pepsi brand. It has hover functionality for product display shuffle and it is highly screen responsive... I guess you should see for yourself',
+        technologies: 'html, css, javascript'
     },
     {
         imageUrl: youtube_clone,
         title: 'youtube clone',
         type: 'vanilla js',
-        info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
+        info: 'We all know youtube is the home of video information. Without youtube, I will probably not know all the useful random and extra things that I know as of today, including software development. The first ever coding impression I got was from a channel owned by a japanese on youtube where he taught the python language before I dived into javascript. All these birthed the ground for making this build. In the coming days I plan to make it even better and functional by making a remake with react js',
+        technologies: 'html, css, javascript'
     },
     {
         imageUrl: random_users,
         title: 'random users app',
         type: 'react js',
-        info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
+        info: 'A catchy UI for a user dashboard. This user landing/dashboard was created as part of an assessment program for a 3 months internship with Decagon Institute sponsored by the UKNGTech. This app uses the random users API to generate random users on every reload where a user can then search the list by names or by gender to get more user detail. Open the project to experience the functionality',
+        technologies: 'html (jsx), css, javascript, react, react-icons, material-ui'
     },
     {
         imageUrl: products_page,
         title: 'products pricing page',
         type: 'vanilla js',
-        info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
+        info: 'This product checkout landing page was made as a part of the Dufuna Code Camp DOM manipulation assessment test (It currently stands out as the best for design and functionality). It simulates how a buyer can alter the quantity of a selected product and get the corresponding price based on well indicated percent inclusions and exclusions.',
+        technologies: 'html, css, javascript'
     },
     {
         imageUrl: porsche_garage,
         title: 'porsche garage',
         type: 'vanilla js',
-        info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
+        info: 'I love speed, I love fast cars and I love the porsche brand. This enthralling website was created as an imaginative representation of the kind of cars I wish I had in my garage as at the time. It displays images of beautiful models of porsche car models and a few specifications to go along with each',
+        technologies: 'html, css, javascript'
     },
     {
         imageUrl: watchesHq,
         title: 'watches sales demo',
         type: 'vanilla js',
-        info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, porro suscipit nemo laudantium ipsa quod. Numquam voluptatem qui nemo molestiae, harum officia, dignissimos minus nam inventore quibusdam quos ex veritatis?',
+        info: 'Time is an important factor, so I found. As a lover of watches, I have created this beautiful watch sales demo landing page that displays different brands of wrist watches with switch functionality for gender specification',
+        technologies: 'html, css, javascript'
     },
 ]

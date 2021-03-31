@@ -1,21 +1,31 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import styled from 'styled-components'
 
-function Project({imageUrl, title, info}) {
-    const [showLess, setShowLess] = useState(true);
+function Project({imageUrl, title, technologies, info}) {
+    // const [showLess, setShowLess] = useState(true);
 
     return (
         <ProjectCard>
             <ProjectImage>
                 <img src={imageUrl} alt={title}/>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, atque quisquam totam quam asperiores assumenda ea. Quisquam explicabo ea delectus esse asperiores iusto praesentium accusamus, amet reiciendis velit! Libero, perferendis?</p>
+                <div>
+                    <p>
+                        <b>SUMMARY - </b><br/>
+                        <i>{info}</i>
+                    </p> <br/>
+                    <p>
+                        <b>MAJOR TECH STACK - </b><br/>
+                        <i>{technologies}</i>
+                    </p>
+                </div>
+                <a href="#ad">view project in action</a>
             </ProjectImage>
             <ProjectInfo>
                 <h2> {title} </h2>
-                <p>
+                {/* <p>
                     {showLess ? `${info.substring(0, 100)}...` : info } 
                     <button onClick={() => setShowLess(!showLess)}> {showLess ? ' Show More' : ' Show Less'} </button>
-                </p>
+                </p> */}
                 {/* <button> visit page <AiOutlineArrowRight /> </button> */}
             </ProjectInfo>
         </ProjectCard>
@@ -36,7 +46,7 @@ const ProjectImage = styled.div`
     height: 350px;
     position: relative;
 
-    > p {
+    > div {
         position: absolute;
         top: 0;
         opacity: 0;
@@ -46,6 +56,7 @@ const ProjectImage = styled.div`
         margin: 20px;
         margin-top: 70px;
         font-family: 'Abel', sans-serif;
+        font-size: 12px;
         /* text-transform: uppercase; */
     }
     
@@ -83,30 +94,65 @@ const ProjectImage = styled.div`
         width: 100%;
     }
 
-    &:hover > p {
+    &:hover > div {
         opacity: 1;
         z-index: 10;
         margin-top: 20px;
         transition: 3000ms;
+    }
+
+    > a {
+        position: absolute;
+        left: 0;
+        bottom : -40px;
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        border-top: 1px solid;
+        outline: none;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        z-index: 11;
+        cursor: pointer;
+        transition: 400ms;
+        text-align: center;
+
+        &:hover {
+            color: white;
+            background-color: darkred;
+        }
+    }
+
+    &:hover > a {
+        bottom : 0;
     }
 `
 
 const ProjectInfo = styled.article`
     padding: 20px;
     background-color: whitesmoke;
+    position: relative;
+    z-index: 14;
 
     > h2 {
-        margin-bottom: 5px;
-        padding-bottom: 5px;
+        /* margin-bottom: 5px;
+        padding-bottom: 5px; */
         border-bottom: 1px solid #eee;
         text-transform: capitalize;
+        text-align: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 14px;
         font-weight: 500;
         color: black;
     }
 
-    > button {
+    /* > button {
         outline: none;
         border: none;
         cursor: pointer;
@@ -118,11 +164,7 @@ const ProjectInfo = styled.article`
         box-shadow: 0 0 1px grey;
         display: flex;
         align-items: center;
-
-        &:hover {
-            outline: none;
-        }
-    }
+    } */
 
     > p {
         text-align: start;

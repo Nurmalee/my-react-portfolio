@@ -34,7 +34,7 @@ function Banner(props) {
     useEffect(() => {
         let autoSlide = setInterval(() => {
             setIndex(index + 1)
-        }, 15000)
+        }, 10000)
         return () => {
             clearInterval(autoSlide)
         }
