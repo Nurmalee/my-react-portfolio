@@ -127,7 +127,7 @@ export const projectList = [
         type: 'react js',
         info: 'Although I dont use the facebook app, It was worth making this build, and considering that I have made an intriguing version of the instagram, I decided to face off with the guys at facebook with a clone of all their applications',
         technologies: 'html (jsx), css, javascript, react, material-ui, firebase',
-        link: "instagramlee.herohuapp.com"
+        link: "https://nurmalee.github.io/facebook-webapp-clone/"
     },
     {
         imageUrl: linkedIn_clone,
@@ -135,7 +135,7 @@ export const projectList = [
         type: 'react js',
         info: 'As an individual who loves networking, I spend a whole lot of my time every day on linkedIn meeting new people. LinkedIn is the best and the most popular online job related platform where professionals meet on a professional level. This build was practically my first major build with ReactJs, it was a revelation, a game changer',
         technologies: 'html (jsx), css, javascript, react, material-ui, firebase',
-        link: "instagramlee.herohuapp.com"
+        link: "https://nurmalee.github.io/linkedIn-webapp-clone/"
     },
     {
         imageUrl: pepsi_landing,
@@ -143,7 +143,7 @@ export const projectList = [
         type: 'vanilla js',
         info: 'Inspired by an instagram post made by a UI/UX expert. This pepsi landing page features a display of variants of the beverages of the pepsi brand. It has hover functionality for product display shuffle and it is highly screen responsive... I guess you should see for yourself',
         technologies: 'html, css, javascript',
-        link: "instagramlee.herohuapp.com"
+        link: "https://nurmalee.github.io/Old-Projects/pepsi_landing_page/pepsi.html"
     },
     {
         imageUrl: youtube_clone,
@@ -151,7 +151,7 @@ export const projectList = [
         type: 'vanilla js',
         info: 'We all know youtube is the home of video information. Without youtube, I will probably not know all the useful random and extra things that I know as of today, including software development. The first ever coding impression I got was from a channel owned by a japanese on youtube where he taught the python language before I dived into javascript. All these birthed the ground for making this build. In the coming days I plan to make it even better and functional by making a remake with react js',
         technologies: 'html, css, javascript',
-        link: "instagramlee.herohuapp.com"
+        link: "https://nurmalee.github.io/Old-Projects/youtube_clone/index.html"
     },
     {
         imageUrl: random_users,
@@ -159,7 +159,7 @@ export const projectList = [
         type: 'react js',
         info: 'A catchy UI for a user dashboard. This user landing/dashboard was created as part of an assessment program for a 3 months internship with Decagon Institute sponsored by the UKNGTech. This app uses the random users API to generate random users on every reload where a user can then search the list by names or by gender to get more user detail. Open the project to experience the functionality',
         technologies: 'html (jsx), css, javascript, react, react-icons, material-ui',
-        link: "instagramlee.herohuapp.com"
+        link: "https://nurmalee.github.io/github-pages-my-users-app-react/"
     },
     {
         imageUrl: products_page,
@@ -167,7 +167,7 @@ export const projectList = [
         type: 'vanilla js',
         info: 'This product checkout landing page was made as a part of the Dufuna Code Camp DOM manipulation assessment test (It currently stands out as the best for design and functionality). It simulates how a buyer can alter the quantity of a selected product and get the corresponding price based on well indicated percent inclusions and exclusions.',
         technologies: 'html, css, javascript', 
-        link: "instagramlee.herohuapp.com"
+        link: "https://nurmalee.github.io/Old-Projects/product_pricing/html/products.html"
     },
     {
         imageUrl: porsche_garage,
@@ -175,7 +175,7 @@ export const projectList = [
         type: 'vanilla js',
         info: 'I love speed, I love fast cars and I love the porsche brand. This enthralling website was created as an imaginative representation of the kind of cars I wish I had in my garage as at the time. It displays images of beautiful models of porsche car models and a few specifications to go along with each',
         technologies: 'html, css, javascript',
-        link: "instagramlee.herohuapp.com"
+        link: "https://nurmalee.github.io/Old-Projects/my_porsche_garage/garage.html"
     },
     {
         imageUrl: watchesHq,
@@ -183,6 +183,6 @@ export const projectList = [
         type: 'vanilla js',
         info: 'Time is an important factor, so I found. As a lover of watches, I have created this beautiful watch sales demo landing page that displays different brands of wrist watches with switch functionality for gender specification',
         technologies: 'html, css, javascript',
-        link: "instagramlee.herohuapp.com"
+        link: "https://nurmalee.github.io/Old-Projects/watches_hq/watches.html"
     },
 ]

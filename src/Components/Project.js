@@ -1,32 +1,31 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 
 function Project({imageUrl, title, technologies, info, link}) {
-    // const [showLess, setShowLess] = useState(true);
+    const [showLess, setShowLess] = useState(true);
 
     return (
         <ProjectCard>
             <ProjectImage>
                 <img src={imageUrl} alt={title}/>
                 <div>
-                    <p>
+                    {/* <p>
                         <b>SUMMARY - </b><br/>
                         <i>{info}</i>
-                    </p> <br/>
+                    </p> <br/> */}
+                    <p>{title}</p>
                     <p>
-                        <b>MAJOR TECH STACK - </b><br/>
-                        <i>{technologies}</i>
+                        <small>{technologies}</small> 
                     </p>
                 </div>
-                <a href={link}>view project in action</a>
+                <a href={link}>go to page</a>
             </ProjectImage>
             <ProjectInfo>
                 <h2> {title} </h2>
-                {/* <p>
+                <p>
                     {showLess ? `${info.substring(0, 100)}...` : info } 
                     <button onClick={() => setShowLess(!showLess)}> {showLess ? ' Show More' : ' Show Less'} </button>
-                </p> */}
-                {/* <button> visit page <AiOutlineArrowRight /> </button> */}
+                </p>
             </ProjectInfo>
         </ProjectCard>
     )
@@ -49,21 +48,39 @@ const ProjectImage = styled.div`
     > div {
         position: absolute;
         top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
         opacity: 0;
         color: white;
         text-align: left;
         text-justify: left;
-        margin: 20px;
-        margin-top: 70px;
         font-family: 'Abel', sans-serif;
-        font-size: 12px;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        > p {
+            padding: 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 900;
+
+            &:nth-of-type(2) {
+                font-size: 12px;
+            }
+        }
     }
     
 
     > img {
-        object-fit: cover;
+        object-fit: contain;
         width: 100%;
         height: 100%;
+        transform: scale(0.95);
     }
 
     &::after {
@@ -96,34 +113,34 @@ const ProjectImage = styled.div`
     &:hover > div {
         opacity: 1;
         z-index: 10;
-        margin-top: 20px;
         transition: 3000ms;
     }
 
     > a {
         position: absolute;
         left: 0;
-        bottom : -40px;
+        bottom : -45px;
         width: 100%;
-        height: 40px;
-        padding: 10px;
+        height: 45px;
         border: none;
-        border-top: 1px solid;
-        outline: none;
         text-transform: uppercase;
         text-decoration: none;
         color: white;
-        background-color: black;
+        background-color: brown;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 700;
         z-index: 11;
         cursor: pointer;
         transition: 400ms;
         text-align: center;
 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
         &:hover {
-            color: white;
             background-color: darkred;
         }
     }
@@ -140,34 +157,19 @@ const ProjectInfo = styled.article`
     z-index: 14;
 
     > h2 {
-        /* margin-bottom: 5px;
-        padding-bottom: 5px; */
+        margin-bottom: 5px;
+        padding-bottom: 5px;
         border-bottom: 1px solid #eee;
         text-transform: uppercase;
-        /* text-align: center; */
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 13px;
         font-weight: 500;
         color: black;
     }
 
-    /* > button {
-        outline: none;
-        border: none;
-        cursor: pointer;
-        margin-top: 20px;
-        color: darkred;
-        font-weight: bold;
-        font-size: 13px;
-        text-transform: uppercase;
-        box-shadow: 0 0 1px grey;
-        display: flex;
-        align-items: center;
-    } */
-
-    /* > p {
-        text-align: start;
-        font-size: 14px;
+    > p {
+        text-align: justify;
+        font-size: 12px;
         font-weight: 400;
 
         > button {
@@ -175,11 +177,11 @@ const ProjectInfo = styled.article`
             outline: none;
             border: none;
             letter-spacing: 1px;
-            color: teal;
+            color: darkred;
             font-weight: bold;
             font-size: 10px;
             margin-left: 5px;
             cursor: pointer;
         }
-    } */
+    }
 `
