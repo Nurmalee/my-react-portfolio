@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 import styled from 'styled-components'
 
-function Project({imageUrl, title, technologies, info}) {
+function Project({imageUrl, title, technologies, info, link}) {
     // const [showLess, setShowLess] = useState(true);
 
     return (
@@ -18,7 +18,7 @@ function Project({imageUrl, title, technologies, info}) {
                         <i>{technologies}</i>
                     </p>
                 </div>
-                <a href="#ad">view project in action</a>
+                <a href={link}>view project in action</a>
             </ProjectImage>
             <ProjectInfo>
                 <h2> {title} </h2>
@@ -57,7 +57,6 @@ const ProjectImage = styled.div`
         margin-top: 70px;
         font-family: 'Abel', sans-serif;
         font-size: 12px;
-        /* text-transform: uppercase; */
     }
     
 
@@ -116,7 +115,7 @@ const ProjectImage = styled.div`
         color: white;
         background-color: black;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 14px;
+        font-size: 10px;
         font-weight: 700;
         z-index: 11;
         cursor: pointer;
@@ -144,10 +143,10 @@ const ProjectInfo = styled.article`
         /* margin-bottom: 5px;
         padding-bottom: 5px; */
         border-bottom: 1px solid #eee;
-        text-transform: capitalize;
-        text-align: center;
+        text-transform: uppercase;
+        /* text-align: center; */
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 500;
         color: black;
     }
@@ -166,7 +165,7 @@ const ProjectInfo = styled.article`
         align-items: center;
     } */
 
-    > p {
+    /* > p {
         text-align: start;
         font-size: 14px;
         font-weight: 400;
@@ -182,5 +181,5 @@ const ProjectInfo = styled.article`
             margin-left: 5px;
             cursor: pointer;
         }
-    }
+    } */
 `
