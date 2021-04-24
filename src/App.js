@@ -1,5 +1,6 @@
 import { useState } from 'react'
 // import './App.css'
+import Navbar from './Components/Navbar'
 import Banner from './Components/Banner'
 import AboutMe from './Components/AboutMe'
 import Projects from './Components/Projects'
@@ -27,12 +28,13 @@ const themes = {
 
 function App() {
 
-  const [theme, setTheme] = useState("light")
+  const [currentTheme, setCurrentTheme] = useState("light")
 
   return (
-    <ThemeProvider theme={themes[theme]}>
+    <ThemeProvider theme={themes[currentTheme]}>
       <AppBody >
-        <Banner theme={theme} setTheme={setTheme} />
+        <Navbar theme={currentTheme} setCurrentTheme={setCurrentTheme} />
+        <Banner />
         <AboutMe />
         <Projects />
         <ContactForm />

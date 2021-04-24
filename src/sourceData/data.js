@@ -42,17 +42,17 @@ export const bannerList = [
     {
         id: 1,
         title: 'the hub of enthralling & functional websites',
-        info: 'Javascript is the now and the future. I build exquisite and functional user interfaces which are in trueness, functional. This portfolio in fact was made with react js. It showcases the flexibility of functional components with a bunch of use cases for the most commonly used react hooks. Click the button below to see projects....',
+        info: 'Javascript is the now and the future. I build exquisite and functional user interfaces which are in trueness, functional. This portfolio in fact was made with react js. It showcases the flexibility of functional components with a bunch of use cases for the most commonly used react hooks.',
     },
     {
         id: 2,
         title: 'seamless focus and priority on responsiveness',
-        info: 'Responsiveness prioritized. At the heart of all my designs and websites is responsive ability for all user interfaces in what i like to call the "ultra-responsive confidence". All my websites are made to work on all devices to ensure an unforgettable user experience that will keep you in awe. Click the button below to see projects....',
+        info: 'Responsiveness prioritized. At the heart of all my designs and websites is responsive ability for all user interfaces in what i like to call the "ultra-responsive confidence". All my websites are made to work on all devices to ensure an unforgettable user experience that will keep you in awe.',
     },
     {
         id: 3,
         title: 'web app clones that make the original look the inferior',
-        info: 'Herein is a few collection of clones of popular social media spaces. These builds make the original looks as though they might need an upgrade. Click the button below to see projects....',
+        info: 'Herein is a few collection of clones of popular social media spaces. These builds make the original looks as though they might need an upgrade.',
     }
 ]
 
@@ -79,20 +79,20 @@ export const techList = [
         Icon: FaNodeJs,
     },
     {
-        title: 'jQuery',
-        Icon: DiJqueryLogo,
-    },
-    {
-        title: 'bootstrap',
-        Icon: FaBootstrap,
-    },
-    {
         title: 'Firebase',
         Icon: SiFirebase,
     },
     {
         title: 'Material Ui',
         Icon: SiMaterialUi,
+    },
+    {
+        title: 'bootstrap',
+        Icon: FaBootstrap,
+    },
+    {
+        title: 'jQuery',
+        Icon: DiJqueryLogo,
     },
     {
         title: 'adobe illustrator & CorelDraw',

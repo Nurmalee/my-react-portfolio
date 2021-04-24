@@ -9,10 +9,6 @@ function Project({imageUrl, title, technologies, info, link}) {
             <ProjectImage>
                 <img src={imageUrl} alt={title}/>
                 <div>
-                    {/* <p>
-                        <b>SUMMARY - </b><br/>
-                        <i>{info}</i>
-                    </p> <br/> */}
                     <p>{title}</p>
                     <p>
                         <small>{technologies}</small> 
@@ -34,11 +30,15 @@ function Project({imageUrl, title, technologies, info, link}) {
 export default Project
 
 const ProjectCard = styled.div`
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     align-self: flex-start;
     color: #555;
     border: 2px solid white;
+
+    &:hover {
+        box-shadow: 0 0 5px teal;
+    }
 `
 
 const ProjectImage = styled.div`
@@ -55,7 +55,6 @@ const ProjectImage = styled.div`
         color: white;
         text-align: left;
         text-justify: left;
-        font-family: 'Abel', sans-serif;
         text-transform: uppercase;
         display: flex;
         flex-direction: column;
@@ -65,6 +64,7 @@ const ProjectImage = styled.div`
 
         > p {
             padding: 20px;
+            font-family: 'Antonio', sans-serif;
             text-align: center;
             font-size: 20px;
             font-weight: 900;
@@ -77,16 +77,15 @@ const ProjectImage = styled.div`
     
 
     > img {
-        object-fit: contain;
+        object-fit: cover;
         width: 100%;
         height: 100%;
-        transform: scale(0.95);
+        /* transform: scale(0.99); */
     }
 
     &::after {
         content: "";
         position: absolute;
-        box-sizing: border-box;
         left: 0;
         width: 0;
         height: 100%;
@@ -97,7 +96,6 @@ const ProjectImage = styled.div`
     &::before {
         content: "";
         position: absolute;
-        box-sizing: border-box;
         right: 0;
         width: 0;
         height: 100%;
@@ -125,9 +123,9 @@ const ProjectImage = styled.div`
         border: none;
         text-transform: uppercase;
         text-decoration: none;
-        color: white;
-        background-color: brown;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: teal;
+        background-color: white;
+        font-family: 'Antonio', sans-serif;
         font-size: 12px;
         font-weight: 700;
         z-index: 11;
@@ -141,7 +139,8 @@ const ProjectImage = styled.div`
         justify-content: center;
 
         &:hover {
-            background-color: darkred;
+            background-color: teal;
+            color: white;
         }
     }
 
@@ -161,15 +160,15 @@ const ProjectInfo = styled.article`
         padding-bottom: 5px;
         border-bottom: 1px solid #eee;
         text-transform: uppercase;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 13px;
+        font-family: 'Antonio', sans-serif;
+        font-size: 15px;
         font-weight: 500;
         color: black;
     }
 
     > p {
-        text-align: justify;
-        font-size: 12px;
+        text-align: left;
+        font-size: 13px;
         font-weight: 400;
 
         > button {

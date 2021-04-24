@@ -19,7 +19,7 @@ function Projects (props) {
     }
 
     return (
-        <ProjectsWrap id="projects" className="projects">
+        <ProjectsWrap id="projects" >
             <p>A collection of project use cases from my recent works</p>
             <h1>PROJECTS/WORKS</h1>
 
@@ -51,22 +51,19 @@ export default Projects
 
 const ProjectsWrap = styled.section`
     min-height: 100vh;
-    padding: 50px 2rem;
-    /* background-color: rgba(245, 233, 230, 0.564); */
-    background-color: ${props => props.theme.pageBackground2};
-    /* background-color: #eee; */
+    padding: 100px 2rem;
+    background-color: ${props => props.theme.pageBackground};
     transition: 500ms;
 
-    &:hover {
-        padding-top: 100px;
+    @media screen and (min-width: 1000px) {
+        padding: 100px 4rem;
     }
     
     > h1 {
         /* text-align: center; */
-        color: black;
-        color: ${props => props.theme.titleColor};
+        color: teal;
+        font-family: 'Antonio', sans-serif;
         transition: 500ms;
-        font-family: 'Abel', sans-serif;
         font-size: 2rem;
         text-transform: uppercase;
         text-align: left;
@@ -85,9 +82,7 @@ const ProjectsWrap = styled.section`
         width: fit-content;
     }
 
-    @media screen and (min-width: 1000px) {
-        padding: 50px 4rem;
-    }
+    
 `
 
 const FilterCategories = styled.div`

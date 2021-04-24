@@ -15,18 +15,19 @@ import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineMenu, AiOutlineArrowRigh
 
 let logo = logo_black
 
-function Navbar({props}) {
+function Navbar(props) {
+
     const [showList, setShowList] = useState(false)
     const navbarListContainerRef = useRef('')
     const navbarListRef = useRef('')
-    const windowWidth = window.innerWidth;
+    const navbarRef = useRef('')
 
     const toggleTheme = () => {
         if(props.theme === 'light'){
-            props.setTheme('dark')
+            props.setCurrentTheme('dark')
             // logo = logo_white
         } else {
-            props.setTheme('light')
+            props.setCurrentTheme('light')
             // logo = logo_black
         }
     }
@@ -45,11 +46,28 @@ function Navbar({props}) {
         else {
             navbarListContainerRef.current.style.width = '0px'
         }
-    }, [showList, windowWidth])
+    }, [showList])
+
+    const handleLinkClick = (e) => {
+        setShowList(false)
+
+        // e.preventDefault()
+
+        const target = e.target.getAttribute('href');
+        const element = document.querySelector(target)
+        const toLocation = document.querySelector(target).offsetTop
+        const navbarHeight = navbarRef.current.getBoundingClientRect().height;
+        console.log(target, element, toLocation, navbarHeight);
+        
+        window.scrollTo({
+            left: 0,
+            top: toLocation - navbarHeight
+        });
+    }
 
     return (
         <Nav>
-            <NavHeader>
+            <NavHeader ref={navbarRef}>
                 <img src={logo} alt="LEE"/>
                 <div onClick={() => setShowList(!showList)}>
                     <p>menu</p>
@@ -62,7 +80,7 @@ function Navbar({props}) {
                 <ul ref={navbarListRef}>
                     {
                         navList.map(({title, href}, index) => {
-                         return <li className="list-item" key={index}> <a href={href} onClick={() => setShowList(false)} >{title}</a> </li>
+                         return <li className="list-item" key={index}> <a href={href} onClick={handleLinkClick} > {title} </a> </li>
                         })
                     }
                     <Toggler>
@@ -75,10 +93,10 @@ function Navbar({props}) {
             </NavListContainer>
 
             <SocialList>
-                <li><a href="#about"> <FiGithub style={socialStyle} /> </a></li>
-                <li><a href="#about"> <AiOutlineInstagram style={socialStyle} /> </a></li>
-                <li><a href="#about">  <FiTwitter style={socialStyle} /> </a></li>
-                <li><a href="#contactme">  <AiOutlineYoutube style={socialStyle} /> </a></li> 
+                <li><a href="#a"> <FiGithub style={socialStyle} /> </a></li>
+                <li><a href="#a"> <AiOutlineInstagram style={socialStyle} /> </a></li>
+                <li><a href="#a">  <FiTwitter style={socialStyle} /> </a></li>
+                <li><a href="#a">  <AiOutlineYoutube style={socialStyle} /> </a></li> 
             </SocialList>
 
         </Nav>
@@ -95,6 +113,7 @@ const Nav = styled.nav`
     width: 100%;
     z-index: 100;
     background-color: white;
+    box-shadow: 0 0 20px teal;
 `
 
 const NavHeader = styled.div`
@@ -106,7 +125,7 @@ const NavHeader = styled.div`
     transition: 1000ms;
 
     > img {
-        height: 60px;
+        height: 50px;
     }
 
     > div {
@@ -116,9 +135,9 @@ const NavHeader = styled.div`
         cursor: pointer;
 
         > p {
-            font-family: 'Abel', sans-serif;
+            font-family: 'Antonio', sans-serif;
             font-weight: 900;
-            font-size: 20px;
+            font-size: 18px;
             margin-right: 5px;
             color: ${props => props.theme.titleColor};
             color: #333;
@@ -132,17 +151,18 @@ const NavListContainer = styled.div`
     overflow: hidden;
     background-color: ${props => props.theme.pageBackground};
     transition: 500ms;
-    box-shadow: 0 0 30px black;
-    border-left: 2px solid darkred;
+    box-shadow: 0 0 20px #333;
+    /* border-left: 2px solid darkred; */
     width: auto;
     height: 100%;
     position: fixed;
+    z-index: 100;
     top: 0;
     right: 0;
 
     > ul {
         list-style: none;
-        width: 350px;
+        width: 300px;
         text-align: center;
         padding: 0;
 
@@ -153,40 +173,27 @@ const NavListContainer = styled.div`
                 text-decoration: none;
                 border-top: 1px solid #eee;
                 color: ${props => props.theme.titleColor};
-                padding: 13px 0;
+                padding: 13px;
                 display: block;
                 width: 100%;
                 font-family: 'Abel', sans-serif;
                 font-size: 14px;
                 font-weight: 500;
                 letter-spacing: 1px;
-                text-align: center;
+                text-align: left;
                 text-transform: capitalize;
-                transition: 500ms;
+                transition: 1000ms;
+
+                &:hover {
+                    background-color: teal;
+                    color: white;
+                    padding-left: 50px;
+                }
+              
             }
 
             &:last-of-type > a {
                 border-bottom: 1px solid #eee;
-            }
-
-            &::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                height: 2px;
-                width: 0;
-                background-color: darkred;
-                transition: 1000ms;
-            }
-
-            &:nth-of-type(odd)::after {
-                left: auto;
-                right: 0;
-            }
-
-            &:hover::after {
-                width: 80%;
             }
         } 
        
@@ -244,7 +251,7 @@ const Toggler = styled.div`
     color: ${props => props.theme.pageBackground};
     background-color: ${props => props.theme.titleColor};
     transition: 500ms;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Abel', sans-serif;
     font-size: 14px;
     font-weight: 900;
     margin-top: 2px;

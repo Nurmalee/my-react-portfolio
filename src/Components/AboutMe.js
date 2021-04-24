@@ -24,26 +24,23 @@ export default AboutMe
 
 const AboutContainer = styled.section`
     min-height: 100vh;
-    font-family: 'Abel', sans-serif;
-    padding: 50px 2rem;
+    padding: 100px 2rem;
     transition: 500ms;
     background-color: ${props => props.theme.pageBackground};
 
     @media screen and (min-width: 1000px) {
-        padding: 50px 4rem;
+        padding: 100px 4rem;
     }
 
     &:hover {
-        padding-top: 100px;
-
         p::after {
             width: 75%;
         }
     }
 
     > h1 {
-        color: ${props => props.theme.titleColor};
-        font-family: 'Abel', sans-serif;
+        color: teal;
+        font-family: 'Antonio', sans-serif;
         font-size: 2rem;
         text-transform: uppercase;
         text-align: left;
@@ -54,9 +51,8 @@ const AboutContainer = styled.section`
 
     > p {
         text-transform: uppercase;
-        /* border-top: 1px solid #777;
-        color: #777; */
         color: ${props => props.theme.titleColor};
+        font-family: 'Poppins', sans-serif;
         letter-spacing: 2px;
         width: fit-content;
         transition: 500ms;
@@ -66,11 +62,11 @@ const AboutContainer = styled.section`
 const AboutInfo = styled.div`
     margin: 60px auto 0 auto;
     color: #555;
-    font-family: 'Abel', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     overflow-wrap: break-word;
 
     > p {
+        font-family: 'Poppins', sans-serif;
         max-width: 600px;
         color: ${props => props.theme.titleColor};
         align-self: flex-start;

@@ -41,13 +41,13 @@ const TechnologyTitle = styled.div`
     margin-bottom: 5px;
     padding-bottom: 5px;
     text-transform: capitalize;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
     font-weight: 500;
     position: relative;
 
     > p {
-        margin-top: 5px;
+        margin: 5px 0;
+        margin-bottom: 3px;
         border-radius: 30px;
         height: 3px;
         background-color: rgba(0, 0, 0, 0.4);
@@ -61,7 +61,7 @@ const TechnologyTitle = styled.div`
             bottom: 0;
             height: 100%;
             width: 0;
-            background-color: darkred;
+            background-color: teal;
             transition: 1500ms cubic-bezier(0.215, 0.610, 0.355, 1);
         }
     }
@@ -73,6 +73,7 @@ const TechnologyIcon = styled.div`
     align-items: center;
 
     > h4 {
+        font-family: 'Abel', sans-serif;
         margin-left: 10px;
         color: black;
     }
