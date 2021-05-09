@@ -1,9 +1,13 @@
-.icon {
+.icon, .projecticon {
    height: 25px;
    width: 25px;
    transition: 1000ms;
-   color: teal;
+   color: brown;
 }
+
+.projecticon {
+    color: #bbb;
+ }
 
 .technology-info {
     text-align: start;

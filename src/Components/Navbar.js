@@ -11,7 +11,7 @@ import { AiTwotoneWarning } from 'react-icons/ai'
 
 
 
-import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineMenu, AiOutlineArrowRight } from 'react-icons/ai'
+import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineMenu } from 'react-icons/ai'
 
 let logo = logo_black
 
@@ -48,23 +48,6 @@ function Navbar(props) {
         }
     }, [showList])
 
-    const handleLinkClick = (e) => {
-        setShowList(false)
-
-        // e.preventDefault()
-
-        const target = e.target.getAttribute('href');
-        const element = document.querySelector(target)
-        const toLocation = document.querySelector(target).offsetTop
-        const navbarHeight = navbarRef.current.getBoundingClientRect().height;
-        console.log(target, element, toLocation, navbarHeight);
-        
-        window.scrollTo({
-            left: 0,
-            top: toLocation - navbarHeight
-        });
-    }
-
     return (
         <Nav>
             <NavHeader ref={navbarRef}>
@@ -76,11 +59,10 @@ function Navbar(props) {
             </NavHeader>
 
             <NavListContainer ref={navbarListContainerRef}>
-                <CloseMenuBtn onClick={() => setShowList(!showList)} />
                 <ul ref={navbarListRef}>
                     {
                         navList.map(({title, href}, index) => {
-                         return <li className="list-item" key={index}> <a href={href} onClick={handleLinkClick} > {title} </a> </li>
+                         return <li className="list-item" key={index}> <a href={href} onClick={() =>  setShowList(false)} > {title} </a> </li>
                         })
                     }
                     <Toggler>
@@ -93,12 +75,11 @@ function Navbar(props) {
             </NavListContainer>
 
             <SocialList>
-                <li><a href="#a"> <FiGithub style={socialStyle} /> </a></li>
-                <li><a href="#a"> <AiOutlineInstagram style={socialStyle} /> </a></li>
-                <li><a href="#a">  <FiTwitter style={socialStyle} /> </a></li>
-                <li><a href="#a">  <AiOutlineYoutube style={socialStyle} /> </a></li> 
+                <li><a href="https://github.com/Nurmalee"> <FiGithub style={socialStyle} /> </a></li>
+                <li><a href="https://instagram.com/thecodedlee"> <AiOutlineInstagram style={socialStyle} /> </a></li>
+                <li><a href="https://twitter.com/nurmanteasy">  <FiTwitter style={socialStyle} /> </a></li>
+                <li><a href="https://youtube.com/nurudeenlawal">  <AiOutlineYoutube style={socialStyle} /> </a></li> 
             </SocialList>
-
         </Nav>
     )
 }
@@ -112,8 +93,8 @@ const Nav = styled.nav`
     left: 0;
     width: 100%;
     z-index: 100;
-    background-color: white;
-    box-shadow: 0 0 20px teal;
+    background-color: rgb(250,250,250);
+    box-shadow: 0 0 20px #444;
 `
 
 const NavHeader = styled.div`
@@ -122,7 +103,6 @@ const NavHeader = styled.div`
     align-items: center;
     padding: 10px 20px;
     color: black;
-    transition: 1000ms;
 
     > img {
         height: 50px;
@@ -139,7 +119,7 @@ const NavHeader = styled.div`
             font-weight: 900;
             font-size: 18px;
             margin-right: 5px;
-            color: ${props => props.theme.titleColor};
+            color: ${props => props.theme.title};
             color: #333;
             transition: 500ms;
         }
@@ -149,15 +129,13 @@ const NavHeader = styled.div`
 
 const NavListContainer = styled.div`
     overflow: hidden;
-    background-color: ${props => props.theme.pageBackground};
-    transition: 500ms;
-    box-shadow: 0 0 20px #333;
-    /* border-left: 2px solid darkred; */
+    background-color: ${props => props.theme.background};
+    transition: 200ms;
+    border-left: 1px solid ${props => props.theme.title};
     width: auto;
     height: 100%;
     position: fixed;
     z-index: 100;
-    top: 0;
     right: 0;
 
     > ul {
@@ -172,7 +150,7 @@ const NavListContainer = styled.div`
             > a {
                 text-decoration: none;
                 border-top: 1px solid #eee;
-                color: ${props => props.theme.titleColor};
+                color: ${props => props.theme.title};
                 padding: 13px;
                 display: block;
                 width: 100%;
@@ -185,9 +163,9 @@ const NavListContainer = styled.div`
                 transition: 1000ms;
 
                 &:hover {
-                    background-color: teal;
+                    background-color: brown;
                     color: white;
-                    padding-left: 50px;
+                    padding-left: 20px;
                 }
               
             }
@@ -204,52 +182,53 @@ const NavListContainer = styled.div`
 const SocialList = styled.ul`
     list-style: none;
     position: fixed;
-    top: 15.5rem;
+    top: 50%;
     left: -35px;
-    border-right: 2px solid white;
+    transform: translateY(-50%);
+    border-right: 7px solid brown;
     background-color: rgba(68, 68, 68, 0.9);
-    padding: 5px 7px 0 2px ;
+    padding: 5px 0px 5px 2px ;
     display: flex;
     flex-direction: column;
     color: white;
-    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 1;
+    transition: 500ms;
+    z-index: 5;
 
     &:hover {
         left: 0;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.9);
     }
 
-    > li > a {
-       text-decoration: none;
-       color: white;
-
+    > li {
         :hover {
-            color: red;
+            background-color: #333;
+        }
+
+        > a {
+           text-decoration: none;
+           color: white;
+       
+    
+            :hover {
+                color: red;
+            }
         }
     }
+    
 `
 
 const OpenMenuBtn = styled(AiOutlineMenu)`
     height: 25px;
     width: 25px;
-    color: ${props => props.theme.titleColor};
+    color: ${props => props.theme.title};
     color: #333;
     transition: 500ms;
 `
 
-const CloseMenuBtn = styled(AiOutlineArrowRight)`
-    height: 25px;
-    width: 25px;
-    color: ${props => props.theme.titleColor};
-    cursor: pointer;
-    margin: 20px;
-`
-
 // TOGGLE CONTAINER, BUTTTON AND CONCERNS
 const Toggler = styled.div`
-    color: ${props => props.theme.pageBackground};
-    background-color: ${props => props.theme.titleColor};
+    color: ${props => props.theme.background};
+    background-color: ${props => props.theme.title};
     transition: 500ms;
     font-family: 'Abel', sans-serif;
     font-size: 14px;
@@ -259,7 +238,7 @@ const Toggler = styled.div`
     display: flex;
     /* flex-direction: column; */
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-transform: capitalize;
     width: 100%;
 `

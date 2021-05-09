@@ -83,6 +83,9 @@ const FooterLists = styled.div`
     border-top: 1px solid teal;
     display: grid;
     gap: 20px;
+    width: 90vw;
+    max-width: 1000px;
+    margin: 0 auto;
 
     > div {
         margin-top: 20px;

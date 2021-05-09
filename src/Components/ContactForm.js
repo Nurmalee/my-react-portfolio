@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import backgroundImg from '../images/joel-filipe-aK0EmfPuktA-unsplash.jpg'
-
 function ContactForm() {
 
     const handleSubmit = (e) => {
@@ -10,22 +8,17 @@ function ContactForm() {
 
     return (
         <ContactFormWrapper id="contactme">
-            <p> need a developer or a designer ? it's what I do ... </p>
-            <p>Use this form to reach out to me for collaborations, contract/full-time engagements as well as freelancing possibilities</p>
+            <h2> work with me on something of value ? Get in touch </h2>
+            <p>Phone: <strong>+234 816 480 0735</strong>; Email: <strong>thecodedlee.lee@gmail.com</strong> </p>
 
             <FormContainer>
                 <form onSubmit={handleSubmit}>
 
-                    {/* <label htmlFor="name"> Name </label> */}
-                    <input type="text" name="name" id="name" placeholder="Your Name" />
-
-                    {/* <label htmlFor="email"> Email Address </label> */}
-                    <input type="email" name="email" id="email" placeholder="Your Email Address" required/>
-
-                    {/* <label htmlFor="topic"> Topic </label> */}
-                    <input type="text" name="topic" id="topic" placeholder="Your Message Subject" required />
-
-                    {/* <label htmlFor="textarea"> Message </label> */}
+                    <input type="text" placeholder="Full Name" required/>
+                    <div>
+                        <input type="email" placeholder="Email Address" required/>
+                        <input type="text" placeholder="Phone Number" required />
+                    </div>
                     <textarea name="textarea" id="textarea" placeholder="Your Message" rows={5} required/> <br/>
 
                     <button type="submit"> SEND MESSAGE </button>
@@ -40,30 +33,34 @@ function ContactForm() {
 export default ContactForm
 
 const ContactFormWrapper = styled.section`
-    background-image: url(${backgroundImg});
-    background-color: #333;
+     background-color: ${props => props.theme.background};
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 100px 2rem;
+    padding-top: 80px;
+    padding-bottom: 50px;
     transition: 500ms;
     text-align: center;
 
-    > p:first-of-type {
+    > h2 {
         text-transform: uppercase;
         font-family: 'Antonio', sans-serif;
-        font-size: 35px;
-        color: teal;
+        /* font-family: 'Poppins', sans-serif; */
+        font-size: 25px;
+        color: brown;
+        width: 90vw;
+        max-width: 500px;
+        margin: 0 auto;
         font-weight: 600;
     }
 
-    > p:nth-of-type(2) {
-        font-weight: 600;
+    > p {
         font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        color: #222;
+        font-size: 16px;
+        color: ${props => props.theme.title};
+        width: 90vw;
         max-width: 500px;
-        margin: 0 auto;
+        margin: 10px auto;
     }
 `
 
@@ -72,6 +69,7 @@ const FormContainer = styled.div`
 
     > form {
         display: grid;
+        width: 90vw;
         max-width: 500px;
         margin: 0 auto;
         /* margin-top: 20px; */
@@ -82,37 +80,50 @@ const FormContainer = styled.div`
             margin-bottom: 7px;
         }
 
-        > input, button {
+        > input, div > input, button {
             height: 35px;
             font-family: 'Poppins', sans-serif;
             font-size: 12px;
             padding: 0 10px;
             border: none;
-            border: 1px solid teal;
-            box-shadow: 0 0 2px black;
+            border: 1px solid brown;
             outline: none;
             margin-bottom: 10px;
+        }
+
+        > div > input {
+            width: 100%;
+
+            &:first-of-type {
+                margin-right: 2%;
+            }
+
+            @media screen and (min-width: 600px) {
+                width: 49%;
+            }
         }
 
         > textarea {
             padding: 10px;
             font-family: 'Poppins', sans-serif;
-            border: 1px solid teal;
+            border: 1px solid brown;
             outline: none;
-            box-shadow: 0 0 2px black;
         }
 
         > button {
             height: 40px;
             cursor: pointer;
             border: 1px solid;
-            color: teal;
+            border-bottom-right-radius: 10px;
+            width: 50%;
+            margin: 0 auto;
+            color: brown;
             font-size: 16px;
             transition: 500ms;
             font-family: 'Antonio', sans-serif;
 
             &:hover {
-                background-color: teal;
+                background-color: brown;
                 color: white;
             }
         }

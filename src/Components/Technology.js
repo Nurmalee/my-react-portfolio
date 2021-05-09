@@ -25,14 +25,15 @@ export default Technology
 
 const TechnologyCard = styled.div`
     cursor: pointer;
-    border: 1px solid #777;
+    border: 1px solid ${props => props.theme.title};
     border-radius: 2px;
     border-bottom-right-radius: 10px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-    background-color: white;
+    box-shadow: 7px 5px 5px ${props => props.theme.shadow};
+    background-color: ${props => props.theme.background};
     align-self: flex-start;
     color: #555;
     padding: 10px 20px;
+    transition: 200ms;
 `
 
 const TechnologyTitle = styled.div`
@@ -48,8 +49,8 @@ const TechnologyTitle = styled.div`
     > p {
         margin: 5px 0;
         margin-bottom: 3px;
-        border-radius: 30px;
-        height: 3px;
+        border-radius: 10px;
+        height: 2px;
         background-color: rgba(0, 0, 0, 0.4);
         position: relative;
 
@@ -61,7 +62,8 @@ const TechnologyTitle = styled.div`
             bottom: 0;
             height: 100%;
             width: 0;
-            background-color: teal;
+            /* border: 1px solid ${props => props.theme.title}; */
+            background-color: brown;
             transition: 1500ms cubic-bezier(0.215, 0.610, 0.355, 1);
         }
     }
@@ -75,6 +77,6 @@ const TechnologyIcon = styled.div`
     > h4 {
         font-family: 'Abel', sans-serif;
         margin-left: 10px;
-        color: black;
+        color: ${props => props.theme.title};
     }
 `

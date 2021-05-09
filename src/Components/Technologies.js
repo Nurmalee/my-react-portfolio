@@ -7,7 +7,7 @@ function Technologies(props) {
 
     return (
         <TechnologiesContainer id="technologies">
-            <h1>what technologies do i know ?</h1>
+            <h1>highlight of technologies</h1>
 
             <TechnologyCardContainer>
                 {techList.map((tech, index) => {
@@ -23,14 +23,14 @@ function Technologies(props) {
 export default Technologies
 
 const TechnologiesContainer = styled.section`
+    width: 90vw;
+    max-width: 1000px;
+    margin: 0 auto;
     margin-top: 50px;
-    transition: 500ms;
-    width: 100%;
     flex: 1;
 
-    > h1 { color: ${props => props.theme.titleColor};
-       
-        transition: 500ms;
+    > h1 { 
+        color: ${props => props.theme.title};
         font-family: 'Abel', sans-serif;
         font-size: 20px;
         text-transform: uppercase;
@@ -46,11 +46,7 @@ const TechnologyCardContainer = styled.div`
         grid-template-columns: repeat(2, 1fr);
     }
 
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: 900px) {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media screen and (min-width: 950px) {
-        grid-template-columns: repeat(4, 1fr);
     }
 `

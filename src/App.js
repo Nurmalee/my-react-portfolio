@@ -1,24 +1,27 @@
 import { useState } from 'react'
 // import './App.css'
 import Navbar from './Components/Navbar'
-import Banner from './Components/Banner'
+// import Banner from './Components/Banner'
 import AboutMe from './Components/AboutMe'
 import Projects from './Components/Projects'
 import ContactForm from './Components/ContactForm'
-import Footer from './Components/Footer'
+// import Footer from './Components/Footer'
 
 import styled, { ThemeProvider } from 'styled-components'
+import BannerLee from './Components/BannerLee'
+import FooterNew from './Components/FooterNew'
+import MyServices from './Components/MyServices'
 
 const lightTheme = {
-  pageBackground: "white",
-  pageBackground2: "#eee",
-  titleColor: "#333",
+  background: "rgb(250,250,250)",
+  title: "#333",
+  shadow: "#eee"
 }
 
 const darkTheme = {
-  pageBackground: "#333",
-  pageBackground2: "#111",
-  titleColor: "white",
+  background: "#333",
+  title: "rgb(250,250,250)",
+  shadow: "#111"
 }
 
 const themes = {
@@ -34,11 +37,12 @@ function App() {
     <ThemeProvider theme={themes[currentTheme]}>
       <AppBody >
         <Navbar theme={currentTheme} setCurrentTheme={setCurrentTheme} />
-        <Banner />
+        <BannerLee />
         <AboutMe />
+        <MyServices />
         <Projects />
         <ContactForm />
-        <Footer />
+        <FooterNew />
       </AppBody>
     </ThemeProvider>
   );

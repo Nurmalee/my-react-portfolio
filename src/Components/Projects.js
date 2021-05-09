@@ -20,10 +20,12 @@ function Projects (props) {
 
     return (
         <ProjectsWrap id="projects" >
-            <p>A collection of project use cases from my recent works</p>
-            <h1>PROJECTS/WORKS</h1>
+            <SectionHeader>
+                <p>use cases from my recent works</p>
+                <h1>PROJECTS/WORKS</h1>
+            </SectionHeader>
 
-            <FilterCategories>
+            <ProjectCategories>
                 <p> FILTER BY CATEGORY: </p> <br/>
                 {
                     projectType.map((type, index) => {
@@ -32,7 +34,7 @@ function Projects (props) {
                         )
                     })
                 }
-            </FilterCategories>
+            </ProjectCategories>
 
             <ProjectsContainer className='project'>
                 {
@@ -50,68 +52,62 @@ function Projects (props) {
 export default Projects
 
 const ProjectsWrap = styled.section`
-    min-height: 100vh;
-    padding: 100px 2rem;
-    background-color: ${props => props.theme.pageBackground};
-    transition: 500ms;
+    padding: 80px 0;
+    margin: 0 auto;
+    background-color: ${props => props.theme.background};
+`
 
-    @media screen and (min-width: 1000px) {
-        padding: 100px 4rem;
-    }
-    
+const SectionHeader = styled.div`
+    width: 90vw;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: ${props => props.theme.title};
+
     > h1 {
-        /* text-align: center; */
-        color: teal;
+        color: brown;
         font-family: 'Antonio', sans-serif;
-        transition: 500ms;
         font-size: 2rem;
         text-transform: uppercase;
         text-align: left;
-        width: fit-content;
         letter-spacing: 3px;
+        margin: 0 auto;
     }
 
     > p {
         text-transform: uppercase;
-        /* border-top: 1px solid #777; */
-        /* color: #777; */
-        /* border-top: 1px solid ${props => props.theme.pageBackground}; */
         color: ${props => props.theme.titleColor};
-        transition: 500ms;
+        font-family: 'Poppins', sans-serif;
         letter-spacing: 2px;
-        width: fit-content;
+        margin: 0 auto;
     }
-
-    
 `
 
-const FilterCategories = styled.div`
-    margin-top: 20px;
-    /* text-align: center;/ */
-    color: ${props => props.theme.titleColor};
+const ProjectCategories = styled.div`
+    color: ${props => props.theme.title};
     transition: 500ms;
+    width: 90vw;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
 
     > button {
             text-transform: uppercase;
-            color: ${props => props.theme.titleColor};
-            background-color: ${props => props.theme.pageBackground};
-            /* background-color: #333; */
+            color: ${props => props.theme.title};
+            background-color: ${props => props.theme.background};
             margin-right: 3px;
             padding: 7px 10px;
-            box-shadow: 0 0 2px ${props => props.theme.titleColor};
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 11px;
             font-weight: 900;
             cursor: pointer;
             letter-spacing: 2px;
             outline: none;
-            border: none;
-            transition: 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+            border: 1px solid ${props => props.theme.title};
+            transition: 200ms;
                 
             &:hover {
-                color: ${props => props.theme.pageBackground};
-                background-color: rgb(95, 10, 10);  
-                background-color: ${props => props.theme.titleColor};
+                color: ${props => props.theme.background};
+                background-color: ${props => props.theme.title};
             }
     }
 `
@@ -120,8 +116,10 @@ const ProjectsContainer = styled.div`
     margin: 60px auto 0 auto;
     display: grid;
     grid-gap: 20px;
+    width: 90vw;
+    max-width: 1000px;
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 700px) {
         grid-template-columns: repeat(2, 1fr);
     }
 
