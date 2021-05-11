@@ -1,16 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
-
 import { navList } from '.././sourceData/data'
 import logo_black from '.././images/1x/logo_2_black.png'
-// import logo_white from '.././images/1x/logo_2_white.png'
-
 import { FiTwitter, FiGithub } from 'react-icons/fi'
 import { BsToggleOn, BsToggleOff } from 'react-icons/bs'
 import { AiTwotoneWarning } from 'react-icons/ai'
-
-
-
 import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineMenu } from 'react-icons/ai'
 
 let logo = logo_black

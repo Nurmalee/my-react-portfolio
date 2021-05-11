@@ -1,61 +1,30 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import styled from 'styled-components'
-import './extended.css'
+import banner from '../images/aleks-dorohovich-nJdwUHmaY8A-unsplash.jpg'
+import { GiSelfLove } from 'react-icons/gi'
 
-import uxstore from '../images/sami-takarautio-t4nN3RWBUow-unsplash.jpg'
+const Banner = (props) => {
 
-import { bannerList } from '.././sourceData/data'
-// import { GiWideArrowDunk } from 'react-icons/gi'
-
-function Banner(props) {
-    const [index, setIndex] = useState(0)
-    const [banner] = useState(bannerList)
-
+    const yearRef = useRef(null)
+    
     useEffect(() => {
-        if(index >= bannerList.length){
-            setIndex(0)
-        }
-    }, [index])
-
-    useEffect(() => {
-        let autoSlide = setInterval(() => {
-            setIndex(index + 1)
-        }, 12000)
-        return () => {
-            clearInterval(autoSlide)
-        }
-    }, [index])
+        const newYear = new Date().getFullYear()
+        yearRef.current.textContent = newYear
+    }, [])
 
     return (
         <BannerContainer id="home">
             <Overlay></Overlay>
-           
-            <Profile>
-               {
-                   banner.map((bannerItem, bannerItemIndex) => {
-                        const {id, title, info} = bannerItem
 
-                        let position = "nextSlide"
+            <BannerTitle>
+                <h2>the lee effect</h2>
+                <p>Welcome to the hub of enthralling & functional websites. I build exquisite and functional user interfaces which are in trueness, functional. Take this portfolio for example, play around here</p>
+                <a href="#projects"> view my works </a>
 
-                        if(bannerItemIndex === index){
-                            position = "activeSlide"
-                        }
-
-                        if(bannerItemIndex === index - 1 || (index === 0 && bannerItemIndex === bannerList.length - 1)){
-                            position = "prevSlide"
-                        }
-
-                        return (
-                            <BannerText key={id} className={position}>
-                                <h1> {title} </h1>
-                                <p> {info} </p>
-                                {/* <a href="#projects"> <GiWideArrowDunk /> jump to projects  </a> */}
-                            </BannerText>
-                        )
-                    })
-               }
-                
-            </Profile>
+                <CopyrightClaim>
+                    <p>&#169; <span ref={yearRef}></span> The LeeEffect. <span> All Rights Reserved</span> | Made with <GiSelfLove style={{color: "red"}} /> from Nigeria </p>
+                </CopyrightClaim>
+            </BannerTitle>
 
         </BannerContainer>
     )
@@ -65,76 +34,59 @@ export default Banner
 
 
 const BannerContainer = styled.section`
-    background-image: url(${uxstore});
+    background-color: rgb(253,253,253);
+    background-image: url(${banner});
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
     display: grid;
-    position: relative;
+    place-items: center;
     color: black;
+    position: relative;
 
     > a {
         margin: 40px 0;
     }
 `
 
-const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-`
-
-const Profile = styled.div`
-    color: #333;
-    width: 80vw;
+const BannerTitle = styled.div`
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 85vw;
+    z-index: 1;
     max-width: 750px;
-    text-align: center;
-    border: 2px solid red;
-    height: 50%;
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
-    /* padding: 10px; */
-    transition: 500ms;
-  
-    display: grid;
-    margin: auto;
-`
-
-const BannerText = styled.div`
-    padding: 10px;
-    position: absolute;
-    /* margin-top: 200px; */
-    top: 0;
-    left: 0;
-    width: 100%;
-    transition: 2000ms;
-
-    > h1 {
-        font-size: 2.1rem;
-        text-transform: uppercase;
+    margin: 0 auto;
+   
+    > h2 {
+        font-size: 2.5rem;
+        color: white;
+        letter-spacing: 5px;
+        text-align: center;
+        font-weight: 500;
         font-family: 'Antonio', sans-serif;
-        color: teal;
-        transition: 500ms;
+        text-transform: uppercase;
+
+        @media screen and (min-width: 700px) {
+            font-size: 3.0rem;
+        }
     }
 
     > p {
         font-family: 'Poppins', sans-serif;
-        /* background-color: rgba(0, 0, 0, 0.25); */
         color: white;
-        padding: 5px;
         transition: 500ms;
-        margin-top: 10px;
-        font-size: 14px;
+        text-align: center;
+        margin-top: 5px;
+        font-size: 12px;
+        font-weight: 300;
         line-height: 25px;
-        z-index: 1;
 
         @media screen and (min-width: 700px){
-            padding: 15px;
+            font-size: 16px;
         }
     }
 
@@ -142,24 +94,51 @@ const BannerText = styled.div`
         display: block;
         text-decoration: none;
         text-align: center;
-        color: black;
-        border: 1px solid #444;
-        background-color: teal;
+        text-transform: uppercase;
         color: white;
         border: 1px solid;
-        border-radius: 5px;
+        border-bottom-right-radius: 10px;
         margin: 20px auto 0;
-        padding: 15px 3px;
-        box-shadow: 0 0 5px #ccc;
+        padding: 12px 25px;
         font-family: 'Antonio', sans-serif;
-        font-size: 14px;
-        font-weight: 900;
-        width: 40%;
-        transition: 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+        font-size: 10px;
+        font-weight: 300;
+        width: 200px;
+        letter-spacing: 2px;
+        background-color: brown;
+        box-shadow: 0 0 10px #ccc;
+        transition: 500ms;
         position: relative;
-            
+        
         &:hover {
             box-shadow: 0 0 20px #ccc;
         }
+
+        @media screen and (min-width: 700px){
+            font-size: 12px;
+        }
     }
+`
+
+const CopyrightClaim = styled.div`
+    margin-top: 25px;
+    background-color: rgb(250,230,230);
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding:  5px 15px;
+    text-align: center;
+
+    @media screen and (min-width: 900px) {
+        font-size: 12px;
+    }
+`
+
+const Overlay = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(35, 0, 0, 0.6);
 `

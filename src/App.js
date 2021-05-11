@@ -1,15 +1,11 @@
 import { useState } from 'react'
-// import './App.css'
+import styled, { ThemeProvider } from 'styled-components'
 import Navbar from './Components/Navbar'
-// import Banner from './Components/Banner'
 import AboutMe from './Components/AboutMe'
 import Projects from './Components/Projects'
 import ContactForm from './Components/ContactForm'
-// import Footer from './Components/Footer'
-
-import styled, { ThemeProvider } from 'styled-components'
-import BannerLee from './Components/BannerLee'
-import FooterNew from './Components/FooterNew'
+import Banner from './Components/Banner'
+import Footer from './Components/Footer'
 import MyServices from './Components/MyServices'
 
 const lightTheme = {
@@ -37,12 +33,12 @@ function App() {
     <ThemeProvider theme={themes[currentTheme]}>
       <AppBody >
         <Navbar theme={currentTheme} setCurrentTheme={setCurrentTheme} />
-        <BannerLee />
+        <Banner />
         <AboutMe />
         <MyServices />
         <Projects />
         <ContactForm />
-        <FooterNew />
+        <Footer />
       </AppBody>
     </ThemeProvider>
   );

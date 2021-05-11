@@ -1,187 +1,141 @@
-import { useEffect, useRef } from 'react'
-import './extended.css'
+import {useEffect, useRef} from 'react'
 import styled from 'styled-components'
-import logo_letterN from '../images/1x/logo_letterN.png'
 
-import { FiTwitter, FiGithub } from 'react-icons/fi'
-import { AiOutlineInstagram, AiOutlineYoutube } from 'react-icons/ai'
+const Footer = () => {
 
-function Footer(props) {
     const yearRef = useRef(null)
+    
     useEffect(() => {
         const newYear = new Date().getFullYear()
         yearRef.current.textContent = newYear
     }, [])
 
     return (
-        <FooterWrapper >
+        <FooterContainer>
+            <FooterMain>
+                <FooterColumns>
+                    <Column>
+                        <h2>Currently working on</h2>
+                        <li> LeanerMeta Africa PWA </li>
+                        <li> Jumia Clone - E-Commerce </li>
+                        <li> RestFUL API - Robust Backend </li>
+                        <li> MERN - Youtube reclone </li>
+                    </Column>
 
-            <FooterLists>
+                    <Column>
+                        <h2>overview</h2>
+                        <li><a href="#about"> my profile </a></li>
+                        <li><a href="#technologies"> technologies </a></li>
+                        <li><a href="#services"> what i offer </a></li>
+                        <li><a href="#terms"> terms of service </a></li>
+                    </Column>
 
-                <div>
-                    <h3> Contact information </h3>
-                    <p>You can reach out to me anytime via email or phone, although most preferrably email since we may have considerable time differences</p>
-                     <br/>
-                    <p> <small>email: thecodedlee.lee@gmail.com</small> </p>
-                    <p> <small> p: +234 816 480 0735; +234 907 576 2921 </small> </p> <br/> 
-                </div>
+                    <Column>
+                        <h2>contact me</h2>
+                        <li><a href="#contactme"> contact </a></li>
+                        <li><a href="#support"> support </a></li>
+                        <li><a href="#sponsorship"> sponsorship </a></li>
+                    </Column>
 
-                <ul>
-                    <h3> Currently working on </h3>
-                    <li> LeanerMeta Africa PWA </li>
-                    <li> Jumia Clone - ECommerce </li>
-                    <li> Amazon Clone - ECommerce </li>
-                    <li> RestFUL API - Robust Backend </li>
-                    <li> MERN - Whatsapp Clone </li>
-                    <li> MERN - My Photo Well </li>
-                </ul>
+                    <Column>
+                        <h2>social media</h2>
+                         <li><a href="https://github.com/Nurmalee"> GitHub </a></li>
+                        <li><a href="https://instagram.com/thecodedlee"> Instagram </a></li>
+                        <li><a href="https://youtube.com/nurudeenlawal"> Youtube </a></li>
+                        <li><a href="https://twitter.com/nurmanteasy"> Twitter </a></li>
+                    </Column>
+                </FooterColumns>
 
-                <div>
-                    <h3> Current availability </h3>
-                    <p> At this moment, I am at your disposal for collaborations, contract/full-time engagements as well as freelancing possibilities</p>
-                </div>
-
-                <ul>
-                    <h3> Follow me on </h3>
-                    <li> <FiGithub className="icon"/> <a href="#github"> github </a> </li>
-                    <li> <AiOutlineInstagram className="icon"/> <a href="#github"> instagram </a> </li>
-                    <li> <FiTwitter className="icon"/> <a href="#github"> twitter </a> </li>
-                    <li> <AiOutlineYoutube className="icon"/> <a href="#github"> facebook </a> </li>
-                    <li> <AiOutlineYoutube className="icon"/> <a href="#github"> linkedIn </a> </li>
-                </ul>
-
-            </FooterLists>
-
-            <CopyrightsClaim>
-                <div>
-                    <img src={logo_letterN} alt="logo_N"/>
-                </div>
-                <h4>Copyrights &copy; <span className="year" ref={yearRef}></span> THELEEEFFECT || THECODEDLEE  </h4>
-                <p>All Rights Reserved</p>
-            </CopyrightsClaim>
-            
-
-        </FooterWrapper>
+                <CopyrightClaim>
+                    <p>&#169; <span ref={yearRef}></span> The CodedLee & The LeeEffect. <span> All Rights Reserved</span> | Made with React from Nigeria </p>
+                </CopyrightClaim>
+            </FooterMain>
+        </FooterContainer>
     )
 }
 
 export default Footer
 
-const FooterWrapper = styled.div`
-    padding: 40px 2rem;
-    background-color: white;
-    color: ${props => props.theme.titleColor};
-    background-color: ${props => props.theme.pageBackground};
-    transition: 500ms;
 
-    @media screen and (min-width: 1000px) {
-        padding: 40px 4rem;
-    }
+const FooterContainer = styled.section`
+    padding: 70px 0;
+    color: #bbb;
+    background-color: #222;
 `
 
-const FooterLists = styled.div`
-    border-top: 1px solid teal;
-    display: grid;
-    gap: 20px;
+const FooterMain = styled.footer`
     width: 90vw;
     max-width: 1000px;
     margin: 0 auto;
+`
 
-    > div {
-        margin-top: 20px;
-        margin-right: 20px;
-        font-size: 14px;
-        /* width: 30%; */
+const FooterColumns = styled.div`
+    border-top: 2px solid brown;
+    display: grid;
+    place-items: center;
+    gap: 20px;
+    padding-top: 20px;
 
-        > h3 {
-            font-weight: 900;
-            font-family: 'Antonio', sans-serif;
-            color: teal;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            text-align: justify;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-        }
-
-        > p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 12px;
-        }
+    @media screen and (min-width: 500px) {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    > ul {
-        list-style: none;
-        margin-top: 20px;
-        margin-right: 20px;
-        padding: 0;
-        font-size: 14px;
-        
-        > li {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            font-size: 12px;
-            font-family: 'Poppins', sans-serif;
-
-            > a {
-                text-decoration: none;
-                font-family: 'Poppins', sans-serif;
-                /* color: black; */
-                color: ${props => props.theme.titleColor};
-                margin-left: 10px;
-                transition: 500ms;
-
-                &:hover {
-                    text-decoration: underline;
-                    color: teal;
-                    margin-left: 10px;
-                    letter-spacing: 2px;
-                }
-            }
-        }
-
-        > h3 {
-            font-weight: 900;
-            font-family: 'Antonio', sans-serif;
-            color: teal;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-        }
-    }
-
-    @media screen and (min-width: 600px) {
-        grid-template-columns: 1fr 1fr;
+    @media screen and (min-width: 700px) {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     @media screen and (min-width: 900px) {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
     }
 
-    @media screen and (min-width: 1100px) {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
 `
 
-const CopyrightsClaim = styled.div`
-    margin-top: 40px;
+const Column = styled.ul`
+    list-style: none;
+    text-transform: capitalize;
+    align-self: flex-start;
+    justify-self: flex-start;
+    font-family: 'Poppins', sans-serif;
 
-    > div {
-        > img {
-            height: 40px;
-            object-fit: contain;
+
+    > h2 {
+        font-size: 12px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        color: white;
+    }
+
+    > li {
+        font-size: 12px;
+        padding: 2px 0;
+        cursor: pointer;
+
+        > a {
+            color: #bbb;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-weight: 300;
+
+            &:hover {
+                color: white;
+            }
         }
     }
 
-    > h4 {
-        font-family: 'Antonio', sans-serif;
-    }
+`
 
-    > p {
-        font-family: 'Poppins', sans-serif;
+const CopyrightClaim = styled.div`
+    margin-top: 45px;
+    background-color: #333;
+    font-family: 'Poppins', sans-serif;
+    padding: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 15px;
+
+    @media screen and (min-width: 900px) {
+        text-align: center;
     }
 `

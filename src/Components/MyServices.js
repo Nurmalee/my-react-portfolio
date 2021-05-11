@@ -86,7 +86,7 @@ const Service = styled.div`
     transition: 200ms;
     box-shadow: 7px 5px 5px ${props => props.theme.shadow};
     border-radius: 5px;
-    min-height: 280px;
+    height: fit-content;
     padding: 30px 20px;
     text-align: center;
     border: 1px solid transparent;
