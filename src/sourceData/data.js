@@ -142,6 +142,28 @@ export const projectList = [
     //     link: "instagramlee.herohuapp.com"
     // },
     {
+        imageUrl: linkedIn_clone,
+        title: 'linkedIn clone',
+        type: 'react js',
+        info: 'As an individual who loves networking, I spend a whole lot of my time every day on linkedIn meeting new people. LinkedIn is the best and the most popular online job related platform where professionals meet on a professional level. This build was practically my first major build with ReactJs, it was a revelation, a game changer',
+        technologies: 'html (jsx), css, javascript, react, material-ui, firebase',
+        React: FaReact,
+        Firebase: SiFirebase,
+        MaterialUi: SiMaterialUi,
+        link: "https://nurmalee.github.io/linkedIn-webapp-clone/"
+    },
+    {
+        imageUrl: porsche_garage,
+        title: 'porsche garage',
+        type: 'vanilla js',
+        info: 'I love speed, I love fast cars and I love the porsche brand. This enthralling website was created as an imaginative representation of the kind of cars I wish I had in my garage as at the time. It displays images of beautiful models of porsche car models and a few specifications to go along with each',
+        technologies: 'html, css, javascript',
+        Html5: FaHtml5,
+        Css: FaCss3Alt,
+        Javascript: DiJavascript,
+        link: "https://nurmalee.github.io/Old-Projects/my_porsche_garage/garage.html"
+    },
+    {
         imageUrl: instagram_clone,
         title: 'Instagram Clone',
         type: 'react js',
@@ -151,6 +173,16 @@ export const projectList = [
         Firebase: SiFirebase,
         StyledComponents: SiStyledComponents,
         link: "https://instagramlee.herokuapp.com"
+    },
+    {
+        imageUrl: random_users,
+        title: 'random users app',
+        type: 'react js',
+        info: 'A catchy UI for a user dashboard. This user landing/dashboard was created as part of an assessment program for a 3 months internship with Decagon Institute sponsored by the UKNGTech. This app uses the random users API to generate random users on every reload where a user can then search the list by names or by gender to get more user detail. Open the project to experience the functionality',
+        technologies: 'html (jsx), css, javascript, react, react-icons, material-ui',
+        React: FaReact,
+        MaterialUi: SiMaterialUi,
+        link: "https://nurmalee.github.io/github-pages-my-users-app-react/"
     },
     {
         imageUrl: facebook_clone,
@@ -164,15 +196,15 @@ export const projectList = [
         link: "https://nurmalee.github.io/facebook-webapp-clone/"
     },
     {
-        imageUrl: linkedIn_clone,
-        title: 'linkedIn clone',
-        type: 'react js',
-        info: 'As an individual who loves networking, I spend a whole lot of my time every day on linkedIn meeting new people. LinkedIn is the best and the most popular online job related platform where professionals meet on a professional level. This build was practically my first major build with ReactJs, it was a revelation, a game changer',
-        technologies: 'html (jsx), css, javascript, react, material-ui, firebase',
-        React: FaReact,
-        Firebase: SiFirebase,
-        MaterialUi: SiMaterialUi,
-        link: "https://nurmalee.github.io/linkedIn-webapp-clone/"
+        imageUrl: products_page,
+        title: 'products pricing page',
+        type: 'vanilla js',
+        info: 'This product checkout landing page was made as a part of the Dufuna Code Camp DOM manipulation assessment test (It currently stands out as the best for design and functionality). It simulates how a buyer can alter the quantity of a selected product and get the corresponding price based on well indicated percent inclusions and exclusions.',
+        technologies: 'html, css, javascript',
+        Html5: FaHtml5,
+        Css: FaCss3Alt,
+        Javascript: DiJavascript,
+        link: "https://nurmalee.github.io/Old-Projects/product_pricing/html/products.html"
     },
     {
         imageUrl: pepsi_landing,
@@ -195,38 +227,6 @@ export const projectList = [
         Css: FaCss3Alt,
         Javascript: DiJavascript,
         link: "https://nurmalee.github.io/Old-Projects/youtube_clone/index.html"
-    },
-    {
-        imageUrl: random_users,
-        title: 'random users app',
-        type: 'react js',
-        info: 'A catchy UI for a user dashboard. This user landing/dashboard was created as part of an assessment program for a 3 months internship with Decagon Institute sponsored by the UKNGTech. This app uses the random users API to generate random users on every reload where a user can then search the list by names or by gender to get more user detail. Open the project to experience the functionality',
-        technologies: 'html (jsx), css, javascript, react, react-icons, material-ui',
-        React: FaReact,
-        MaterialUi: SiMaterialUi,
-        link: "https://nurmalee.github.io/github-pages-my-users-app-react/"
-    },
-    {
-        imageUrl: products_page,
-        title: 'products pricing page',
-        type: 'vanilla js',
-        info: 'This product checkout landing page was made as a part of the Dufuna Code Camp DOM manipulation assessment test (It currently stands out as the best for design and functionality). It simulates how a buyer can alter the quantity of a selected product and get the corresponding price based on well indicated percent inclusions and exclusions.',
-        technologies: 'html, css, javascript',
-        Html5: FaHtml5,
-        Css: FaCss3Alt,
-        Javascript: DiJavascript,
-        link: "https://nurmalee.github.io/Old-Projects/product_pricing/html/products.html"
-    },
-    {
-        imageUrl: porsche_garage,
-        title: 'porsche garage',
-        type: 'vanilla js',
-        info: 'I love speed, I love fast cars and I love the porsche brand. This enthralling website was created as an imaginative representation of the kind of cars I wish I had in my garage as at the time. It displays images of beautiful models of porsche car models and a few specifications to go along with each',
-        technologies: 'html, css, javascript',
-        Html5: FaHtml5,
-        Css: FaCss3Alt,
-        Javascript: DiJavascript,
-        link: "https://nurmalee.github.io/Old-Projects/my_porsche_garage/garage.html"
     },
     {
         imageUrl: watchesHq,

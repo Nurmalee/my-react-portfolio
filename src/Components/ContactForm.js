@@ -9,7 +9,7 @@ function ContactForm() {
     return (
         <ContactFormWrapper id="contactme">
             <h2> work with me on something of value ? Get in touch </h2>
-            <p>Phone: <strong>+234 816 480 0735</strong>; Email: <strong>thecodedlee.lee@gmail.com</strong> </p>
+            <p>Phone: <strong>+234 816 480 0735</strong>; Email: <strong>lawalnurudeenfocus@gmail.com</strong> </p>
 
             <FormContainer>
                 <form onSubmit={handleSubmit}>

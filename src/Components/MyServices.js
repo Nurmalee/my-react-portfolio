@@ -126,5 +126,8 @@ const Service = styled.div`
         margin: 10px 0;
         font-family: 'Poppins', sans-serif;
         color: ${props => props.theme.title};
+        //CHECK THE EFFECT OF THESE LINES OUT
+        word-wrap: break-word;
+        word-break: break-all;
     }
 `

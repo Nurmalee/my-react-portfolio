@@ -66,7 +66,7 @@ const BannerTitle = styled.div`
         color: white;
         letter-spacing: 5px;
         text-align: center;
-        font-weight: 500;
+        font-weight: 700;
         font-family: 'Antonio', sans-serif;
         text-transform: uppercase;
 
