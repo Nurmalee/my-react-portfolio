@@ -7,13 +7,13 @@ import watchesHq from '.././images/works/Watches-Landing-Page.JPG'
 import random_users from '.././images/works/react-random-users-app.JPG'
 import linkedIn_clone from '.././images/works/linkedIn-clone.JPG'
 import instagram_clone from '.././images/works/instagram_clone.JPG'
-// import brisk_sleek from '.././images/works/Brisk-and-Sleek.JPG'
+import jumia_clone from '.././images/works/jumia-clone.JPG'
 import facebook_clone from '.././images/works/facebook_clone.JPG'
 
 
 //react-icons
 import { FaReact, FaCss3Alt, FaHtml5, FaBootstrap, FaNodeJs } from 'react-icons/fa'
-import { SiAdobeillustrator, SiFirebase, SiMaterialUi, SiStyledComponents } from 'react-icons/si'
+import { SiAdobeillustrator, SiFirebase, SiMaterialUi, SiStyledComponents, SiRedux } from 'react-icons/si'
 import { DiJqueryLogo, DiJavascript, DiCodeigniter } from 'react-icons/di'
 import { CgFigma } from 'react-icons/cg'
 import {BsCodeSlash} from 'react-icons/bs'
@@ -84,20 +84,24 @@ export const myServices = [
 
 export const techList = [
     {
-        title: 'html5',
+        title: 'Html5',
         Icon: FaHtml5,
     },
     {
-        title: 'css3 (incl. Bootstrap, SASS)',
+        title: 'Css3 (incl. Bootstrap, SASS)',
         Icon: FaCss3Alt,
     },
     {
-        title: 'javascript (ES6+)',
+        title: 'Javascript (ES6+)',
         Icon: DiJavascript,
     },
     {
-        title: 'react (incl. Redux)',
+        title: 'React (incl. Redux)',
         Icon: FaReact,
+    },
+    {
+        title: 'Redux',
+        Icon: SiRedux,
     },
     {
         title: 'Node (with MongoDB & Express)',
@@ -112,7 +116,7 @@ export const techList = [
         Icon: SiMaterialUi,
     },
     {
-        title: 'bootstrap',
+        title: 'Bootstrap',
         Icon: FaBootstrap,
     },
     {
@@ -120,7 +124,7 @@ export const techList = [
         Icon: DiJqueryLogo,
     },
     {
-        title: 'adobe illustrator & CorelDraw',
+        title: 'Adobe illustrator & CorelDraw',
         Icon: SiAdobeillustrator,
     },
     {
@@ -130,17 +134,17 @@ export const techList = [
 ]
 
 export const projectList = [
-    // {
-    //     imageUrl: brisk_sleek,
-    //     title: 'brisk and sleek Official - landing page',
-    //     type: 'vanilla js',
-    //     info: 'This is the proposed inspiration for the official website of Brisk and Sleek Arch Ventures. An upcoming architectural firm that deals in completion of architecural drawings, building construction, supervision, renovations, maintenance, production of quantity bills and so much more extended dealings related to construction development',
-    //     technologies: 'html, css, javascript',
-    //     Html5: FaHtml5,
-    //     Css: FaCss3Alt,
-    //     Javascript: DiJavascript,
-    //     link: "instagramlee.herohuapp.com"
-    // },
+    {
+        imageUrl: jumia_clone,
+        title: 'Jumia E-Commerce Clone',
+        type: 'react js',
+        // info: 'This is the proposed inspiration for the official website of Brisk and Sleek Arch Ventures. An upcoming architectural firm that deals in completion of architecural drawings, building construction, supervision, renovations, maintenance, production of quantity bills and so much more extended dealings related to construction development',
+        technologies: 'html (jsx), css, javascript, react, material-ui, redux',
+        React: FaReact,
+        MaterialUi: SiMaterialUi,
+        Redux: SiRedux,
+        link: "https://jumia-commercial.netlify.app/"
+    },
     {
         imageUrl: linkedIn_clone,
         title: 'linkedIn clone',

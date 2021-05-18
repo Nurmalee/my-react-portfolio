@@ -16,7 +16,7 @@ function ContactForm() {
 
                     <input type="text" placeholder="Full Name" required/>
                     <div>
-                        <input type="email" placeholder="Email Address" required/>
+                        <input type="email" placeholder="Email Address" required />
                         <input type="text" placeholder="Phone Number" required />
                     </div>
                     <textarea name="textarea" id="textarea" placeholder="Your Message" rows={5} required/> <br/>

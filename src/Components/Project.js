@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 import './extended.css'
 
-function Project({imageUrl, title, link, Html5, Css, Javascript, MaterialUi, React, Firebase, StyledComponents}) {
+function Project({imageUrl, title, link, Html5, Css, Javascript, MaterialUi, React, Redux, Firebase, StyledComponents}) {
 
     return (
         <ProjectCard>
@@ -18,6 +18,7 @@ function Project({imageUrl, title, link, Html5, Css, Javascript, MaterialUi, Rea
                         {Firebase && <Firebase className="icon projecticon" />}
                         {StyledComponents && <StyledComponents className="icon projecticon" />}
                         {MaterialUi && <MaterialUi className="icon projecticon" />}
+                        {Redux && <Redux className="icon projecticon" />}
                     </div>
                 </ProjectStack>
             </ProjectImage>
