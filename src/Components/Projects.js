@@ -8,14 +8,18 @@ const projectType = ["all", ...new Set(projectList.map(project => project.type))
 
 function Projects (props) {
     const [filteredProjects, setFilteredProjects] = useState(projectList)
+    const [currentCategory, setCurrentCategory] = useState(0)
 
-    const filterProjectsByType = (type) => {
+    const filterProjectsByType = (e, type) => {
+        setCurrentCategory(Number(e.target.id))
         const filteredByType = projectList.filter(project => project.type === type)
         setFilteredProjects(filteredByType)
 
         if(type === "all"){
             setFilteredProjects(projectList)
         }
+
+        
     }
 
     return (
@@ -30,7 +34,7 @@ function Projects (props) {
                 {
                     projectType.map((type, index) => {
                         return (
-                            <button key={index} onClick={() => filterProjectsByType(type)}>{type}</button>
+                            <button key={index} id={index} onClick={(e) => filterProjectsByType(e, type)} className={currentCategory === index ? 'activeCategory' : null}>{type}</button>
                         )
                     })
                 }
@@ -92,8 +96,9 @@ const ProjectCategories = styled.div`
 
     > button {
             text-transform: uppercase;
-            color: ${props => props.theme.title};
-            background-color: ${props => props.theme.background};
+            /* color: ${props => props.theme.title}; */
+            color: #444;
+            /* background-color: ${props => props.theme.background}; */
             margin-right: 3px;
             padding: 7px 10px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

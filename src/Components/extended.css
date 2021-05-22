@@ -29,3 +29,8 @@
     opacity: 1;
     transform: translateX(0);
 }
+
+.activeCategory {
+    color: white;
+    background-color: brown;
+}

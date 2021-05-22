@@ -18,7 +18,7 @@ const Banner = (props) => {
 
             <BannerTitle>
                 <h2>the lee effect</h2>
-                <p>Welcome to the hub of enthralling & functional websites. I build exquisite and functional user interfaces which are in trueness, functional. Take this portfolio for example, play around here</p>
+                <p>Greetings from <b> LAWAL NURUDEEN</b>, Welcome to the hub of enthralling & functional websites. I build exquisite and functional user interfaces which are in trueness, functional. Take this portfolio for example, play around here</p>
                 <a href="#projects"> view my works </a>
 
                 <CopyrightClaim>
@@ -140,5 +140,6 @@ const Overlay = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(35, 0, 0, 0.6);
+    transition: 500ms;
+    background-color: ${props => props.theme.bannerOverlayDim};
 `

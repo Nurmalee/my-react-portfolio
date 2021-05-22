@@ -19,10 +19,8 @@ function Navbar(props) {
     const toggleTheme = () => {
         if(props.theme === 'light'){
             props.setCurrentTheme('dark')
-            // logo = logo_white
         } else {
             props.setCurrentTheme('light')
-            // logo = logo_black
         }
     }
 
@@ -87,8 +85,9 @@ const Nav = styled.nav`
     left: 0;
     width: 100%;
     z-index: 100;
-    background-color: rgb(250,250,250);
+    background-color: ${props => props.theme.navBackgroundDim};
     box-shadow: 0 0 20px #444;
+    transition: 500ms;
 `
 
 const NavHeader = styled.div`
