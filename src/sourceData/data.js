@@ -9,6 +9,7 @@ import linkedIn_clone from '.././images/works/linkedIn-clone.JPG'
 import instagram_clone from '.././images/works/instagram_clone.JPG'
 import jumia_clone from '.././images/works/jumia-clone.JPG'
 import facebook_clone from '.././images/works/facebook_clone.JPG'
+import formplus_templates from '.././images/works/formplus_templates.JPG'
 
 
 //react-icons
@@ -144,6 +145,17 @@ export const projectList = [
         MaterialUi: SiMaterialUi,
         Redux: SiRedux,
         link: "https://jumia-commercial.netlify.app/"
+    },
+    {
+        imageUrl: formplus_templates,
+        title: 'formplus templates task',
+        type: 'react js',
+        info: 'As an individual who loves networking, I spend a whole lot of my time every day on linkedIn meeting new people. LinkedIn is the best and the most popular online job related platform where professionals meet on a professional level. This build was practically my first major build with ReactJs, it was a revelation, a game changer',
+        technologies: 'html (jsx), css, javascript, react, redux',
+        React: FaReact,
+        Redux: SiRedux,
+        StyledComponents: SiStyledComponents,
+        link: "https://formplus-templates-api-task.netlify.app/"
     },
     {
         imageUrl: linkedIn_clone,
