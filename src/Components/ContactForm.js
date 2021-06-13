@@ -1,30 +1,55 @@
 import styled from 'styled-components'
+import { useState, useEffect } from 'react'
+import emailjs from 'emailjs-com'
 
 function ContactForm() {
 
+    const [sendMsgNotify, setSendMsgNotify] = useState('')
+    const [removeMsgNotify, setRemoveMsgNotify] = useState(false)
+
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        emailjs.sendForm('service_7froz6r', 'template_lxrkzgj', e.target, 'user_p7bBt2jrDsoor1LW6MHS0')
+        .then((result) => {
+            setSendMsgNotify(result.text)
+        }, (error) => {
+            setSendMsgNotify(error.text)
+        });
+
+        e.target.reset()
     }
+
+    useEffect(() => {
+        const msgNotifyTimeout = setTimeout(() => {
+            setRemoveMsgNotify(true)
+            return () => {
+                clearInterval(msgNotifyTimeout)
+            }
+        }, 3000)
+    }, [])
 
     return (
         <ContactFormWrapper id="contactme">
-            <h2> work with me on something of value ? Get in touch </h2>
+            <h2> work or enquiry ? send a direct message to my box </h2>
             <p>Phone: <strong>+234 816 480 0735</strong>; Email: <strong>lawalnurudeenfocus@gmail.com</strong> </p>
 
             <FormContainer>
                 <form onSubmit={handleSubmit}>
 
-                    <input type="text" placeholder="Full Name" required/>
+                    <input type="text" name="sender_name" placeholder="Full Name" required/>
                     <div>
-                        <input type="email" placeholder="Email Address" required />
-                        <input type="text" placeholder="Phone Number" required />
+                        <input type="email" name="sender_email" placeholder="Email Address" required />
+                        <input type="text" name="sender_phone" placeholder="Phone Number" required />
                     </div>
-                    <textarea name="textarea" id="textarea" placeholder="Your Message" rows={5} required/> <br/>
+                    <textarea name="sender_message" id="textarea" placeholder="Your Message" rows={5} required/> <br/>
 
                     <button type="submit"> SEND MESSAGE </button>
 
                 </form>
             </FormContainer>
+
+            {!removeMsgNotify && <SendNotification>{sendMsgNotify ? <p>Your message was delivered</p> : <p>Your message was delivered</p>}</SendNotification>}
             
         </ContactFormWrapper>
     )
@@ -56,7 +81,7 @@ const ContactFormWrapper = styled.section`
 
     > p {
         font-family: 'Poppins', sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         color: ${props => props.theme.title};
         width: 90vw;
         max-width: 500px;
@@ -128,4 +153,13 @@ const FormContainer = styled.div`
             }
         }
     }
+`
+
+const SendNotification = styled.p`
+    border: 1px solid green;
+    color: green;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 0 5px #777;
 `

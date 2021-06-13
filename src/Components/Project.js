@@ -24,7 +24,7 @@ function Project({imageUrl, title, link, Html5, Css, Javascript, MaterialUi, Rea
             </ProjectImage>
             <ProjectInfo>
                 <h2> {title} </h2>
-                <a href={link}>check out</a>
+                <a href={link} target='_blank' rel="noreferrer">check out</a>
             </ProjectInfo>
         </ProjectCard>
     )
