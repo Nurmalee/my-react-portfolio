@@ -59,6 +59,7 @@ const ProjectsWrap = styled.section`
     padding: 80px 0;
     margin: 0 auto;
     background-color: ${props => props.theme.background};
+    scroll-snap-align: start;
 `
 
 const SectionHeader = styled.div`

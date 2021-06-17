@@ -66,6 +66,7 @@ const ContactFormWrapper = styled.section`
     padding-bottom: 50px;
     transition: 500ms;
     text-align: center;
+    scroll-snap-align: start;
 
     > h2 {
         text-transform: uppercase;

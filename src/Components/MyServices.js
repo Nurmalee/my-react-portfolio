@@ -39,6 +39,7 @@ const ServicesContainer = styled.section`
    background-color: ${props => props.theme.background};
    padding: 80px 0;
    transition: 200ms;
+   scroll-snap-align: start;
 `
 
 const SectionHeader = styled.div`

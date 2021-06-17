@@ -44,6 +44,7 @@ const BannerContainer = styled.section`
     place-items: center;
     color: black;
     position: relative;
+    scroll-snap-align: start;
 
     > a {
         margin: 40px 0;

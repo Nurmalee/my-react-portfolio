@@ -51,7 +51,7 @@ function App() {
 export default App
 
 const AppBody = styled.main`
-    scroll-snap-type: mandatory;
-    overflow: auto;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
     height: 100vh;
 `

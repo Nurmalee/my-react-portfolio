@@ -28,6 +28,7 @@ const AboutContainer = styled.section`
     padding: 80px 0;
     background-color: ${props => props.theme.background};
     transition: 200ms;
+    scroll-snap-align: start;
 
     &:hover {
         p::after {
