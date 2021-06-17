@@ -61,6 +61,7 @@ const FooterContainer = styled.section`
     padding: 70px 0;
     color: #bbb;
     background-color: #222;
+    scroll-snap-align: start;
 `
 
 const FooterMain = styled.footer`
