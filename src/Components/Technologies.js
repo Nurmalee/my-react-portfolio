@@ -7,7 +7,7 @@ function Technologies(props) {
 
     return (
         <TechnologiesContainer id="technologies">
-            <h1>highlight of technologies</h1>
+            <h1>languages/technologies</h1>
 
             <TechnologyCardContainer>
                 {techList.map((tech, index) => {

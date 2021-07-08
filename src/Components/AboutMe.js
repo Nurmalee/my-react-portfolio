@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import me from '.././images/me.jpg'
+import me from '.././images/me3.jpg'
 // import backgroundImg from '../images/1x/aboutme_techs.png'
 import Technologies from './Technologies'
 
@@ -72,22 +72,25 @@ const AboutInfo = styled.div`
 
     > img {
         object-fit: cover;
-        height: 200px;
-        width: 200px;
+        height: 270px;
+        width: 210px;
         transition: 200ms;
-        border-radius: 5%;
+        border-radius: 10px;
         border: 3px solid  ${props => props.theme.title};
         box-shadow: 7px 5px 5px ${props => props.theme.shadow};
     }
 
     > p {
         font-family: 'Poppins', sans-serif;
-        max-width: 600px;
+        max-width: 650px;
         color: ${props => props.theme.title};
         align-self: flex-start;
         line-height: 30px;
         text-align: justify;
         margin-top: 25px;
+        cursor: pointer;
+        padding: 10px;
+        transition: 200ms;
     }
 
 

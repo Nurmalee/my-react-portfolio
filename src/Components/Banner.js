@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import MySocialLinks from './MySocialLinks'
-import banner from '../images/aleks-dorohovich-nJdwUHmaY8A-unsplash.jpg'
+import banner from '../images/fakurian-design-dvfph1sB-oA-unsplash.jpg'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { motion } from 'framer-motion'
 
