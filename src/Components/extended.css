@@ -34,3 +34,11 @@
     color: white;
     background-color: brown;
 }
+
+.navbar {
+    background-color: transparent;
+}
+
+.navbar.colorChange{
+    background-color: #000;
+}

@@ -244,15 +244,15 @@ export const projectList = [
         Javascript: DiJavascript,
         link: "https://nurmalee.github.io/Old-Projects/youtube_clone/index.html"
     },
-    {
-        imageUrl: watchesHq,
-        title: 'watches sales demo',
-        type: 'vanilla js',
-        info: 'Time is an important factor, so I found. As a lover of watches, I have created this beautiful watch sales demo landing page that displays different brands of wrist watches with switch functionality for gender specification',
-        technologies: 'html, css, javascript',
-        Html5: FaHtml5,
-        Css: FaCss3Alt,
-        Javascript: DiJavascript,
-        link: "https://nurmalee.github.io/Old-Projects/watches_hq/watches.html"
-    },
+    // {
+    //     imageUrl: watchesHq,
+    //     title: 'watches sales demo',
+    //     type: 'vanilla js',
+    //     info: 'Time is an important factor, so I found. As a lover of watches, I have created this beautiful watch sales demo landing page that displays different brands of wrist watches with switch functionality for gender specification',
+    //     technologies: 'html, css, javascript',
+    //     Html5: FaHtml5,
+    //     Css: FaCss3Alt,
+    //     Javascript: DiJavascript,
+    //     link: "https://nurmalee.github.io/Old-Projects/watches_hq/watches.html"
+    // },
 ]

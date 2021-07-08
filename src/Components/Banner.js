@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import MySocialLinks from './MySocialLinks'
 import banner from '../images/aleks-dorohovich-nJdwUHmaY8A-unsplash.jpg'
-import { GiSelfLove } from 'react-icons/gi'
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { motion } from 'framer-motion'
 
 const bannerTitle = {
@@ -14,19 +14,6 @@ const bannerTitle = {
         transition: {delay: 1.0, duration: 0.5}
     }
 }
-
-const bannerTitleH2 = {
-    initial: {
-        opacity: 0,
-        x: -500,
-    },
-    animate: {
-        opacity: 1,
-        x: 0,
-        transition: {delay: 1.0, duration: 0.5}
-    }
-}
-
 
 const bannerTitleP = {
     initial: {
@@ -41,13 +28,12 @@ const bannerTitleP = {
 }
 
 const bannerButton = {
-    hover: {
+    animate: {
         scale: 1.2,
         transition: {
             yoyo: Infinity,
         }
-    }
-
+    },
 }
 
 const Banner = (props) => {
@@ -68,12 +54,12 @@ const Banner = (props) => {
                 initial="initial"
                 animate="animate"
              >
-                <motion.h2 variants={bannerTitleH2}> the lee effect </motion.h2>
-                <motion.p variants={bannerTitleP}> Welcome to the hub of enthralling & functional websites. I build exquisite and functional user interfaces </motion.p>
-                <motion.a variants={bannerButton} whileHover="hover" href="#projects"> view my works </motion.a>
+                <motion.p variants={bannerTitleP}> Hi, I'm LEE. Welcome to the hub of enthralling & functional websites. I build exquisite & functional user interfaces </motion.p>
+
+                <motion.a variants={bannerButton} animate="animate" href="#about"> Learn more about what I do <br></br> <span> <ArrowDropDownIcon /> </span> </motion.a>
 
                 <CopyrightClaim>
-                    <p>&#169; <span ref={yearRef}></span> The LeeEffect. <span> All Rights Reserved</span> | Made with <GiSelfLove style={{color: "red"}} /> from Nigeria </p>
+                    <p>&#169; <span ref={yearRef}></span> The LeeEffect. All Rights Reserved | Live from the LEE TEMPLE </p>
                 </CopyrightClaim>
 
                 <MySocialLinks />
@@ -92,7 +78,9 @@ const BannerContainer = styled.section`
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 600px;
+    overflow-y: scroll;
     display: grid;
     place-items: center;
     color: black;
@@ -102,6 +90,19 @@ const BannerContainer = styled.section`
     > a {
         margin: 40px 0;
     }
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+        
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+        
+    &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        border-radius: 5px;
+    }
 `
 
 const BannerTitle = styled(motion.div)`
@@ -110,9 +111,9 @@ const BannerTitle = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 85vw;
+    width: 90vw;
     z-index: 1;
-    max-width: 750px;
+    max-width: 950px;
     margin: 0 auto;
    
     > h2 {
@@ -133,15 +134,19 @@ const BannerTitle = styled(motion.div)`
 
     > p {
         font-family: 'Poppins', sans-serif;
+        font-family: 'Antonio', sans-serif;
+        font-family: 'Otomanopee One', sans-serif;
         color: white;
         transition: 500ms;
         text-align: center;
         margin-top: 5px;
         font-size: 10px;
-        font-weight: 300;
+        font-size: 1.2rem;
+        /* font-weight: 300; */
 
         @media screen and (min-width: 700px){
             font-size: 1.3vw;
+            font-size: 1.7rem;
         }
     }
 
@@ -151,26 +156,30 @@ const BannerTitle = styled(motion.div)`
         text-align: center;
         text-transform: capitalize;
         color: white;
-        border: 1px solid #bbb;
+        /* border: 1px solid #bbb; */
         border-radius: 2px;
         margin: 20px auto 0;
         padding: 12px 25px;
         font-family: 'Antonio', sans-serif;
         font-family: 'Poppins', sans-serif;
         font-size: 10px;
-        width: 200px;
+        /* width: 200px; */
         letter-spacing: 1px;
-        background-color: brown;
+        /* background-color: brown; */
         transition: 500ms;
         position: relative;
+
+
+        position: absolute;
+        bottom: 20px;
         
         &:hover {
-             box-shadow: 0 0 10px #ccc;
+             /* box-shadow: 0 0 10px #ccc; */
         }
 
         @media screen and (min-width: 700px){
-            width: 16vw;
-            font-size: 0.8vw;
+            /* width: 16vw; */
+            font-size: 0.9vw;
         }
     }
 `
@@ -183,6 +192,7 @@ const CopyrightClaim = styled.div`
     text-transform: uppercase;
     padding:  5px 15px;
     text-align: center;
+    max-width: 90%;
 
     @media screen and (min-width: 900px) {
         font-size: 12px;

@@ -1,20 +1,30 @@
 import { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
+import './extended.css'
 import { navList } from '.././sourceData/data'
-import logo_black from '.././images/1x/logo_2_black.png'
+import logo_black from '.././images/1x/logo_2_white.png'
 import { FiTwitter, FiGithub } from 'react-icons/fi'
 import { BsToggleOn, BsToggleOff } from 'react-icons/bs'
 import { AiTwotoneWarning } from 'react-icons/ai'
 import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineMenu } from 'react-icons/ai'
+import { Close } from '@material-ui/icons';
 
 let logo = logo_black
 
 function Navbar(props) {
 
     const [showList, setShowList] = useState(false)
+    const [colorChange, setColorchange] = useState(false);
     const navbarListContainerRef = useRef('')
     const navbarListRef = useRef('')
-    const navbarRef = useRef('')
+    const navHeaderRef = useRef('')
+
+    useEffect(() => {
+        const changeNavbarColor = () => {
+            window.scrollY >= 80 ? setColorchange(true) : setColorchange(false);
+        };
+        window.addEventListener('scroll', changeNavbarColor);
+    }, [])
 
     const toggleTheme = () => {
         if(props.theme === 'light'){
@@ -41,16 +51,22 @@ function Navbar(props) {
     }, [showList])
 
     return (
-        <Nav>
-            <NavHeader ref={navbarRef}>
+        <Nav className={colorChange ? 'navbar colorChange' : 'navbar'}>
+            <NavHeader ref={navHeaderRef}>
                 <img src={logo} alt="LEE"/>
                 <div onClick={() => setShowList(!showList)}>
                     <p>menu</p>
-                    <OpenMenuBtn />
+                    <OpenMenuBtn style={{color: "white"}} />
                 </div>
             </NavHeader>
 
             <NavListContainer ref={navbarListContainerRef}>
+                <div onClick={() => setShowList(!showList)}>
+                    <p>close</p>
+                    <Close style={{color: "brown"}} />
+                </div>
+
+               
                 <ul ref={navbarListRef}>
                     {
                         navList.map(({title, href}, index) => {
@@ -85,16 +101,23 @@ const Nav = styled.nav`
     left: 0;
     width: 100%;
     z-index: 100;
-    background-color: ${props => props.theme.navBackgroundDim};
-    box-shadow: 0 0 20px #444;
+    background-color: transparent;
+    /* box-shadow: 0 0 20px #444; */
     transition: 500ms;
+
+    @media screen and (max-width: 700px){
+        background-color: rgba(255,255,255,0.45);
+    }
 `
 
 const NavHeader = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 0;
+    width: 95vw;
+    margin: 0 auto;
+    /* text-align: center; */
     color: black;
 
     > img {
@@ -114,6 +137,7 @@ const NavHeader = styled.div`
             margin-right: 5px;
             color: ${props => props.theme.title};
             color: #333;
+            color: white;
             transition: 500ms;
         }
     }
@@ -130,6 +154,27 @@ const NavListContainer = styled.div`
     position: fixed;
     z-index: 100;
     right: 0;
+    top: 0;
+
+    > div {
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 13px;
+
+        > p {
+            font-family: 'Antonio', sans-serif;
+            font-weight: 900;
+            font-size: 18px;
+            margin-right: 5px;
+            color: ${props => props.theme.title};
+            color: brown;
+            /* color: #333;
+            color: white; */
+            transition: 500ms;
+        }
+    }
 
     > ul {
         list-style: none;

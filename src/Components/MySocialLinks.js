@@ -48,6 +48,8 @@ const Socials = styled.ul`
 
     > li > a {
         .MuiIconButton-root {
+            padding: 10px;
+
             &:hover {
                 background-color: white;
 
