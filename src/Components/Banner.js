@@ -119,14 +119,15 @@ const BannerTitle = styled(motion.div)`
         font-size: 2.3rem;
         color: white;
         margin-bottom: 10px;
-        letter-spacing: 2px;
+        /* letter-spacing: 2px; */
         text-align: center;
         font-weight: 700;
         font-family: 'Antonio', sans-serif;
+        font-family: 'Otomanopee One', sans-serif;
         text-transform: uppercase;
 
         @media screen and (min-width: 700px) {
-            font-size: 3.8vw;
+            font-size: 3.2vw;
         }
     }
 
