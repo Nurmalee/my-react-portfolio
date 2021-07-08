@@ -54,7 +54,7 @@ const Banner = (props) => {
                 initial="initial"
                 animate="animate"
              >
-                <motion.p variants={bannerTitleP}> Hi, I'm LEE. Welcome to the hub of enthralling & functional websites. I build exquisite & functional user interfaces </motion.p>
+                <motion.p variants={bannerTitleP}> Hi, I'm LEE. Welcome to the hub of enthralling, exquisite & functional user facing views</motion.p>
 
                 <motion.a variants={bannerButton} animate="animate" href="#about"> Learn more about what I do <br></br> <span> <ArrowDropDownIcon /> </span> </motion.a>
 
