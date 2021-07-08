@@ -1,5 +1,6 @@
 import {useEffect, useRef} from 'react'
 import styled from 'styled-components'
+import MySocialLinks from './MySocialLinks'
 
 const Footer = () => {
 
@@ -39,10 +40,7 @@ const Footer = () => {
 
                     <Column>
                         <h2>social media</h2>
-                         <li><a href="https://github.com/Nurmalee"> GitHub </a></li>
-                        <li><a href="https://instagram.com/thecodedlee"> Instagram </a></li>
-                        <li><a href="https://youtube.com/nurudeenlawal"> Youtube </a></li>
-                        <li><a href="https://twitter.com/nurmanteasy"> Twitter </a></li>
+                        <MySocialLinks />
                     </Column>
                 </FooterColumns>
 
@@ -88,7 +86,6 @@ const FooterColumns = styled.div`
     @media screen and (min-width: 900px) {
         grid-template-columns: repeat(4, 1fr);
     }
-
 `
 
 const Column = styled.ul`
@@ -124,7 +121,6 @@ const Column = styled.ul`
             }
         }
     }
-
 `
 
 const CopyrightClaim = styled.div`

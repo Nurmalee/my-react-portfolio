@@ -15,7 +15,7 @@ function AboutMe(props) {
             
             <AboutInfo>
                 <img src={me} alt="Nurudeen Lawal" />
-                <p> I'm an independent and meticulous web developer with over 2 years of experience in the front-end department concatenating the art of design with functional and object-oriented programming skills to deliver enthralling user interfaces with captivating responsiveness for immersive user experience. Recursively pushing variables into an array of abilities that already includes proficiency in HTML, CSS, JavaScript, jQuery, Node and frameworks and/or libraries like React, Bootstrap, Material UI etc </p>
+                <p> I'm Nurudeen Lawal. An independent web developer with over 2 years of experience in the front-end department concatenating the art of design with functional and object-oriented programming skills to deliver enthralling user interfaces with captivating responsiveness for immersive user experience. Recursively pushing variables into an array of abilities that already includes proficiency in HTML, CSS, JavaScript, jQuery, Node and frameworks and/or libraries like React, Bootstrap, Material UI etc </p>
             </AboutInfo>
             <Technologies />
         </AboutContainer>

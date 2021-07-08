@@ -4,7 +4,9 @@ import emailjs from 'emailjs-com'
 
 function ContactForm() {
 
-    const [sendMsgNotify, setSendMsgNotify] = useState('')
+    // const [sendMsgNotify, setSendMsgNotify] = useState('')
+    const [sendMsgDone, setSendMsgDone] = useState('')
+    const [sendMsgError, setSendMsgError] = useState('')
     const [removeMsgNotify, setRemoveMsgNotify] = useState(false)
 
     const handleSubmit = (e) => {
@@ -12,9 +14,11 @@ function ContactForm() {
 
         emailjs.sendForm('service_7froz6r', 'template_lxrkzgj', e.target, 'user_p7bBt2jrDsoor1LW6MHS0')
         .then((result) => {
-            setSendMsgNotify(result.text)
+            // setSendMsgNotify(result.text)
+            setSendMsgDone(result.text)
         }, (error) => {
-            setSendMsgNotify(error.text)
+            // setSendMsgNotify(error.text)
+            setSendMsgError(error.text)
         });
 
         e.target.reset()
@@ -24,14 +28,14 @@ function ContactForm() {
         const msgNotifyTimeout = setTimeout(() => {
             setRemoveMsgNotify(true)
             return () => {
-                clearInterval(msgNotifyTimeout)
+                clearTimeout(msgNotifyTimeout)
             }
         }, 3000)
     }, [])
 
     return (
         <ContactFormWrapper id="contactme">
-            <h2> work or enquiry ? send a direct message to my box </h2>
+            <h2> need my services? send me a messsage </h2>
             <p>Phone: <strong>+234 816 480 0735</strong>; Email: <strong>lawalnurudeenfocus@gmail.com</strong> </p>
 
             <FormContainer>
@@ -49,7 +53,7 @@ function ContactForm() {
                 </form>
             </FormContainer>
 
-            {!removeMsgNotify && <SendNotification>{sendMsgNotify ? <p>Your message was delivered</p> : <p>Your message was delivered</p>}</SendNotification>}
+            {!removeMsgNotify && <SendNotification>{sendMsgDone ? <p>Your message was delivered</p> : <p>Your message was delivered</p>}</SendNotification>}
             
         </ContactFormWrapper>
     )
