@@ -6,7 +6,7 @@ const MySocialLinks = () => {
     return (
         <Socials>
             <li>
-                <a href="https://github.com/Nurmalee"> 
+                <a href="https://github.com/Nurmalee">
                     <IconButton> 
                         <GitHub />
                     </IconButton>
@@ -14,15 +14,15 @@ const MySocialLinks = () => {
             </li>
 
             <li>
-                <a href="https://linkedIn.com/Nurmalee"> 
-                    <IconButton> 
+                <a href="https://www.linkedin.com/in/nurudeen-lawal-505580119">
+                    <IconButton>
                         <LinkedIn />
                     </IconButton>
                 </a>
             </li>
 
             <li>
-                <a href="https://instagram.com/thecodedlee"> 
+                <a href="https://instagram.com/thecodedlee">
                     <IconButton> 
                         <Instagram />
                     </IconButton>
