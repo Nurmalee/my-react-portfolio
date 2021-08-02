@@ -36,12 +36,11 @@ const ProjectCard = styled.div`
     box-shadow: 7px 5px 5px ${props => props.theme.shadow};
     align-self: flex-start;
     color: #555;
-    border: 1px solid #bbb;
-    /* border: 1px solid brown; */
+    border-bottom: 1px solid #bbb;
     border-radius: 5px;
 
     &:hover {
-        border: 1px solid brown;
+        border-bottom: 1px solid brown;
     }
 `
 

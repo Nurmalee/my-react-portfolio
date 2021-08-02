@@ -10,15 +10,16 @@ import instagram_clone from '.././images/works/instagram_clone.JPG'
 import jumia_clone from '.././images/works/jumia-clone.JPG'
 import facebook_clone from '.././images/works/facebook_clone.JPG'
 import formplus_templates from '.././images/works/formplus_templates.JPG'
+import moviesnow_movies from '../images/works/moviesNow.PNG'
 
 
 //react-icons
 import { FaReact, FaCss3Alt, FaHtml5, FaBootstrap, FaNodeJs } from 'react-icons/fa'
-import { SiAdobeillustrator, SiFirebase, SiMaterialUi, SiStyledComponents, SiRedux } from 'react-icons/si'
+import { SiAdobeillustrator, SiFirebase, SiMaterialUi, SiStyledComponents, SiRedux, SiNextDotJs } from 'react-icons/si'
 import { DiJqueryLogo, DiJavascript, DiCodeigniter } from 'react-icons/di'
 import { CgFigma } from 'react-icons/cg'
-import {BsCodeSlash} from 'react-icons/bs'
-import {MdGraphicEq} from 'react-icons/md'
+import { BsCodeSlash } from 'react-icons/bs'
+import { MdGraphicEq } from 'react-icons/md'
 
 
 
@@ -85,11 +86,11 @@ export const myServices = [
 
 export const techList = [
     {
-        title: 'Html5',
+        title: 'HTML5',
         Icon: FaHtml5,
     },
     {
-        title: 'Css3 (incl. Bootstrap, SASS)',
+        title: 'CSS3',
         Icon: FaCss3Alt,
     },
     {
@@ -97,15 +98,19 @@ export const techList = [
         Icon: DiJavascript,
     },
     {
-        title: 'React (incl. Redux)',
+        title: 'React JS',
         Icon: FaReact,
+    },
+    {
+        title: 'Next JS',
+        Icon: SiNextDotJs,
     },
     {
         title: 'Redux',
         Icon: SiRedux,
     },
     {
-        title: 'Node (with MongoDB & Express)',
+        title: 'Node JS (with MongoDB & Express)',
         Icon: FaNodeJs,
     },
     {
@@ -129,17 +134,27 @@ export const techList = [
         Icon: SiAdobeillustrator,
     },
     {
-        title: 'Figma & Balsamiq Wireframe',
+        title: 'Figma',
         Icon: CgFigma,
     }
 ]
 
 export const projectList = [
     {
+        imageUrl: moviesnow_movies,
+        title: 'moviesNow.se',
+        type: 'next js',
+        technologies: 'html (jsx), css, javascript, react, material-ui, redux',
+        React: FaReact,
+        MaterialUi: SiMaterialUi,
+        Next: SiNextDotJs,
+        StyledComponents: SiStyledComponents,
+        link: "https://moviesnow-se.vercel.app/"
+    },
+    {
         imageUrl: jumia_clone,
         title: 'Jumia E-Commerce Clone',
         type: 'react js',
-        // info: 'This is the proposed inspiration for the official website of Brisk and Sleek Arch Ventures. An upcoming architectural firm that deals in completion of architecural drawings, building construction, supervision, renovations, maintenance, production of quantity bills and so much more extended dealings related to construction development',
         technologies: 'html (jsx), css, javascript, react, material-ui, redux',
         React: FaReact,
         MaterialUi: SiMaterialUi,
@@ -150,7 +165,6 @@ export const projectList = [
         imageUrl: formplus_templates,
         title: 'formplus templates task',
         type: 'react js',
-        info: 'As an individual who loves networking, I spend a whole lot of my time every day on linkedIn meeting new people. LinkedIn is the best and the most popular online job related platform where professionals meet on a professional level. This build was practically my first major build with ReactJs, it was a revelation, a game changer',
         technologies: 'html (jsx), css, javascript, react, redux',
         React: FaReact,
         Redux: SiRedux,
@@ -161,7 +175,6 @@ export const projectList = [
         imageUrl: linkedIn_clone,
         title: 'linkedIn clone',
         type: 'react js',
-        info: 'As an individual who loves networking, I spend a whole lot of my time every day on linkedIn meeting new people. LinkedIn is the best and the most popular online job related platform where professionals meet on a professional level. This build was practically my first major build with ReactJs, it was a revelation, a game changer',
         technologies: 'html (jsx), css, javascript, react, material-ui, firebase',
         React: FaReact,
         Firebase: SiFirebase,
@@ -172,7 +185,6 @@ export const projectList = [
         imageUrl: porsche_garage,
         title: 'porsche garage',
         type: 'vanilla js',
-        info: 'I love speed, I love fast cars and I love the porsche brand. This enthralling website was created as an imaginative representation of the kind of cars I wish I had in my garage as at the time. It displays images of beautiful models of porsche car models and a few specifications to go along with each',
         technologies: 'html, css, javascript',
         Html5: FaHtml5,
         Css: FaCss3Alt,
@@ -183,7 +195,6 @@ export const projectList = [
         imageUrl: instagram_clone,
         title: 'Instagram Clone',
         type: 'react js',
-        info: 'An explicit clone of the all popular instagram app from facebook. This desktop version of instagram was inspired from my love for using instagram',
         technologies: 'html (jsx), css, javascript, react, styled-components, firebase',
         React: FaReact,
         Firebase: SiFirebase,
@@ -194,7 +205,6 @@ export const projectList = [
         imageUrl: random_users,
         title: 'random users app',
         type: 'react js',
-        info: 'A catchy UI for a user dashboard. This user landing/dashboard was created as part of an assessment program for a 3 months internship with Decagon Institute sponsored by the UKNGTech. This app uses the random users API to generate random users on every reload where a user can then search the list by names or by gender to get more user detail. Open the project to experience the functionality',
         technologies: 'html (jsx), css, javascript, react, react-icons, material-ui',
         React: FaReact,
         MaterialUi: SiMaterialUi,
@@ -204,7 +214,6 @@ export const projectList = [
         imageUrl: facebook_clone,
         title: 'facebook clone',
         type: 'react js',
-        info: 'Although I dont use the facebook app, It was worth making this build, and considering that I have made an intriguing version of the instagram, I decided to face off with the guys at facebook with a clone of all their applications',
         technologies: 'html (jsx), css, javascript, react, material-ui, firebase',
         React: FaReact,
         Firebase: SiFirebase,
@@ -215,7 +224,6 @@ export const projectList = [
         imageUrl: products_page,
         title: 'products pricing page',
         type: 'vanilla js',
-        info: 'This product checkout landing page was made as a part of the Dufuna Code Camp DOM manipulation assessment test (It currently stands out as the best for design and functionality). It simulates how a buyer can alter the quantity of a selected product and get the corresponding price based on well indicated percent inclusions and exclusions.',
         technologies: 'html, css, javascript',
         Html5: FaHtml5,
         Css: FaCss3Alt,
@@ -226,7 +234,6 @@ export const projectList = [
         imageUrl: pepsi_landing,
         title: 'pepsi landing page',
         type: 'vanilla js',
-        info: 'Inspired by an instagram post made by a UI/UX expert. This pepsi landing page features a display of variants of the beverages of the pepsi brand. It has hover functionality for product display shuffle and it is highly screen responsive... I guess you should see for yourself',
         technologies: 'html, css, javascript',
         Html5: FaHtml5,
         Css: FaCss3Alt,
@@ -237,7 +244,6 @@ export const projectList = [
         imageUrl: youtube_clone,
         title: 'youtube clone',
         type: 'vanilla js',
-        info: 'We all know youtube is the home of video information. Without youtube, I will probably not know all the useful random and extra things that I know as of today, including software development. The first ever coding impression I got was from a channel owned by a japanese on youtube where he taught the python language before I dived into javascript. All these birthed the ground for making this build. In the coming days I plan to make it even better and functional by making a remake with react js',
         technologies: 'html, css, javascript',
         Html5: FaHtml5,
         Css: FaCss3Alt,
@@ -248,7 +254,6 @@ export const projectList = [
     //     imageUrl: watchesHq,
     //     title: 'watches sales demo',
     //     type: 'vanilla js',
-    //     info: 'Time is an important factor, so I found. As a lover of watches, I have created this beautiful watch sales demo landing page that displays different brands of wrist watches with switch functionality for gender specification',
     //     technologies: 'html, css, javascript',
     //     Html5: FaHtml5,
     //     Css: FaCss3Alt,
